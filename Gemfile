@@ -56,10 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # すべての環境で使うgem
 gem "rails-i18n"
 gem "haml-rails"
-gem "devise"
+#gem "devise"
 gem "carrierwave"
 gem "mini_magick"
 gem "pry-rails"
 gem "font-awesome-rails"
 gem "jquery-rails"
-##
