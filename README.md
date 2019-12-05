@@ -18,9 +18,9 @@
 
 ### Association
 
-- has_many : products_id
-- has_many : productslikes_id
-- has_many : messages_id
+- has_many : products
+- has_many : productslikes
+- has_many : messages
 - has_many : credits, through: :user_credits
 - has_many : address, through: :user_addresss
 - has_many :user_addresss
@@ -32,8 +32,8 @@
 | postnum    | integer | null: false |
 | prefecture | string  | null: false |
 | city       | integer | null: false |
-| streetnum  | integer | null: false |
-| building   | string  | null: false |
+| street_num  | integer | null: false |
+| building   | string  |
 
 ### Association
 
@@ -58,7 +58,7 @@
 | number      | integer |
 | name        | string  |
 | deadline    | integer |
-| securitynum | integer |
+| security_num | integer |
 
 ### Association
 
@@ -84,20 +84,22 @@
 | user_id     | integer | null: false |
 | sells_id    | integer | null: false |
 | buys_id     | integer | null: true  |
-| deliverhow  | integer | null: false |
-| deliverdate | date    | null: false |
+| deliver_how  | integer | null: false |
+| deliver_date | date    | null: false |
 | price       | integer | null: false |
 | explanation | string  | null: true  |
 | state       | integer | null: false |
+| brand_id       | integer | null: false |
+| sizes_id       | integer | null: false |
 
 ### Association
 
-- has_many : categorys3
-- has_many : productimages
-- has_many :productslikes
-- belongs_to :size
-- belongs_to :user
-- belongs_to :brand
+- has_many : productsimages
+- has_many : productslikes
+- belongs_to :user, foreign_key: true
+- belongs_to :size, foreign_key: true
+- belongs_to :brand, foreign_key: true
+- belongs_to : category, foreign_key: true
 - has_one :sell
 - has_one :buy
 
@@ -106,27 +108,18 @@
 | Column      | Type    | Options     |
 | ----------- | ------- | ----------- |
 | products_id | integer | null: false |
-| image01     | string  |
-| image02     | string  |
-| image03     | string  |
-| image04     | string  |
-| image05     | string  |
-| image06     | string  |
-| image07     | string  |
-| image08     | string  |
-| image09     | string  |
-| image10     | string  |
+| image01     | string  | null: false |
 
 ### Association
 
-- belongs_to :product
+- belongs_to :product, foreign_key: true
 
 ## 08:sizes
 
 | Column     | Type    | Options     |
 | ---------- | ------- | ----------- |
 | product_id | integer | null: false |
-| sizename   | integer |
+| size_name   | integer |
 
 ### Association
 
@@ -142,8 +135,8 @@
 
 ### Association
 
-- belongs_to :user
-- belongs_to :product
+- belongs_to :user, foreign_key: true
+- belongs_to :product, foreign_key: true
 
 ## 10:productslikes
 
@@ -151,38 +144,38 @@
 | ------------- | ------- | ----------- |
 | products_id   | integer | null: false |
 | users_id      | integer |
-| productslikes | integer |
+| products_likes | integer |
 
 ### Association
 
-- belongs_to :product
-- belongs_to :user
+- belongs_to :product, foreign_key: true
+- belongs_to :user, foreign_key: true
 
 ## 11:brands
 
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
-| brandname | string | null: false |
+| brand_name | string | null: false |
 | text      | string |
 
 ### Association
 
 - has_many :products
-- has_many :category1s ,through :category_brands
+- has_many :categorys ,through :category_brands
 
-## 12:brand_category1s
+## 12:brand_categorys
 
 | Column       | Type    | Options |
 | ------------ | ------- | ------- |
-| category1_id | integer |
+| categorys_id | integer |
 | brands_id    | integer |
 
 ### Association
 
-- belongs_to :category1, foreign_key: true
-- belongs_to :brands, foreign_key: true
+- belongs_to :category, foreign_key: true
+- belongs_to :brand, foreign_key: true
 
-## 13:category1s
+## 13:categorys
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
@@ -191,48 +184,22 @@
 
 ### Association
 
-- has_many category2s
+- has_many products
 - has_many brands, through :category_brands
 
-## 14:category2s
-
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| name          | string  | null: false |
-| category1s_id | integer |
-| text          | string  |
-
-### Association
-
-- has_many :category3
-- belongs_to :category1
-
-## 15:category3s
-
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| name         | string  | null: false |
-| category2_id | integer |
-| text         | string  |
-
-### Association
-
-- has_many :products
-- belongs_to :category2
-
-## 16:sellers
+## 14:sellers
 
 | Column            | Type    | Options     |
 | ----------------- | ------- | ----------- |
 | products_id       | integer | null: false |
-| sellerEvaluate_id | integer | null: false |
+| seller_evaluate_id | integer | null: false |
 
 ### Association
 
-- belongs_to :product
-- has_one :buyerEvaluate
+- belongs_to :product, foreign_key: true
+- has_one :buyer_evaluate
 
-## 17:sellerEvaluates
+## 15:sellerEvaluates
 
 | Column     | Type    | Options     |
 | ---------- | ------- | ----------- |
@@ -243,19 +210,19 @@
 
 ### Association
 
-- belongs_to :seller
+- belongs_to :seller, foreign_key: true
 
-## 18:buyers
+## 16:buyers
 
 | Column           | Type    | Options     |
 | ---------------- | ------- | ----------- |
 | products_id      | integer | null: false |
-| buyerEvaluate_id | integer | null: false |
+| buyer_evaluate_id | integer | null: false |
 
 ### Association
 
-- belongs_to :product
-- has_one :buyerEvaluate
+- belongs_to :product, foreign_key: true
+- has_one :buyer_evaluate
 
 ## 19:buyerEvaluates
 
@@ -268,5 +235,4 @@
 
 ### Association
 
-- belongs_to :buyer
-
+- belongs_to :buyer, foreign_key: true
