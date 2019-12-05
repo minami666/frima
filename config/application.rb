@@ -30,5 +30,13 @@ module Frima
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.i18n.default_locale = :ja
+
+    # 「Rails g controller」時に不要なファイルを生成しない設定↓
+    config.generators do |g|
+      g.javascripts false
+      g.helper false
+      g.test_framework false
+    end
+
   end
 end
