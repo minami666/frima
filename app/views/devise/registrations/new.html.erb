@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+      <%= f.label :nickname %> <em>(10 characters maximum)</em><br />
+      <%= f.text_field :nickname, autofocus: true, maxlength: "10" %>
+      </div>
+
+  <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
