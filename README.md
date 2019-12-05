@@ -1,4 +1,6 @@
-## usersテーブル
+#テーブル／カラム／データ型／オプション
+
+## 01:users
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, unique: true|
@@ -14,103 +16,132 @@
 |image|string|
 
 ### Association
-- belongs_to :user, foreign_key-true
-- belongs_to :address, foreign_key-true
+- belongs_to :user, foreign_key: true
+- belongs_to :address, foreign_key: true
+- has_many : products_id
+- has_many : productslikes_id
+- has_many : messages_id
+- has_many : credits, through: :user_credits
+- has_many : address, through: :user_addresss
 
-## 中間(user_address)テーブル
+## 02:adresssテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer||
-|address_id|integer||
-
-### Association
-- belongs_to :user, foreign_key-true
-- belongs_to :address, foreign_key-true
-
-## adresssテーブル
-|Column|Type|Options|
-|------|----|-------|
-|郵便|integer|null: false|
-|都道府県|integer|null: false|
-|市町村|integer|null: false|
-|番地|ineger|null: false|
-|建物以降|string|null: false|
+|postnum|integer|null: false|
+|prefecture|string|null: false|
+|city|integer|null: false|
+|streetnum|integer|null: false|
+|building|string|null: false|
 
 ### Association
 - has_many :users, through :user_address
 
-## messagesテーブル
+## 03:user_address
 |Column|Type|Options|
 |------|----|-------|
-|text|string|null: false|
-|商品_id|integer|null: false|
-|user_id|integer|null: false|
+|user_id|integer|
+|address_id|integer|
 
 ### Association
-- belongs_to :user
-- belongs_to :商品
+- belongs_to :user, foreign_key: true
+- belongs_to :address, foreign_key: true
 
-
-## 商品いいねテーブル
+## 04:credits
 |Column|Type|Options|
 |------|----|-------|
-|商品_id|||
-|user_id|integer|null: ture|
-|いいね!|integer|null: ture|
+|number|integer|
+|name|string|
+|deadline|integer|
+|securitynum|integer|
 
 ### Association
-- belongs_to :商品
-- belongs_to :user
+- has_many :users, through :user_credits
 
+## 05:user_credits
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|
+|credits_id|integer|
 
-## 商品テーブル
+### Association
+- belongs_to :user, foreign_key: true
+- belongs_to :credit, foreign_key: true
+
+## 06:products
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |user_id|integer|null: false|
-|出品者_id|integer|null: false|
-|購入者_id|integer|null: ture|
-|発送方法|integer|null: false|
-|発送日|date|null: false|
-|価格|integer|null: false|
-|説明|string|null: ture|
-|取引状態|integer|null: false|
-|お届け先住所_id|integer|null: ture|
-|決済用クレカ|integer|null: ture|
-|area_id|integer|null: false|
+|sells_id|integer|null: false|
+|buys_id|integer|null: true|
+|deliverhow|integer|null: false|
+|deliverdate|date|null: false|
+|price|integer|null: false|
+|explanation|string|null: true|
+|state|integer|null: false|
 
 ### Association
 - has_many : categorys3
 - has_many : productimages
-- has_many :likes
-- belongs_to :sizes
+- has_many :productslikes
+- belongs_to :size
 - belongs_to :user
-- belongs_to :brad
-- has_one :出品者
-- has_one :購入者
+- belongs_to :brand
+- has_one :sell
+- has_one :buy
 
-
-## 商品画像テーブル
+## 07:productsimages
 |Column|Type|Options|
 |------|----|-------|
-|商品_id|integer|null: false|
-|画像1|integer|null: true|
-|以下略10まで|||
+|products_id|integer|null: false|
+|image01|string|null: true|
+|image02|string|null: true|
+|image03|string|null: true|
+|image04|string|null: true|
+|image05|string|null: true|
+|image06|string|null: true|
+|image07|string|null: true|
+|image08|string|null: true|
+|image09|string|null: true|
+|image10|string|null: true|
 
 ### Association
-- belongs_to :商品
+- belongs_to :product
 
-
-## サイズテーブル
+## 08:sizes
 |Column|Type|Options|
 |------|----|-------|
-|商品_id|integer|null: false|
-|サイズ各カラム|integer|null: true|
+|product_id|integer|null: false|
+|sizename|integer|null: true|
 
 ### Association
-- has_many :商品s
+- has_many :products
 
-## ブランドテーブル
+## 09:messages
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|products_id|integer|null: false|
+|users_id|integer|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :product
+
+
+## 10:productslikes
+|Column|Type|Options|
+|------|----|-------|
+|products_id|integer|null: false|
+|users_id|integer|null: true|
+|productslikes|integer|null: true|
+
+### Association
+- belongs_to :product
+- belongs_to :user
+
+
+## 11:brands
 |Column|Type|Options|
 |------|----|-------|
 |brandname|string|null: false|
