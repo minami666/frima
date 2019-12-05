@@ -38,5 +38,10 @@ module Frima
       g.test_framework false
     end
 
+    # タイムゾーン：東京
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
+
   end
 end
