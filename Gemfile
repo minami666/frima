@@ -62,3 +62,4 @@ gem "mini_magick"
 gem "pry-rails"
 gem "font-awesome-rails"
 gem "jquery-rails"
+##
