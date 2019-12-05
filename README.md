@@ -18,13 +18,12 @@
 
 ### Association
 
-- belongs_to :user, foreign_key: true
-- belongs_to :address, foreign_key: true
 - has_many : products_id
 - has_many : productslikes_id
 - has_many : messages_id
 - has_many : credits, through: :user_credits
 - has_many : address, through: :user_addresss
+- has_many :user_addresss
 
 ## 02:adresss テーブル
 
