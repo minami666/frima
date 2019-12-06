@@ -1,6 +1,6 @@
 # テーブル／カラム／データ型／オプション
 
-## 01:users
+## 01:users
 
 |  Column            |  Type    |  Options                    |
 | ------------------ | -------- | --------------------------- |
@@ -16,7 +16,7 @@
 |  profile           |  string  |
 |  image             |  string  |
 
-### Association
+### Association
 
 - has_many :products, dependent: destroy
 - has_many :productslikes, dependent: destroy
@@ -24,7 +24,7 @@
 - has_one :credit, dependent: destroy
 - has_many :addresss, dependent: destroy
 
-## 02:adresss  テーブル
+## 02:adresss  テーブル
 
 |  Column       |  Type     |  Options      |
 | ------------- | --------- | ------------- |
@@ -35,11 +35,11 @@
 |  street_num   |  integer  |  null: false  |
 |  building     |  string   |
 
-### Association
+### Association
 
 - belongs_to :user
 
-## 03:credits
+## 03:credits
 
 |  Column        |  Type     |  Options  |
 | -------------- | --------- | --------- |
@@ -48,11 +48,11 @@
 |  deadline      |  integer  |
 |  security_num  |  integer  |
 
-### Association
+### Association
 
 - belongs_to :user
 
-## 04:products
+## 04:products
 
 |  Column          |  Type     |  Options      |
 | ---------------- | --------- | ------------- |
@@ -68,7 +68,7 @@
 |  brand_id        |  integer  |  null: false  |
 |  sizes_id        |  integer  |  null: false  |
 
-### Association
+### Association
 
 - has_many :productsimages, dependent: destroy
 - has_many :productslikes, dependent: destroy
@@ -79,28 +79,28 @@
 - has_one :seller
 - has_one :buyer
 
-## 05:productsimages
+## 05:productsimages
 
 |  Column       |  Type     |  Options      |
 | ------------- | --------- | ------------- |
 |  products_id  |  integer  |  null: false  |
 |  image01      |  string   |  null: false  |
 
-### Association
+### Association
 
 - belongs_to :product, foreign_key: true
 
-## 06:sizes
+## 06:sizes
 
 |  Column       |  Type     |  Options      |
 | ------------- | --------- | ------------- |
 |  size_name    |  integer  |
 
-### Association
+### Association
 
 - has_many :products
 
-## 07:messages
+## 07:messages
 
 |  Column       |  Type     |  Options      |
 | ------------- | --------- | ------------- |
@@ -108,12 +108,12 @@
 |  products_id  |  integer  |  null: false  |
 |  users_id     |  integer  |  null: false  |
 
-### Association
+### Association
 
 - belongs_to :user, foreign_key: true
 - belongs_to :product, foreign_key: true
 
-## 08:productslikes
+## 08:productslikes
 
 |  Column          |  Type     |  Options      |
 | ---------------- | --------- | ------------- |
@@ -121,50 +121,50 @@
 |  users_id        |  integer  |
 |  products_likes  |  integer  |
 
-### Association
+### Association
 
 - belongs_to :product, foreign_key: true
 - belongs_to :user, foreign_key: true
 
-## 09:brands
+## 09:brands
 
 |  Column      |  Type    |  Options      |
 | ------------ | -------- | ------------- |
 |  brand_name  |  string  |  null: false  |
 |  text        |  string  |
 
-### Association
+### Association
 
 - has_many :products
 - has_many :categorys ,through :brand_categorys
 - has_many :brand_categorys
 
-## 10:brand_categorys
+## 10:brand_categorys
 
 |  Column        |  Type     |  Options  |
 | -------------- | --------- | --------- |
 |  categorys_id  |  integer  |
 |  brands_id     |  integer  |
 
-### Association
+### Association
 
 - belongs_to :category, foreign_key: true
 - belongs_to :brand, foreign_key: true
 
-## 11:categorys
+## 11:categorys
 
 |  Column  |  Type    |  Options      |
 | -------- | -------- | ------------- |
 |  name    |  string  |  null: false  |
 |  text    |  string  |
 
-### Association
+### Association
 
 - has_many :products
 - has_many :brands, through :brand_categorys
 - has_many :brand_categorys
 
-## 12:sellers
+## 12:sellers
 
 |  Column              |  Type     |  Options      |
 | -------------------- | --------- | ------------- |
@@ -172,13 +172,13 @@
 |  users_id            |  integer  |  null: false  |
 |  seller_evaluate_id  |  integer  |  null: false  |
 
-### Association
+### Association
 
 - belongs_to :product, foreign_key: true
 - belongs_to :user, foreign_key: true
 - has_one :buyer_evaluate, dependent: destroy
 
-## 13:sellerEvaluates
+## 13:sellerEvaluates
 
 |  Column      |  Type     |  Options      |
 | ------------ | --------- | ------------- |
@@ -187,11 +187,11 @@
 |  ordinary    |  integer  |
 |  bad         |  integer  |
 
-### Association
+### Association
 
 - belongs_to :seller, foreign_key: true, dependent: destroy
 
-## 14:buyers
+## 14:buyers
 
 |  Column             |  Type     |  Options      |
 | ------------------- | --------- | ------------- |
@@ -199,13 +199,13 @@
 |  users_id           |  integer  |  null: false  |
 |  buyer_evaluate_id  |  integer  |  null: false  |
 
-### Association
+### Association
 
 - belongs_to :product, foreign_key: true
 - belongs_to :user, foreign_key: true
 - has_one :buyer_evaluate, dependent: destroy
 
-## 15:buyerEvaluates
+## 15:buyerEvaluates
 
 |  Column    |  Type     |  Options      |
 | ---------- | --------- | ------------- |
@@ -214,6 +214,6 @@
 |  ordinary  |  integer  |
 |  bad       |  integer  |
 
-### Association
+### Association
 
 - belongs_to :buyer, foreign_key: true, dependent: destroy
