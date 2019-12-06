@@ -18,11 +18,11 @@
 
 ### Association
 
-- has_many : products, dependent: destroy
-- has_many : productslikes, dependent: destroy
-- has_many : messages, dependent: destroy
-- has_one : credit, dependent: destroy
-- has_many : addresss, dependent: destroy
+- has_many :products, dependent: destroy
+- has_many :productslikes, dependent: destroy
+- has_many :messages, dependent: destroy
+- has_one :credit, dependent: destroy
+- has_many :addresss, dependent: destroy
 
 ## 02:adresss テーブル
 
@@ -39,7 +39,7 @@
 
 - belongs_to :user
 
-## 04:credits
+## 03:credits
 
 | Column      | Type    | Options |
 | ----------- | ------- | ------- |
@@ -52,7 +52,7 @@
 
 - belongs_to :user
 
-## 06:products
+## 04:products
 
 | Column      | Type    | Options     |
 | ----------- | ------- | ----------- |
@@ -70,16 +70,16 @@
 
 ### Association
 
-- has_many : productsimages, dependent: destroy
-- has_many : productslikes, dependent: destroy
+- has_many :productsimages, dependent: destroy
+- has_many :productslikes, dependent: destroy
 - belongs_to :user, foreign_key: true
 - belongs_to :size, foreign_key: true
 - belongs_to :brand, foreign_key: true
-- belongs_to : category, foreign_key: true
+- belongs_to :category, foreign_key: true
 - has_one :seller
 - has_one :buyer
 
-## 07:productsimages
+## 05:productsimages
 
 | Column      | Type    | Options     |
 | ----------- | ------- | ----------- |
@@ -90,7 +90,7 @@
 
 - belongs_to :product, foreign_key: true
 
-## 08:sizes
+## 06:sizes
 
 | Column     | Type    | Options     |
 | ---------- | ------- | ----------- |
@@ -100,7 +100,7 @@
 
 - has_many :products
 
-## 09:messages
+## 07:messages
 
 | Column      | Type    | Options     |
 | ----------- | ------- | ----------- |
@@ -113,7 +113,7 @@
 - belongs_to :user, foreign_key: true
 - belongs_to :product, foreign_key: true
 
-## 10:productslikes
+## 08:productslikes
 
 | Column        | Type    | Options     |
 | ------------- | ------- | ----------- |
@@ -126,7 +126,7 @@
 - belongs_to :product, foreign_key: true
 - belongs_to :user, foreign_key: true
 
-## 11:brands
+## 09:brands
 
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
@@ -136,10 +136,10 @@
 ### Association
 
 - has_many :products
-- has_many :categorys ,through :category_brands
-- has_many :category_brands
+- has_many :categorys ,through :brand_categorys
+- has_many :brand_categorys
 
-## 12:brand_categorys
+## 10:brand_categorys
 
 | Column       | Type    | Options |
 | ------------ | ------- | ------- |
@@ -151,7 +151,7 @@
 - belongs_to :category, foreign_key: true
 - belongs_to :brand, foreign_key: true
 
-## 13:categorys
+## 11:categorys
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
@@ -162,9 +162,9 @@
 
 - has_many :products
 - has_many :brands, through :brand_categorys
-- has_many :category_brands
+- has_many :brand_categorys
 
-## 14:sellers
+## 12:sellers
 
 | Column            | Type    | Options     |
 | ----------------- | ------- | ----------- |
@@ -178,7 +178,7 @@
 - belongs_to :user, foreign_key: true
 - has_one :buyer_evaluate, dependent: destroy
 
-## 15:sellerEvaluates
+## 13:sellerEvaluates
 
 | Column     | Type    | Options     |
 | ---------- | ------- | ----------- |
@@ -191,7 +191,7 @@
 
 - belongs_to :seller, foreign_key: true, dependent: destroy
 
-## 16:buyers
+## 14:buyers
 
 | Column           | Type    | Options     |
 | ---------------- | ------- | ----------- |
@@ -205,7 +205,7 @@
 - belongs_to :user, foreign_key: true
 - has_one :buyer_evaluate, dependent: destroy
 
-## 19:buyerEvaluates
+## 15:buyerEvaluates
 
 | Column   | Type    | Options     |
 | -------- | ------- | ----------- |
