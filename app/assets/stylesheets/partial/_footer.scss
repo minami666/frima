@@ -1,0 +1,131 @@
+.footer{
+  background-color: rgb(34, 34, 34);
+  padding: 0px 20px 10px;
+  position: relative;
+  .footer_main{
+    height: 300px;
+    width: 100%;
+    .foorer_top{
+      height: 387px;
+      width: 1020px;
+      margin: 190px;
+      margin-bottom: 0;
+      display: flex;
+      background-color: rgb(34, 34, 34);
+      color: rgb(255, 255, 255);
+      .link_box1{
+        height: 207px;
+        width: 167px;
+        margin-top: 17px;
+        margin-right: 40px;
+        line-height: 30px;
+        list-style: none;
+        &_title{
+          color: white;
+          font-size: 15px;
+          font-weight: 700;
+        }
+        &_details{
+          font-size: 11px;
+          opacity: 0.5;
+        }
+        .icon_box{
+          margin-top: 15px;
+          display: flex;
+          &_icon1{
+            font-size: 35px;
+          }
+          &_icon2{
+            font-size: 35px;
+            margin-left: 20px;
+          }
+          i{
+            color: white;
+          }
+        }
+          
+      }
+      .link_box2{
+        height: 207px;
+        width: 175px;
+        margin-top: 17px;
+        margin-right: 40px;
+        line-height: 30px;
+        list-style: none;
+        .title{
+          font-size: 15px;
+          font-weight: 700;
+        }
+        .details{
+          font-size: 11px;
+          opacity: 0.5;
+        }
+      }
+      .link_box3{
+        height: 207px;
+        width: 175px;
+        margin-top: 17px;
+        margin-right: 10px;
+        line-height: 30px;
+        list-style: none;
+        .title{
+          font-size: 15px;
+          font-weight: 700;
+        }
+        .details{
+          font-size: 11px;
+          opacity: 0.5;
+        }
+      }
+
+      .link_box4{
+        height: 207px;
+        width: 175px;
+        margin-top: 17px;
+        margin-right: 40px;
+        line-height: 30px;
+        list-style: none;
+        .details{
+          font-size: 11px;
+          margin-top: 30px;
+          opacity: 0.5;
+        }
+      }
+      .link_box5{
+        height: 72px;
+        width: 130px;
+        margin-top: 17px;
+        line-height: 30px;
+        list-style: none;
+        .title{
+          font-size: 15px;
+          font-weight: 700;
+        }
+        .details{
+          font-size: 11px;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .foorer_under{
+      height: 50px;
+      width: 100%;
+      margin: 30px auto 20px;
+      color: white;
+      display: flex;
+
+    }
+    .icon-bar{
+      position: absolute;
+      left: 190px;
+    }
+    .mercari{
+      position: absolute;
+      left: 650px;
+      bottom: 50px;
+      font-size: 11px;
+      opacity: 0.5;
+      
+    }
+}
