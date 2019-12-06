@@ -23,12 +23,10 @@
     = f.text_field :nickname, autofocus: true, maxlength: "10"
   .field
     %field
-      %input.form__message
-      .form__mask
-        %label.form__mask__image
+      %input.image
+        %label.image-icon
           = fa_icon 'picture-o', class: 'icon'
           %input.hidden{type: 'file'}
-      %input.form__submit{type: 'submit', value: 'Send'}
     -# %span.file{:title => "ファイルを選択"}
     -#   = f.label :image
     -#   %br/
