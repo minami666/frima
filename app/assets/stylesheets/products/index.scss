@@ -81,3 +81,27 @@ body{margin: 0;
     }
   }
 }
+.bay_btn{
+  height: 160px;
+  width: 160px;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  font-weight: bold;
+  font-size:20px;
+  display: inline-block;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index:2;
+  .fa-camera{
+    color: white;
+    position: absolute;
+    top:70px;
+    left:60px;
+    font-size:40px;
+  }
+}
