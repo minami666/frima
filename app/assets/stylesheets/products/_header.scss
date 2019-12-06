@@ -1,0 +1,100 @@
+.header_content{
+  height:92px;
+  width: 1200px;
+  margin-left: 200px;
+  padding-top: 8px;
+  .header_top{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    .header_icon{
+      width: 150px;
+      height: 40px;
+      margin-left: 6px;
+      margin-top: 4px;
+      background-image:url("/fmarket_logo_red.svg");
+    }
+    .header_seach{
+      width: 100%;
+      height: 40px;
+      .search-form{
+        width: 100%;
+        height: 40px;
+        position: relative;
+        .search-input{
+          width: 840px;
+          height: 40px;
+          background-color: #f5f5f5;
+          font-size:20px;
+        }
+        .search-btn{
+          display: none;
+        }
+        .fa-search{
+          position: absolute;
+          right: 230px;
+          top:15px;
+        }
+      }
+    }
+  }
+  .header_bottom{
+    width: 100%;
+    height: 42px;
+    display: flex;
+    .select_box{
+      width: 350px;
+      height: 42px;
+      display: flex;
+      .categry_box{
+        height: 42px;
+        width: 50%;
+        line-height: 60px;
+        font-size: 14px;
+      }
+      .brand_box{
+        height: 42px;
+        width: 50%;
+        line-height: 60px;
+        font-size: 14px;
+      }
+    }
+  .user_box{
+    width: 650px;
+    height: 42px;
+    display: flex;
+    .like_box{
+      width: 150px;
+      line-height: 60px;
+      font-size: 14px;
+    }
+    .new_box{
+      width: 150px;
+      line-height: 60px;
+      font-size: 14px;
+    }
+    .list_box{
+      width: 150px;
+      line-height: 60px;
+      font-size: 14px;
+    }
+    .my_box{
+      width: 200px;
+      line-height: 60px;
+      font-size: 14px;
+      display: flex;
+      .my-image{
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        background-color: darkblue;
+        margin-top: 14px;
+      }
+      .my_text{
+        width: 150px;
+        height: 50px;
+      }
+    }
+  }
+  }
+}
