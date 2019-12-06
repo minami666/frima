@@ -21,9 +21,12 @@
     <%= f.text_field :nickname, autofocus: true, maxlength: "10" %>
   </div>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image, placeholder: "Image Url" %>
+  <div class="field">   
+    <%= f.label :image %><br />
+    <%#= fa_icon 'picture-o', class: 'icon' %>
+      <input type=”file”>
+      <%# <div> input.form__submit{type: 'submit', value: 'Send'} </div> %>
+    <%# <%= f.text_field :image, placeholder: "Image Url" %>
   </div>
 
   <div class="field">
