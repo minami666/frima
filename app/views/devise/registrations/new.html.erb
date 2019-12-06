@@ -17,11 +17,14 @@
   </div>
 
   <div class="field">
-      <%= f.label :nickname %> <em>(10 characters maximum)</em><br />
-      <%= f.text_field :nickname, autofocus: true, maxlength: "10" %>
+    <%= f.label :nickname %> <em>(10 characters maximum)</em><br />
+    <%= f.text_field :nickname, autofocus: true, maxlength: "10" %>
   </div>
 
-  <%= form.text_field :image, placeholder: "Image Url" %>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image, placeholder: "Image Url" %>
+  </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
