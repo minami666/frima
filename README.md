@@ -14,6 +14,7 @@
 |  birth             |  string  |  null: false                |
 |  tel               |  string  |  null: false, unique: true  |
 |  profile           |  string  |
+
 |  image             |  string  |
 
 ### Association
