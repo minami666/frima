@@ -5,7 +5,23 @@
         .header_icon
         .header_seach
           = text_field_tag placeholder:"何かお探しですか？",class: "search-input"
-          =fa_icon'seach',class:"search-btn"
       .header_bottom
+        .select_box
+          .categry_box
+            カテゴリーから探す
+          .brand_box
+            ブランドから探す
+        .user_box
+          .like_box
+            いいね！一覧
+          .new_box
+            お知らせ
+          .list_box
+            やることリスト
+          .my_box
+            マイページ
+  .slide_image
+    = image_tag "/slide_1.jpeg",class: "image", width: "100%",height:"390px"
+  .favorite_categry
+    人気のカテゴリー
   .footer
-// = submit "検索", class: "search-btn"
