@@ -28,25 +28,13 @@
   </div>
 
   <div class="field">   
-    
-   
         <%# <link rel="icon" type="image/x-icon" href="img/favicon.icon" > %>
-        <span class="file" title="ファイルを選択"> 
-        <%= f.label :image %><br />
-         <%= fa_icon "address-book" %>
-      <input type="file" name="datafile">
-      <input type="hidden" name="datafile" id="filesend">
-      </span>
-    </div>  
-
-     
-      
-     
-     
-    
-    <%# <%= fa_icon 'picture-o', class: 'icon' %>
-      <%# <div> input.form__submit{type: 'submit', value: 'Send'} </div> %>
-    <%# <%= f.text_field :image, placeholder: "Image Url" %>
+    <span class="file" title="ファイルを選択"> 
+    <%= f.label :image %><br />
+    <%= fa_icon "address-book" %>
+    <input type="file" name="datafile">
+    <input type="hidden" name="datafile" id="filesend">
+    </span>
   </div>
 
   <div class="actions">
