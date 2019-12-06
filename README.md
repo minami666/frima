@@ -18,17 +18,17 @@
 
 ### Association
 
-- has_many : products
-- has_many : productslikes
-- has_many : messages
-- has_many : credits, through: :user_credits, dependent: destroy
-- has_many : address, through: :user_addresss, dependent: destroy
-- has_many : user_addresss, dependent: destroy
+- has_many : products, dependent: destroy
+- has_many : productslikes, dependent: destroy
+- has_many : messages, dependent: destroy
+- has_one : credit, dependent: destroy
+- has_many : addresss, dependent: destroy
 
 ## 02:adresss テーブル
 
 | Column     | Type    | Options     |
 | ---------- | ------- | ----------- |
+| user_id    | integer | null: false |
 | postnum    | integer | null: false |
 | prefecture | string  | null: false |
 | city       | integer | null: false |
@@ -37,19 +37,7 @@
 
 ### Association
 
-- has_many :users, through :user_address
-
-## 03:user_address
-
-| Column     | Type    | Options |
-| ---------- | ------- | ------- |
-| user_id    | integer |
-| address_id | integer |
-
-### Association
-
-- belongs_to :user, foreign_key: true
-- belongs_to :address, foreign_key: true
+- belongs_to :user
 
 ## 04:credits
 
@@ -62,19 +50,7 @@
 
 ### Association
 
-- has_many :users, through :user_credits
-
-## 05:user_credits
-
-| Column     | Type    | Options |
-| ---------- | ------- | ------- |
-| user_id    | integer |
-| credits_id | integer |
-
-### Association
-
-- belongs_to :user, foreign_key: true
-- belongs_to :credit, foreign_key: true
+- belongs_to :user
 
 ## 06:products
 
@@ -118,7 +94,6 @@
 
 | Column     | Type    | Options     |
 | ---------- | ------- | ----------- |
-| product_id | integer | null: false |
 | size_name   | integer |
 
 ### Association
@@ -162,6 +137,7 @@
 
 - has_many :products
 - has_many :categorys ,through :category_brands
+- has_many :category_brands
 
 ## 12:brand_categorys
 
@@ -185,7 +161,7 @@
 ### Association
 
 - has_many :products
-- has_many :brands, through :category_brands
+- has_many :brands, through :brand_categorys
 - has_many :category_brands
 
 ## 14:sellers
