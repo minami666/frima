@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.4'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -64,3 +64,6 @@ gem "font-awesome-rails"
 gem "jquery-rails"
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+group :production do
+  gem 'unicorn', '5.4.1'
+end

@@ -1,0 +1,22 @@
+.wrapper
+  = render "header"
+  .slide_image
+    = image_tag "/slide_1.jpeg",class: "image1"
+    = image_tag "/slide_2.jpeg",class: "image1"
+  .favorite_categry
+    人気のカテゴリー
+  .product_box
+    .categry_name
+      レディース新着アイテム
+      .show_link
+        もっと見る ＞
+    .product_show
+      .product_one
+        .product_img
+          = image_tag "/test.jpg",heith:188,width:188
+          .price_one
+            ¥6,900
+        .one_name_box
+          .one_name
+            エアフォース1 ピースマイナスワン
+  = render "partial/footer"
