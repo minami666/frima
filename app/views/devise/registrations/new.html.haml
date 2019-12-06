@@ -23,17 +23,9 @@
     = f.text_field :nickname, autofocus: true, maxlength: "10"
   .field
     %field
-      %input.image
-        %label.image-icon
-          = fa_icon 'picture-o', class: 'icon'
-          %input.hidden{type: 'file'}
-    -# %span.file{:title => "ファイルを選択"}
-    -#   = f.label :image
-    -#   %br/
-    -#   = fa_icon "address-book"
-    -#   = link_to address-book do
-    -#     %input{:name => "datafile", :type => "file"}/
-    -#     %input#filesend{:name => "datafile", :type => "hidden"}/
+      %label.image-icon
+        = fa_icon 'picture-o', class: 'icon'
+        %input.hidden{type: 'file'}
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
