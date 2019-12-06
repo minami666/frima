@@ -21,9 +21,9 @@
 - has_many : products
 - has_many : productslikes
 - has_many : messages
-- has_many : credits, through: :user_credits
-- has_many : address, through: :user_addresss
-- has_many :user_addresss
+- has_many : credits, through: :user_credits, dependent: destroy
+- has_many : address, through: :user_addresss, dependent: destroy
+- has_many : user_addresss, dependent: destroy
 
 ## 02:adresss テーブル
 
@@ -94,14 +94,14 @@
 
 ### Association
 
-- has_many : productsimages
-- has_many : productslikes
+- has_many : productsimages, dependent: destroy
+- has_many : productslikes, dependent: destroy
 - belongs_to :user, foreign_key: true
 - belongs_to :size, foreign_key: true
 - belongs_to :brand, foreign_key: true
 - belongs_to : category, foreign_key: true
-- has_one :sell
-- has_one :buy
+- has_one :seller
+- has_one :buyer
 
 ## 07:productsimages
 
@@ -184,20 +184,23 @@
 
 ### Association
 
-- has_many products
-- has_many brands, through :category_brands
+- has_many :products
+- has_many :brands, through :category_brands
+- has_many :category_brands
 
 ## 14:sellers
 
 | Column            | Type    | Options     |
 | ----------------- | ------- | ----------- |
 | products_id       | integer | null: false |
+| users_id | integer | null: false |
 | seller_evaluate_id | integer | null: false |
 
 ### Association
 
 - belongs_to :product, foreign_key: true
-- has_one :buyer_evaluate
+- belongs_to :user, foreign_key: true
+- has_one :buyer_evaluate, dependent: destroy
 
 ## 15:sellerEvaluates
 
@@ -210,19 +213,21 @@
 
 ### Association
 
-- belongs_to :seller, foreign_key: true
+- belongs_to :seller, foreign_key: true, dependent: destroy
 
 ## 16:buyers
 
 | Column           | Type    | Options     |
 | ---------------- | ------- | ----------- |
 | products_id      | integer | null: false |
+| users_id | integer | null: false |
 | buyer_evaluate_id | integer | null: false |
 
 ### Association
 
 - belongs_to :product, foreign_key: true
-- has_one :buyer_evaluate
+- belongs_to :user, foreign_key: true
+- has_one :buyer_evaluate, dependent: destroy
 
 ## 19:buyerEvaluates
 
@@ -235,4 +240,4 @@
 
 ### Association
 
-- belongs_to :buyer, foreign_key: true
+- belongs_to :buyer, foreign_key: true, dependent: destroy
