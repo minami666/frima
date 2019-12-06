@@ -17,21 +17,34 @@
   </div>
 
   <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :nickname %> <em>(10 characters maximum)</em><br />
     <%= f.text_field :nickname, autofocus: true, maxlength: "10" %>
   </div>
 
   <div class="field">   
     <%= f.label :image %><br />
-    <%#= fa_icon 'picture-o', class: 'icon' %>
-      <input type=”file”>
+    <%= fa_icon "address-book" %>
+        <link rel="icon" type="image/x-icon" href="img/favicon.icon" >
+        <span class="file" title="ファイルを選択"> 
+      <input type="file" name="datafile" >
+      <input type="hidden" name="datafile" id="filesend">
+      </span>
+ 
+
+     
+      
+     
+     
+    
+    <%# <%= fa_icon 'picture-o', class: 'icon' %>
       <%# <div> input.form__submit{type: 'submit', value: 'Send'} </div> %>
     <%# <%= f.text_field :image, placeholder: "Image Url" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
