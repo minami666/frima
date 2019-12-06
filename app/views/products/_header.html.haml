@@ -2,20 +2,32 @@
   .header_content
     .header_top
       .header_icon
+        = image_tag "/fmarket_logo_red.svg",class: "image", width: "90%",height:"390px"
       .header_seach
-        = text_field_tag placeholder:"何かお探しですか？",class: "search-input"
+        = form_with( local: true, method: :get, class: "search-form") do |form|
+          = form.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
+          %label
+            %i.fa.fa-search
+            = form.submit "検索", class: "search-btn"        
     .header_bottom
       .select_box
         .categry_box
+          %i.fa.fa-list
           カテゴリーから探す
         .brand_box
+          %i.fa.fa-battery-empty
           ブランドから探す
       .user_box
         .like_box
+          %i.fa.fa-heart-o
           いいね！一覧
         .new_box
+          %i.fa.fa-bell-o
           お知らせ
         .list_box
+          %i.fa.fa-check
           やることリスト
         .my_box
-          マイページ
+          .my-image
+          .my_text
+            マイページ
