@@ -19,7 +19,9 @@
   <div class="field">
       <%= f.label :nickname %> <em>(10 characters maximum)</em><br />
       <%= f.text_field :nickname, autofocus: true, maxlength: "10" %>
-      </div>
+  </div>
+
+  <%= form.text_field :image, placeholder: "Image Url" %>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
