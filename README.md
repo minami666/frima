@@ -110,7 +110,7 @@
 
 ### Association
 
-- belongs_to :user, foreign_key: true
+- belongs_to :user, foreign_key: true  
 - belongs_to :product, foreign_key: true
 
 ## 08:productslikes
@@ -123,7 +123,7 @@
 
 ### Association
 
-- belongs_to :product, foreign_key: true
+- belongs_to :product, foreign_key: true  
 - belongs_to :user, foreign_key: true
 
 ## 09:brands
@@ -135,9 +135,9 @@
 
 ### Association
 
-- has_many :products
-- has_many :categorys ,through :brand_categorys
-- has_many :brand_categorys
+- has_many :products  
+- has_many :categorys ,through :brand_categorys  
+- has_many :brand_categorys  
 
 ## 10:brand_categorys
 
@@ -148,8 +148,8 @@
 
 ### Association
 
-- belongs_to :category, foreign_key: true
-- belongs_to :brand, foreign_key: true
+- belongs_to :category, foreign_key: true  
+- belongs_to :brand, foreign_key: true  
 
 ## 11:categorys
 
@@ -160,9 +160,9 @@
 
 ### Association
 
-- has_many :products
-- has_many :brands, through :brand_categorys
-- has_many :brand_categorys
+- has_many :products  
+- has_many :brands, through :brand_categorys  
+- has_many :brand_categorys  
 
 ## 12:sellers
 
@@ -174,9 +174,9 @@
 
 ### Association
 
-- belongs_to :product, foreign_key: true
-- belongs_to :user, foreign_key: true
-- has_one :buyer_evaluate, dependent: destroy
+- belongs_to :product, foreign_key: true  
+- belongs_to :user, foreign_key: true  
+- has_one :buyer_evaluate, dependent: destroy  
 
 ## 13:sellerEvaluates
 
@@ -189,7 +189,7 @@
 
 ### Association
 
-- belongs_to :seller, foreign_key: true, dependent: destroy
+- belongs_to :seller, foreign_key: true, dependent: destroy  
 
 ## 14:buyers
 
@@ -201,9 +201,9 @@
 
 ### Association
 
-- belongs_to :product, foreign_key: true
-- belongs_to :user, foreign_key: true
-- has_one :buyer_evaluate, dependent: destroy
+- belongs_to :product, foreign_key: true  
+- belongs_to :user, foreign_key: true  
+- has_one :buyer_evaluate, dependent: destroy  
 
 ## 15:buyerEvaluates
 
@@ -216,4 +216,4 @@
 
 ### Association
 
-- belongs_to :buyer, foreign_key: true, dependent: destroy
+- belongs_to :buyer, foreign_key: true, dependent: destroy  
