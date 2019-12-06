@@ -1,0 +1,28 @@
+.sign_in{
+  height:100vh;
+  width:100%;
+  background-color: rgb(230, 225, 225);
+
+  .header{
+    display: flex;
+    height: 128px;
+    background-color: #F5F5F5;
+
+    &__logo{
+      // height: 49px;
+      // width: 185px;
+    }
+    &__nav{
+      display: flex;
+      list-style: none;
+      margin: 0 40px 0 0;
+      color: red;
+
+    }
+
+
+  }
+  #register-form{
+
+  }
+}
