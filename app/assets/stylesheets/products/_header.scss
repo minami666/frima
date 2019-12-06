@@ -1,0 +1,132 @@
+.header_content{
+  height:92px;
+  width: 1200px;
+  margin-left: 200px;
+  padding-top: 8px;
+  position: relative;
+  .header_top{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    .header_icon{
+      width: 150px;
+      height: 40px;
+      margin-left: 6px;
+      margin-top: 4px;
+      background-image:url("/fmarket_logo_red.svg");
+    }
+    .header_seach{
+      width: 100%;
+      height: 40px;
+      .search-form{
+        width: 100%;
+        height: 40px;
+        position: relative;
+        .search-input{
+          width: 820px;
+          height: 35px;
+          background-color: #f5f5f5;
+          font-size:20px;
+          margin-top: 5px;
+          border-radius: 5px;
+        }
+        .search-btn{
+          display: none;
+        }
+        .fa-search{
+          position: absolute;
+          right: 250px;
+          top:17px;
+        }
+      }
+    }
+  }
+  .header_bottom{
+    width: 100%;
+    height: 42px;
+    display: flex;
+    .select_box{
+      width: 350px;
+      height: 42px;
+      display: flex;
+      .categry_box{
+        height: 42px;
+        width: 50%;
+        line-height: 60px;
+        font-size: 14px;
+      }
+      
+      .brand_box{
+        height: 42px;
+        width: 50%;
+        line-height: 60px;
+        font-size: 14px;
+      }i{
+        color:rgb(234,53,45);
+      }
+      .brand_box:hover{
+        color:lightblue;
+      }
+      .categry_box:hover{
+        color:lightblue;
+      }
+    }
+  .user_box{
+    width: 650px;
+    height: 42px;
+    display: flex;
+    position: absolute;
+    right: 90px;
+    .like_box{
+      width: 113px;
+      line-height: 60px;
+      font-size: 14px;
+      padding: 0 14px;
+    }
+    .new_box{
+      width: 83px;
+      line-height: 60px;
+      font-size: 14px;
+      padding: 0 14px;
+    }
+    .list_box{
+      width: 129px;
+      line-height: 60px;
+      font-size: 14px;
+      padding: 0 14px;
+    }
+    .my_box{
+      width: 170px;
+      line-height: 60px;
+      font-size: 14px;
+      display: flex;
+      padding: 0 14px;
+      
+      .my-image{
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        background-color: darkblue;
+        margin-top: 14px;
+        
+      }
+      .my_text{
+        width: 150px;
+        height: 50px;
+      }
+    }
+    .like_box:hover{
+      color:lightblue;
+    }
+    .new_box:hover{
+      color:lightblue;
+    }
+    .list_box:hover{
+      color:lightblue;
+    }
+    .my_box:hover{
+      color:lightblue;
+    }
+  }
+  }
+}
