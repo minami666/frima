@@ -1,3 +1,113 @@
 .footer{
-  background-color: red;
+  background-color: rgb(34, 34, 34);
+  padding: 0px 20px 10px;
+  .footer_main{
+    height: 300px;
+    width: 100%;
+    .foorer_top{
+      height: 387px;
+      width: 1020px;
+      margin: 190px;
+      margin-bottom: 0;
+      display: flex;
+      background-color: rgb(34, 34, 34);
+      color: white;
+      .link_box1{
+        height: 207px;
+        width: 167px;
+        margin-top: 17px;
+        margin-right: 40px;
+        line-height: 30px;
+        list-style: none;
+        &_title{
+          font-size: 15px;
+          font-weight: 700;
+        }
+        &_details{
+          font-size: 7px;
+        }
+        .icon_box{
+          margin-top: 15px;
+          display: flex;
+          &_icon1{
+            font-size: 35px;
+          }
+          &_icon2{
+            font-size: 35px;
+            margin-left: 20px;
+          }
+          i{
+            color: white;
+          }
+        }
+          
+      }
+      .link_box2{
+        height: 207px;
+        width: 175px;
+        margin-top: 17px;
+        margin-right: 40px;
+        line-height: 30px;
+        list-style: none;
+        .title{
+          font-size: 15px;
+          font-weight: 700;
+        }
+        .details{
+          font-size: 7px;
+        }
+      }
+      .link_box3{
+        height: 207px;
+        width: 175px;
+        margin-top: 17px;
+        margin-right: 10px;
+        line-height: 30px;
+        list-style: none;
+        .title{
+          font-size: 15px;
+          font-weight: 700;
+        }
+        .details{
+          font-size: 7px;
+        }
+      }
+
+      .link_box4{
+        height: 207px;
+        width: 175px;
+        margin-top: 17px;
+        margin-right: 40px;
+        line-height: 30px;
+        list-style: none;
+        .details{
+          font-size: 7px;
+          margin-top: 30px;
+        }
+      }
+      .link_box5{
+        height: 72px;
+        width: 130px;
+        margin-top: 17px;
+        line-height: 30px;
+        list-style: none;
+        .title{
+          font-size: 15px;
+          font-weight: 700;
+        }
+        .details{
+          font-size: 7px;
+        }
+      }
+    }
+  }
+  .foorer_under{
+      height: 50px;
+      width: 100%;
+      margin: 30px auto 20px;
+      background-color:mediumspringgreen;
+    }
+    .icon_bar{
+    
+    }
 }
