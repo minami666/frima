@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   #collection do #検索機能用
   # get 'search'
   #end
+  get "/products/show",to:"products#show"
 
 end
