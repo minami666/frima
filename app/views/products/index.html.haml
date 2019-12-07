@@ -1,13 +1,10 @@
 .wrapper
-  = render "header"
+  = render "partial/header"
   .slide_image
     = image_tag "/slide_1.jpeg",class: "image1"
     = image_tag "/slide_2.jpeg",class: "image1"
   .favorite_categry
     人気のカテゴリー
-  .bay_btn
-    出品
-    %i.fa.fa-camera
   .product_box
     .categry_name
       レディース新着アイテム
@@ -23,4 +20,5 @@
           .one_name
             エアフォース1 ピースマイナスワン
   = render "partial/footer"
+  = render "partial/sell-btn"
   = link_to "#","/products/show"
