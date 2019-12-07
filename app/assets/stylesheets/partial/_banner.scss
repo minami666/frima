@@ -1,9 +1,57 @@
 .banner{
   height: 260px;
   width: 100%;
-  background-image: url("/banner_back.jpg");
+  background-image: url("/banner_img.jpg");
   color: white;
+  display: flex;
+  justify-content: space-between;
+
+.banner_box {
+  display: flex;
+  justify-content: space-between;
+  width: 750px;
+  height: auto;
+  margin: 0 auto;
 }
-  .banner_left{
-    
+
+  &__banner_left{
+    height: 260px;
+    width: 400px;
+    list-style: none;
+
+    &__moji1{
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+    &__moji2{
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+    &__link_box{
+      display: flex;
+      &--photo{
+        overflow: hidden;
+        border-radius: 13px;
+        width: 68px;
+        height: 68px;
+        img {
+          width: 68px;
+          height: 68px;
+        }
+      }
+      &--link1{
+        margin-top: 15px;
+        margin-left: 30px;
+      }
+      &--link2{
+        margin-top: 15px;
+        margin-left: 20px;
+      }
+    }
+      
+  .banner_light{
+    }
   }
+}
