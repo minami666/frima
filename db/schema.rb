@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_114442) do
+ActiveRecord::Schema.define(version: 2019_12_08_115245) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 2019_12_08_114442) do
 
   create_table "buyer_evaluates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "buyers_id", null: false
-    t.integer "good"
-    t.integer "ordinary"
-    t.integer "bad"
+    t.integer "good", default: 0
+    t.integer "ordinary", default: 0
+    t.integer "bad", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -107,9 +107,9 @@ ActiveRecord::Schema.define(version: 2019_12_08_114442) do
 
   create_table "seller_evaluates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "sellers_id", null: false
-    t.integer "good"
-    t.integer "ordinary"
-    t.integer "bad"
+    t.integer "good", default: 0
+    t.integer "ordinary", default: 0
+    t.integer "bad", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
