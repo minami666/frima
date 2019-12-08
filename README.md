@@ -199,7 +199,7 @@
 
 - has_one :buyer_evaluate, dependent: destroy
 
-## 13:sellerEvaluates
+## 13:seller_evaluates
 
 |  Column      |  Type     |  Options      |
 | ------------ | --------- | ------------- |
@@ -228,7 +228,7 @@
 
 - has_one :buyer_evaluate, dependent: destroy
 
-## 15:buyerEvaluates
+## 15:buyer_evaluates
 
 |  Column    |  Type     |  Options      |
 | ---------- | --------- | ------------- |
