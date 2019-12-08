@@ -210,7 +210,7 @@
 
 ### Association
 
-- belongs_to :seller, foreign_key: true, dependent: destroy
+- belongs_to :seller, foreign_key: true, dependent: :destroy
 
 ## 14:buyers
 
