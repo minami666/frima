@@ -157,10 +157,10 @@
 
 ## 10:brand_categories
 
-|  Column        |  Type     |  Options  |
-| -------------- | --------- | --------- |
+|  Column         |  Type     |  Options  |
+| --------------- | --------- | --------- |
 |  categories_id  |  integer  |
-|  brands_id     |  integer  |
+|  brands_id      |  integer  |
 
 ### Association
 
@@ -214,10 +214,10 @@
 
 ## 14:buyers
 
-|  Column             |  Type     |  Options      |
-| ------------------- | --------- | ------------- |
-|  products_id        |  integer  |  null: false  |
-|  users_id           |  integer  |  null: false  |
+|  Column              |  Type     |  Options      |
+| -------------------- | --------- | ------------- |
+|  products_id         |  integer  |  null: false  |
+|  users_id            |  integer  |  null: false  |
 |  buyer_evaluates_id  |  integer  |  null: false  |
 
 ### Association
@@ -230,12 +230,12 @@
 
 ## 15:buyer_evaluates
 
-|  Column    |  Type     |  Options      |
-| ---------- | --------- | ------------- |
+|  Column      |  Type     |  Options      |
+| ------------ | --------- | ------------- |
 |  buyers_id   |  integer  |  null: false  |
-|  good      |  integer  |
-|  ordinary  |  integer  |
-|  bad       |  integer  |
+|  good        |  integer  |
+|  ordinary    |  integer  |
+|  bad         |  integer  |
 
 ### Association
 
