@@ -232,11 +232,11 @@
 
 |  Column    |  Type     |  Options      |
 | ---------- | --------- | ------------- |
-|  buys_id   |  integer  |  null: false  |
+|  buyers_id   |  integer  |  null: false  |
 |  good      |  integer  |
 |  ordinary  |  integer  |
 |  bad       |  integer  |
 
 ### Association
 
-- belongs_to :buyer, foreign_key: true, dependent: destroy
+- belongs_to :buyer, foreign_key: true, dependent: :destroy
