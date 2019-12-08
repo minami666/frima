@@ -1,0 +1,2 @@
+class BuyerEvaluate < ApplicationRecord
+end
