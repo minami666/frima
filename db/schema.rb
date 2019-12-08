@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_080315) do
+ActiveRecord::Schema.define(version: 2019_12_08_081258) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2019_12_08_080315) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text", null: false
+    t.integer "products_id", null: false
+    t.integer "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "deliver_how", null: false
@@ -47,6 +55,14 @@ ActiveRecord::Schema.define(version: 2019_12_08_080315) do
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "products_id", null: false
     t.string "image", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "productslikes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "products_likes", default: 0
+    t.integer "users_id"
+    t.integer "products_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

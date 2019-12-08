@@ -130,9 +130,9 @@
 
 |  Column          |  Type     |  Options      |
 | ---------------- | --------- | ------------- |
-|  products_id     |  integer  |  null: false  |
-|  users_id        |  integer  |
 |  products_likes  |  integer  |
+|  users_id        |  integer  |
+|  products_id     |  integer  |  null: false  |
 
 ### Association
 
