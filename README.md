@@ -28,7 +28,7 @@
 
 - has_many :addresss, dependent: destroy
 
-## 02:adresss  テーブル
+## 02:adressss
 
 |  Column       |  Type     |  Options      |
 | ------------- | --------- | ------------- |
