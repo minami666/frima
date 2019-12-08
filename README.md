@@ -218,7 +218,7 @@
 | ------------------- | --------- | ------------- |
 |  products_id        |  integer  |  null: false  |
 |  users_id           |  integer  |  null: false  |
-|  buyer_evaluate_id  |  integer  |  null: false  |
+|  buyer_evaluates_id  |  integer  |  null: false  |
 
 ### Association
 
@@ -226,7 +226,7 @@
 
 - belongs_to :user, foreign_key: true
 
-- has_one :buyer_evaluate, dependent: destroy
+- has_one :buyer_evaluate, dependent: :destroy
 
 ## 15:buyer_evaluates
 
