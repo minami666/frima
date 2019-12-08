@@ -47,10 +47,10 @@
 
 |  Column        |  Type     |  Options  |
 | -------------- | --------- | --------- |
-|  number        |  integer  |
-|  name          |  string   |
-|  deadline      |  integer  |
-|  security_num  |  integer  |
+|  number        |  integer  |  null: false  |
+|  name          |  string   |  null: false  |
+|  deadline      |  integer  |  null: false  |
+|  security_num  |  integer  |  null: false  |
 
 ### Association
 
