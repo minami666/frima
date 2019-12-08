@@ -1,7 +1,42 @@
+// リセットCSSなど
+@import "./reset";
 @import "font-awesome";
-@import 'products/index';
-@import 'font-awesome';
-@import 'products/_header';
+
+// 全ページ共通の要素
+@import 'partial/header';
 @import 'partial/footer';
-@import 'products/_slick';
+
+// 商品：表示
+@import 'products/index';
 @import 'products/show';
+@import 'products/slick';
+
+// 住所
+@import 'addresses/addresses';
+
+// ブランド
+@import 'brands/brands';
+
+// 購入者
+@import 'buyers/buyers';
+
+// 購入者への評価
+@import 'buyersevaluates/buyersevaluates';
+
+// カテゴリ
+@import 'categories/categories';
+
+// クレカ
+@import 'credits/credits';
+
+// 商品メッセージ
+@import 'messages/messages';
+
+// 商品へのいいね！
+@import 'productslikes/productslikes';
+
+// 出品者への評価
+@import 'sellersevaluates/sellersevaluates';
+
+// マイページ
+@import 'mypage/mypage';
