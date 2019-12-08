@@ -15,4 +15,10 @@ class User < ApplicationRecord
   validates :first_name_ktkne, presence: true
   validates :birth, presence: true
 
+  has_many :products, dependent: destroy
+  has_many :productslikes, dependent: destroy
+  has_many :messages, dependent: destroy
+  has_one :credit, dependent: destroy
+  has_many :addresss, dependent: destroy
+
 end
