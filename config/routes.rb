@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
 
   # ====================== ルートパス ＝ 商品一覧ページ ======================
-
   root to: 'products#index'
 
   # ====================== ヘッダーの検索機能用 ======================
@@ -15,24 +14,26 @@ Rails.application.routes.draw do
   #end
 
   # ====================== 商品：表示 ======================
-
-  resources :products, only: [:index, :show]
   get "/products/show",to:"products#show"
-
+  resources :products, only: [:index, :show] do
               # ===== いいね(商品と紐づくからネスト) =====
+    resources :productslikes, only: [:new, :create,:edit,:update]
+  end
 
   # ====================== 商品：出品 ======================
-              # 取引が終わってから「取引相手を評価しよう」ページに遷移
-
+  resources :sellers, only: [:new,:create,:edit,:update,:delete] do
+              # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
+    resources :sellersevaluates, only: [:new, :create]
+  end
   # ====================== 商品：画像 ======================
+  resources :productsimages, only: [:new,:create,:edit,:update,:delete]
 
   # ====================== 商品メッセージ ======================
-
-  resources :addresses, only: [:index,:new,:create,:edit,:update,:destroy]
+  resources :messages, only: [:index,:new,:create,:edit,:update,:delete]
 
   # ====================== 商品：購入 ======================
   resources :buyers, only: [:new, :create, :show] do
-              # 取引が終わってから「取引相手を評価しよう」ページに遷移
+              # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
     resources :buyersevaluates, only: [:new, :create]
   end
 
@@ -43,7 +44,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
   # ====================== クレジットカード ======================
-
   resources :credits, only: [:new,:create,:edit,:update]
 
   # ====================== 住所 ======================
