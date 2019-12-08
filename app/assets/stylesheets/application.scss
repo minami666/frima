@@ -1,7 +1,62 @@
+// リセットCSSなど
+@import "reset";
 @import "font-awesome";
-@import 'products/index';
-@import 'font-awesome';
-@import 'products/_header';
+
+// 全ページ共通の要素
+@import 'partial/header';
 @import 'partial/footer';
-@import 'products/_slick';
+
+// 商品：表示
+@import 'products/index';
 @import 'products/show';
+@import 'products/slick';
+
+// 出品ページ
+@import 'sellers/new';
+@import 'sellers/edit';
+
+// 購入者
+@import 'buyers/new';
+@import 'buyers/show';
+
+// ブランド
+@import 'brands/index';
+@import 'brands/show';
+
+// カテゴリ
+@import 'categories/index';
+@import 'categories/show';
+
+// 出品者への評価
+@import 'sellersevaluates/new';
+
+// 購入者への評価
+@import 'buyersevaluates/new';
+
+// 商品へのいいね！
+@import 'productslikes/productslikes';
+
+// 住所
+@import 'addresses/new';
+@import 'addresses/edit';
+
+// クレカ
+@import 'credits/new';
+@import 'credits/edit';
+
+// マイページ
+@import 'mypage/buying';
+@import 'mypage/completed';
+@import 'mypage/confirmation';
+@import 'mypage/evaluates';
+@import 'mypage/index';
+@import 'mypage/listing';
+@import 'mypage/news';
+@import 'mypage/notification';
+@import 'mypage/pastransaction';
+@import 'mypage/points';
+@import 'mypage/profile';
+@import 'mypage/progress';
+@import 'mypage/sns';
+@import 'mypage/support';
+@import 'mypage/todo';
