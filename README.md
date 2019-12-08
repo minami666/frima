@@ -58,19 +58,21 @@
 
 ## 04:products
 
-|  Column          |  Type     |  Options      |
-| ---------------- | --------- | ------------- |
-|  name            |  string   |  null: false  |
-|  user_id         |  integer  |  null: false  |
-|  sells_id        |  integer  |  null: false  |
-|  buys_id         |  integer  |  null: true   |
-|  deliver_how     |  integer  |  null: false  |
-|  deliver_date    |  date     |  null: false  |
-|  price           |  integer  |  null: false  |
-|  explanation     |  string   |  null: true   |
-|  state           |  integer  |  null: false  |
-|  brand_id        |  integer  |  null: false  |
-|  sizes_id        |  integer  |  null: false  |
+|  Column           |  Type     |  Options      |
+| ----------------- | --------- | ------------- |
+|  name             |  string   |  null: false  |
+|  deliver_how      |  integer  |  null: false  |
+|  deliver_date     |  date     |  null: false  |
+|  price            |  integer  |  null: false  |
+|  explanation      |  string   |
+|  state            |  integer  |  null: false  |
+|  user_id          |  integer  |  null: false  |
+|  sizes_id         |  integer  |  null: false  |
+|  brands_id        |  integer  |  null: false  |
+<!-- categorys_idカラムを追加し忘れたので後で入れる -->
+|  categorys_id     |  integer  |  null: false  |
+|  sellers_id       |  integer  |  null: false  |
+|  buyers_id        |  integer  |
 
 ### Association
 
@@ -89,7 +91,6 @@
 - has_one :seller
 
 - has_one :buyer
-
 
 ## 05:productsimages
 
