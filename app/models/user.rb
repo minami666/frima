@@ -6,19 +6,18 @@ class User < ApplicationRecord
 
          mount_uploader :image, ImageUploader
 
-  validates :nickname, presence: true,unique: true
-  validates :email, presence: true,unique: true
-  validates :tel, presence: true,unique: true
-  validates :family_name_knj, presence: true
-  validates :family_name_ktkne, presence: true
-  validates :first_name_knj, presence: true
-  validates :first_name_ktkne, presence: true
-  validates :birth, presence: true
+  # validates :nickname, presence: true,unique: true
+  # validates :tel, presence: true,unique: true
+  # validates :family_name_knj, presence: true
+  # validates :family_name_ktkne, presence: true
+  # validates :first_name_knj, presence: true
+  # validates :first_name_ktkne, presence: true
+  # validates :birth, presence: true
 
-  has_many :products, dependent: destroy
-  has_many :productslikes, dependent: destroy
-  has_many :messages, dependent: destroy
-  has_one :credit, dependent: destroy
-  has_many :addresss, dependent: destroy
+  has_many :products
+  # has_many :productslikes
+  # has_many :messages
+  # has_one :credit
+  has_many :addresses
 
 end

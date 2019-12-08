@@ -28,16 +28,16 @@
 
 - has_many :addresss, dependent: destroy
 
-## 02:adressss
+## 02:adressses
 
 |  Column       |  Type     |  Options      |
 | ------------- | --------- | ------------- |
-|  user_id      |  integer  |  null: false  |
 |  postnum      |  integer  |  null: false  |
 |  prefecture   |  string   |  null: false  |
-|  city         |  integer  |  null: false  |
+|  city         |  string   |  null: false  |
 |  street_num   |  integer  |  null: false  |
 |  building     |  string   |
+|  user_id      |  integer  |  null: false  |
 
 ### Association
 
