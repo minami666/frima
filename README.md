@@ -151,15 +151,15 @@
 
 - has_many :products
 
-- has_many :categorys ,through :brand_categorys
+- has_many :categories ,through :brand_categories
 
-- has_many :brand_categorys
+- has_many :brand_categories
 
-## 10:brand_categorys
+## 10:brand_categories
 
 |  Column        |  Type     |  Options  |
 | -------------- | --------- | --------- |
-|  categorys_id  |  integer  |
+|  categories_id  |  integer  |
 |  brands_id     |  integer  |
 
 ### Association
@@ -168,7 +168,7 @@
 
 - belongs_to :brand, foreign_key: true
 
-## 11:categorys
+## 11:categories
 
 |  Column  |  Type    |  Options      |
 | -------- | -------- | ------------- |
@@ -179,9 +179,9 @@
 
 - has_many :products
 
-- has_many :brands, through :brand_categorys
+- has_many :brands, through :brand_categories
 
-- has_many :brand_categorys
+- has_many :brand_categories
 
 ## 12:sellers
 
