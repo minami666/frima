@@ -45,8 +45,8 @@
 
 ## 03:credits
 
-|  Column        |  Type     |  Options  |
-| -------------- | --------- | --------- |
+|  Column        |  Type     |  Options      |
+| -------------- | --------- | ------------- |
 |  number        |  integer  |  null: false  |
 |  name          |  string   |  null: false  |
 |  deadline      |  integer  |  null: false  |
@@ -69,7 +69,6 @@
 |  user_id          |  integer  |  null: false  |
 |  sizes_id         |  integer  |  null: false  |
 |  brands_id        |  integer  |  null: false  |
-<!-- categorys_idカラムを追加し忘れたので後で入れる -->
 |  categorys_id     |  integer  |  null: false  |
 |  sellers_id       |  integer  |  null: false  |
 |  buyers_id        |  integer  |
@@ -97,7 +96,7 @@
 |  Column       |  Type     |  Options      |
 | ------------- | --------- | ------------- |
 |  products_id  |  integer  |  null: false  |
-|  image01      |  string   |  null: false  |
+|  image        |  string   |  null: false  |
 
 ### Association
 
