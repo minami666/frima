@@ -173,4 +173,53 @@
       margin-right: 30px;
     }
   }
+  .sell-margin_bold{
+    width: 400px;
+    height: 39px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+    margin-top: 24px;
+    .sell-margin_left{}
+    .sell-margin_right{
+      margin-right: 30px;
+    }
+  }
+.sell-content{
+  .sell-btn_text{
+    list-style: none;
+    font-size: 14px;
+    color:#333333;
+  }
+  .sell-btn{
+    width: 620px;
+    height: 50px;
+    background-color: #ea352d;
+    margin-top: 50px;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .sell-btn_back{
+    width: 279px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #aaaaaa;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+  }
+}
+.sell-footer{
+  height: 240px;
+  width: 100vw;
+  text-align: center;
+  line-height: 120px;
+  font-size: 12px;
+  color:#333333;
+}
   
