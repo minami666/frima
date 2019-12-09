@@ -1,0 +1,28 @@
+.user_login
+  .user_login_header
+    = image_tag "sns_top.svg", size: "185x49"
+  .user_login_body
+    .user_login_text
+      新規会員登録
+    .user_login_sns
+      .user_login_sns_1
+        = fa_icon 'envelope', class: 'icon'
+        .user_login_sns_1_a
+          メールアドレスで登録する
+      .user_login_sns_2
+        = fa_icon 'facebook-square', class: 'icon'
+        .user_login_sns_2_b
+          Facebookで登録する
+      .user_login_sns_3
+        = fa_icon 'google', class: 'icon'
+        .user_login_sns_3_c
+          Googleで登録する
+  .user_login_bottom
+    %ul.user_login_bottom_text
+      %li= link_to "プライバシーポリシー","#"
+      %li= link_to "メルカリ利用規約","#"
+      %li= link_to "特定商取引に関する表記","#"
+    .user_login_bottom_box
+      = image_tag "bottom_merukari.jpg", size: "80x65"
+    .user_login_bottom_mozi
+      © Mercari, Inc.
