@@ -72,9 +72,3 @@ gem 'devise-i18n-views'
 group :production do
   gem 'unicorn', '5.4.1'
 end
-
-# gem 'capistrano'
-# gem 'capistrano-rbenv'
-# gem 'capistrano-bundler'
-# gem 'capistrano-rails'
-# gem 'capistrano3-unicorn'
