@@ -5,6 +5,8 @@
 // 全ページ共通の要素
 @import 'partial/header';
 @import 'partial/footer';
+@import 'products/_slick';
+@import 'partial/banner';
 
 // 商品：表示
 @import 'products/index';
