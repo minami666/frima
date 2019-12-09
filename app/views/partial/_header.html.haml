@@ -3,7 +3,7 @@
     .header_top
       .header_icon
         = link_to root_path do
-          = image_tag "/fmarket_logo_red.svg",class: "image", width: "90%",height:"390px"
+          = image_tag "/fmarket_logo_red.svg",class: "image"
       .header_seach
         = form_with( local: true, method: :get, class: "search-form") do |form|
           = form.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
