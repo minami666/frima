@@ -1,0 +1,148 @@
+.body{
+  height: 1292px;
+  width: auto;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  
+  .main_body{
+    width: 1020px;
+    display: flex;
+    margin: 40px auto 0;
+    .left_box{
+      height: 1252px;
+      width: 280px;
+      list-style: none;
+      .page_box{
+        .title{
+          height: 48px;
+          width: 280px;
+          display: flex;
+          line-height: 48px;
+          background-color: white;
+          font-size: 14px;
+          font-weight: 100;
+          justify-content: space-between;
+          border-bottom: 1px solid #f5f5f5;
+          .moji{
+            margin-left: 20px;
+            opacity: 0.8;
+          }
+          .fa-chevron-right{
+            font-size: 14px;
+            line-height: 44px;
+            padding-right: 20px;
+          }
+        }
+
+        .details{
+          height: 48px;
+          width: 280px;
+          display: flex;
+          line-height: 48px;
+          background-color: white;
+          font-size: 14px;
+          justify-content: space-between;
+          border-bottom: 1px solid #f5f5f5;
+          .moji2{
+            margin-left: 20px;
+            opacity: 0.8;
+          }
+          .fa-chevron-right{
+            line-height: 44px;
+            padding-right: 20px;
+            opacity: 0.2;
+            font-size: 14px;
+          }
+        }
+        .tyoku{
+          margin-top: 30px;
+        }
+      }
+    }
+    .right_box{
+      height: 932px;
+      width: 700px;
+      margin-left: 40px;
+      background-color:  #f5f5f5;
+      &__head{
+        height: 200px;
+        width: 700px;
+        background-color: darkgray;
+        text-align: center;
+        img{
+          height: 60px;
+          width: 60px;
+          border-radius: 50%;
+          margin-top: 50px;
+        }
+        &__user_name{
+          
+        }
+        &__history_box{
+          height: 16px;
+          width: 700px;
+          text-align: center;
+          
+        
+          &__evaluation{
+            display:inline-block;
+            font-size: small;
+          }
+          &__exhibit{
+            margin-left: 8px;
+            font-size: small;
+            display:inline-block;
+
+          }
+          &__number{
+            display: inline-block;
+            font-size: small;
+          }
+        }
+      }
+      &__bar_box{
+        display: inline-flex;
+        &__notice{
+          height: 72px;
+          width: 350px;
+          background-color: white;
+          border-top: 2px solid #ea352d;
+        }
+        &__list{
+          height: 72px;
+          width: 350px;
+          background-color: #f5f5f5;
+        }
+      }
+      &__message_item_link{
+        height: 80px;
+        width: 700px;
+        background-color: white;
+        &__icon{
+          display: flex;
+          padding: 16px;
+          img{
+            height: 48px;
+            width: 48px;
+            color: #f5f5f5;
+          }
+          .right_box__message_item_link__icon__box__text{
+            font-size: 14px;
+          }
+          .right_box__message_item_link__icon__box__time_box{
+            height: 17px;
+            width: 75px;
+            opacity: 0.5;
+            margin-left: 5px;
+            &__time_icon{
+              font-size: 16px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}  
+
