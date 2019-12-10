@@ -1,0 +1,19 @@
+.message
+  .message-show
+    .message-img
+    .message-name
+      清水かんた
+      .message-name_text
+        コメント失礼します。
+        購入を検討しています。
+        ウエストと股上の実寸を教えて下さい。インチ表記(28、30など)もあれば教えて下さい。
+        また、レディース物なのでしょうか？
+        .time-box
+          .time-box_show
+            １時間前
+          %i.fa.fa-flag
+  = form_with class: :message_new, local: true do |form| #以下入力フォーム
+    .message-warning
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    = form.text_area placeholder: "text" ,class: :text_new
+    = form.submit "コメントする",class: :submit_new

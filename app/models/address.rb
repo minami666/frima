@@ -5,5 +5,5 @@ class Address < ApplicationRecord
   validates :street_num, presence: true
   validates :user_id, presence: true
 
-  belongs_to :user
+  belongs_to :user
 end

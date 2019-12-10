@@ -1,31 +1,143 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :nickname
-    %em (10 characters maximum)
-    %br/
-    = f.text_field :nickname, autofocus: true, maxlength: "10"
-  .field
-    %field
-      %label.image-icon
-        = fa_icon 'picture-o', class: 'icon'
-        %input.hidden{type: 'file'}
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.body
+  .header
+    .header__logo
+      = link_to image_tag(src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421" ), root_path
+    %ol.header__nav
+      %li.header__nav__text--active
+        会員情報
+        .header__nav--status
+      %li.header__nav__text
+        電話番号認証
+        .header__nav--status
+      %li.header__nav__text
+        お届け先住所入力
+        .header__nav--status
+      %li.header__nav__text
+        支払い方法
+        .header__nav--status
+      %li.header__nav__text
+        完了
+        .header__nav--status
+
+  -# = form_for(resource, as: resource_name, url: registration_path(resource_name), id: "register-form") do |f|
+  -#   .signup
+  -#     .signup__title
+  -#       会員情報入力
+  -#     = render "devise/shared/error_messages", resource: resource
+  -#     .signup__box
+  -#       .signup__box-input
+  -#         .field
+  -#           .field-info__nickname
+  -#             %label{for: "nickname" } ニックネーム
+  -#             %span.form-require 必須
+  -#             %br
+  -#           .field-input
+  -#           = f.text_field :nickname, class: "input-default", autocomplete: "nickname", placeholder: "例）メルカリ太郎"
+  -#         .field
+  -#           = f.label :email
+  -#           %br/
+  -#           = f.email_field :email, autofocus: true, autocomplete: "email"
+  -#         .field
+  -#           = f.label :password
+  -#           - if @minimum_password_length
+  -#             %em
+  -#               (#{@minimum_password_length} characters minimum)
+  -#           %br/
+  -#           = f.password_field :password, autocomplete: "new-password"
+  -#         .field
+  -#           = f.label :password_confirmation
+  -#           %br/
+  -#           = f.password_field :password_confirmation, autocomplete: "new-password"
+  -#         .field
+  -#           %field
+  -#             %label.image-icon
+  -#               = fa_icon 'picture-o', class: 'icon'
+  -#               %input.hidden{type: 'file'}
+  -#         .actions
+  -#           = f.submit "Sign up"
+  -#       = render "devise/shared/links"
+
+  = form_for(resource, as: resource_name, url: '/signup/phonenumber', method: :get ) do |f|
+    .signup
+      .signup-title
+        会員情報入力：テスト
+      .signup__box
+        .signup__box-input
+          .field
+            .field-info__nickname
+              %label{for: "nickname" } ニックネーム
+              %span.form-require 必須
+              %br
+            .field-input
+            = f.text_field :nickname, class: "input-default", autocomplete: "nickname", placeholder: "例）メルカリ太郎"
+          .field
+            .field-info__email
+              %label{for: "email"} メールアドレス
+              %span.form-require 必須
+              %br
+            .field-input
+            = f.email_field :email, class: "input-default", autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+          .field
+            .field-info__password
+              %label{for: "password"} パスワード
+              %span.form-require 必須
+              %br
+            .field-input
+            = f.password_field :password, class: "input-default", autocomplete: "password", placeholder: "7文字以上"
+          -# .field
+          -#   .field-info__password-comfirm
+          -#     %label{for: "password"} パスワード（確認）
+          -#     %span.form-require 必須
+          -#     %br
+            .field-input
+            = f.password_field :password_confirmation, class: "input-default", autocomplete: "off", placeholder: "7文字以上"
+            %h3 本人確認
+          .login__info
+            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
+
+          .field  
+            .field-info__fullname
+              %label{for: "family_name_kanji"} お名前（全角）
+              %span.form-require 必須
+              %br
+            .field-input
+            -# = f.text_field :last_name, class: "input-default-half", autocomplete: "last_name", placeholder: "例）山田"
+            -# = f.text_field :first_name, class: "input-default-half", autocomplete: "first_name", placeholder: "例）彩"
+          .field
+            .field-info__kana
+              %label{for: "family-name-katakana"} お名前カナ（全角）
+              %span.form-require 必須
+              %br
+            .field-input
+            -# = f.text_field :last_name_kana, class: "input-default-half", autocomplete: "last_name_kana", placeholder: "例）ヤマダ"
+            -# = f.text_field :first_name_kana, class: "input-default-half", autocomplete: "first_name_kana", placeholder: "例）アヤ"
+          .field
+            .field-info__birth
+              %label{for: "birthday"} 生年月日
+              %span.form-require 必須
+            .field-input
+            -# = f.collection_select :birthdate_year, Year.all, :id, :name, class: "birthdate_year"
+            年
+            -# = f.collection_select :birthdate_month, Month.all, :id, :name, class: "birthdate_month"
+            月
+            -# = f.collection_select :birthdate_day, Day.all, :id, :name, class: "birthdate_day"
+            日
+          .form__info
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .attention
+            「次へ進む」のボタンを押すことにより、
+            = link_to '利用規約', '#'
+            に同意したものとみなします
+
+          .next__btn
+            = f.submit '次へ進む', class:"next-btn"
+          .about__user-information
+            = link_to '本人情報の登録について 〉', '#'
+  .footer-user
+    %ul
+      %li= link_to 'プライバシーポリシー', '#'
+      %li= link_to 'メルカリ利用規約', '#'
+      %li= link_to '特定商取引に関する表記', '#'
+    .footer-user__link
+      = link_to image_tag(src= "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3296506464", class: "mercari-graylogo", height: 80, width: 60), "/"
+      %p © 2019 Mercari
