@@ -5,6 +5,11 @@ class MypagesController < ApplicationController
 
   end
 
+  # 本人確認
+  def identfication
+
+  end
+
   # SNS認証ページ(APIでfacebookやtwitterアカウントでのログインを行う)
   def sns
 
