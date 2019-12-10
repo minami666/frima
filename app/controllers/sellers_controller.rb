@@ -3,7 +3,7 @@ class SellersController < ApplicationController
   # 商品の出品画面(もっとも難易度が高そうなので時間をかける)
   def new
     @product = Product.new
-   # @product.productsimages.build
+    @product.productsimages.build
   end
 
   def create
