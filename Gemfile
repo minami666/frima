@@ -69,6 +69,7 @@ gem "font-awesome-rails"
 gem "jquery-rails"
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'fog-aws'
 group :production do
   gem 'unicorn', '5.4.1'
 end
