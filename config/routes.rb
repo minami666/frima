@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   resources :addresses, only: [:new,:create,:edit,:update]
 
 # ====================== ユーザーのマイページ ======================
-  get "/mypage/index", to:"mypage#index"
+  get "/mypages/index", to:"mypages#index"
   get "/mypage/sns", to:"mypage#sns"
   get "/mypage/notification", to:"mypage#notification"
   get "/mypage/todo", to:"mypage#todo"
