@@ -86,10 +86,10 @@
             .field-input
             = f.collection_select :birth, Year.all, :id, :name, class: "birthdate_year"
             年
-            = f.collection_select :birth, Year.all, :id, :name, class: "birthdate_year"
-            年
-            = f.collection_select :birth, Year.all, :id, :name, class: "birthdate_year"
-            年
+            = f.collection_select :birth, Month.all, :id, :name, class: "birthdate_month"
+            月
+            = f.collection_select :birth, Day.all, :id, :name, class: "birthdate_day"
+            日
 
 
             -# = f.collection_select :birthdate_month, Month.all, :id, :name, class: "birthdate_month"
@@ -105,7 +105,7 @@
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .attention
             「次へ進む」のボタンを押すことにより、
-            = link_to '利用規約', '#'
+            = link_to '利用規約', '/credits/new'
             に同意したものとみなします
 
           .next__btn
