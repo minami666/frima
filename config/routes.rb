@@ -63,7 +63,7 @@ Rails.application.routes.draw do
   get "/mypage/evaluates", to:"mypage#evaluates"
   get "/mypage/support", to:"mypage#support"
   get "/mypage/points", to:"mypage#points"
-  get "/mypage/profile", to:"mypage#profile"
+  get "/mypages/profile", to:"mypages#profile"
   get "/mypage/confirmation", to:"mypage#confirmation"
 
 
