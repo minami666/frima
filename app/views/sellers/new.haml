@@ -40,7 +40,19 @@
         = f.select :category_id, [["レディース", "1"],["メンズ", "2"]]
         .img-head
           .img-head_bold
-            カテゴリー
+            ブランド
+          .img-head_icon
+            必須
+        = f.select :state, [["新品", "1"],["中古", "2"]]
+        .img-head
+          .img-head_bold
+            商品の状態
+          .img-head_icon
+            必須
+        = f.select :state, [["新品", "1"],["中古", "2"]]
+        .img-head
+          .img-head_bold
+            サイズ
           .img-head_icon
             必須
         = f.select :state, [["新品", "1"],["中古", "2"]]
@@ -60,7 +72,7 @@
             配送元の地域
           .img-head_icon
             必須
-        //= f.select :area, [["大阪","1"],["広島", "2"]]
+        = f.select :state, [["大阪","1"],["広島", "2"]]
         .img-head
           .img-head_bold
             配送までの日数
