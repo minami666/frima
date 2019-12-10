@@ -11,14 +11,21 @@ validates :deliver_how, presence: true
 validates :deliver_day, presence: true
 validates :price, presence: true
 validates :state, presence: true
-#validates :brands_id, presence: true
-#validates :sizes_id, presence: true
-#validates :user_id, presence: true
-#validates :sellers_id, presence: true
+  
+# #validates :brands_id, presence: true
+# #validates :sizes_id, presence: true
+# #validates :user_id, presence: true
+# #validates :sellers_id, presence: true
 
 
-has_many :productsimages, dependent: :destroy #画像投稿用
-accepts_nested_attributes_for :productsimages
+# has_many :productsimages, dependent: :destroy #画像投稿用
+# accepts_nested_attributes_for :productsimages
+
+validates :brand_id, presence: true
+validates :size_id, presence: true
+validates :user_id, presence: true
+validates :seller_id, presence: true
+
 
 has_many :productsimages, dependent: :destroy
 has_many :productslikes, dependent: :destroy
