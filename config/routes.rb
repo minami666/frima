@@ -50,21 +50,21 @@ Rails.application.routes.draw do
   resources :addresses, only: [:new,:create,:edit,:update]
 
 # ====================== ユーザーのマイページ ======================
-  get "/mypage/index", to:"mypage#index"
-  get "/mypage/sns", to:"mypage#sns"
-  get "/mypage/notification", to:"mypage#notification"
-  get "/mypage/todo", to:"mypage#todo"
-  get "/mypage/listing", to:"mypage#listing"
-  get "/mypage/progress", to:"mypage#progress"
-  get "/mypage/completed", to:"mypage#completed"
-  get "/mypage/buying", to:"mypage#buying"
-  get "/mypage/pastransaction", to:"mypage#pastransaction"
-  get "/mypage/news", to:"mypage#news"
-  get "/mypage/evaluates", to:"mypage#evaluates"
-  get "/mypage/support", to:"mypage#support"
-  get "/mypage/points", to:"mypage#points"
-  get "/mypage/profile", to:"mypage#profile"
-  get "/mypage/confirmation", to:"mypage#confirmation"
+  get "/mypage/index", to:"mypages#index"
+  get "/mypage/sns", to:"mypages#sns"
+  get "/mypage/notification", to:"mypages#notification"
+  get "/mypage/todo", to:"mypages#todo"
+  get "/mypage/listing", to:"mypages#listing"
+  get "/mypage/progress", to:"mypages#progress"
+  get "/mypage/completed", to:"mypages#completed"
+  get "/mypage/buying", to:"mypages#buying"
+  get "/mypage/pastransaction", to:"mypages#pastransaction"
+  get "/mypage/news", to:"mypages#news"
+  get "/mypage/evaluates", to:"mypages#evaluates"
+  get "/mypage/support", to:"mypages#support"
+  get "/mypage/points", to:"mypages#points"
+  get "/mypage/profile", to:"mypages#profile"
+  get "/mypage/confirmation", to:"mypages#confirmation"
 
 
 
