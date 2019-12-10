@@ -15,9 +15,9 @@ class User < ApplicationRecord
   # validates :birth, presence: true
 
   has_many :products
-  # has_many :productslikes
-  # has_many :messages
-  # has_one :credit
+  has_many :productslikes
+  has_many :messages
+  has_one :credit
   has_many :addresses
 
   extend ActiveHash::Associations::ActiveRecordExtensions
