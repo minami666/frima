@@ -51,27 +51,18 @@ Rails.application.routes.draw do
 
 # ====================== ユーザーのマイページ ======================
   get "/mypages/index", to:"mypages#index"
-  get "/mypage/sns", to:"mypage#sns"
-  get "/mypage/notification", to:"mypage#notification"
-  get "/mypage/todo", to:"mypage#todo"
-  get "/mypage/listing", to:"mypage#listing"
-  get "/mypage/progress", to:"mypage#progress"
-  get "/mypage/completed", to:"mypage#completed"
-  get "/mypage/buying", to:"mypage#buying"
-  get "/mypage/pastransaction", to:"mypage#pastransaction"
-  get "/mypage/news", to:"mypage#news"
-  get "/mypage/evaluates", to:"mypage#evaluates"
-  get "/mypage/support", to:"mypage#support"
-  get "/mypage/points", to:"mypage#points"
+  get "/mypages/sns", to:"mypages#sns"
+  get "/mypages/notification", to:"mypages#notification"
+  get "/mypages/todo", to:"mypages#todo"
+  get "/mypages/listing", to:"mypages#listing"
+  get "/mypages/progress", to:"mypages#progress"
+  get "/mypages/completed", to:"mypages#completed"
+  get "/mypages/buying", to:"mypages#buying"
+  get "/mypages/pastransaction", to:"mypages#pastransaction"
+  get "/mypages/news", to:"mypages#news"
+  get "/mypages/evaluates", to:"mypages#evaluates"
+  get "/mypages/support", to:"mypages#support"
+  get "/mypages/points", to:"mypages#points"
   get "/mypages/profile", to:"mypages#profile"
-  get "/mypage/confirmation", to:"mypage#confirmation"
-
-
-
-
-
-
-
-
-
+  get "/mypages/confirmation", to:"mypages#confirmation"
 end
