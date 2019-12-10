@@ -18,6 +18,7 @@
 // 出品ページ
 @import 'sellers/new';
 @import 'sellers/edit';
+@import 'partial/sell_bay_header';
 
 // 購入者
 @import 'buyers/new';
@@ -64,3 +65,4 @@
 @import 'mypage/sns';
 @import 'mypage/support';
 @import 'mypage/todo';
+@import 'mypage/partial/sidebar';
