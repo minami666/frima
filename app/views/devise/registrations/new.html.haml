@@ -2,22 +2,28 @@
   .header
     .header__logo
       = link_to image_tag(src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421" ), root_path
-    %ol.header__nav
-      %li.header__nav__text--active
-        会員情報
-        .header__nav--status
-      %li.header__nav__text
-        電話番号認証
-        .header__nav--status
-      %li.header__nav__text
-        お届け先住所入力
-        .header__nav--status
-      %li.header__nav__text
-        支払い方法
-        .header__nav--status
-      %li.header__nav__text
-        完了
-        .header__nav--status
+    %nav.progress
+      %ul.progress-bar
+        %li.through#through
+          会員情報
+          .progress-status
+          .progress-status_bar
+        %li.active#active
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.address#address
+          お届け先住所入力
+          .progress-status
+          .progress-status_bar
+        %li.payment#payment
+          支払い方法
+          .progress-status
+          .progress-status_bar
+        %li.end#end
+          完了
+          .progress-status
+          .progress-status_bar
 
   -# = form_for(resource, as: resource_name, url: registration_path(resource_name), id: "register-form") do |f|
   -#   .signup
