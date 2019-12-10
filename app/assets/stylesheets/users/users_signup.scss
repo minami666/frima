@@ -11,12 +11,15 @@
     background-color: #F5F5F5;
 
     &__logo{
+      min-width: 185px;
       height: 49px;
       width: 185px;
       margin: 40px 10px 0;
     }
 
     .progress {
+      min-width: 580px;
+
       padding: 40px 0 0 44px;
       border: 0;
       display: inline-block;
@@ -47,43 +50,44 @@
         }
       }
     }
-      
-// デフォルトのプログレスバー
-.progress-status_bar {
-  position: absolute;
-  left: 50%;
-  top: 32px;
-  bottom: 5px;
-  display: block;
-  width: 130px;
-  height: 2px;
-  background: gray;
-  z-index: 10;
-  }
-    
-    .end .progress-status_bar {
+
+    // デフォルトのプログレスバー
+    .progress-status_bar {
+      position: absolute;
+      left: 50%;
+      top: 32px;
+      bottom: 5px;
+      display: block;
+      width: 130px;
+      height: 2px;
+      background: gray;
+      z-index: 10;
+    }
+
+    .step5 .progress-status_bar {
       width: 0px;
     }
-    .payment .progress-status_bar {
+    .step4 .progress-status_bar {
       width: 100px;
     }
-      #through{
+    #done{
       color: #ea352d;
       .progress-status{
         background: #ea352d;
       }
     }
-      
-  #through .progress-status_bar{
-    background: #ea352d;
-  }
-  #active{
-    color: #ea352d;
-    .progress-status{
+
+    #done .progress-status_bar{
       background: #ea352d;
     }
+    #active{
+      color: #ea352d;
+      .progress-status{
+        background: #ea352d;
+      }
+    }
   }
-}
+
   .signup {
     height: 100%;
     width: 700px;
@@ -91,7 +95,6 @@
     margin: 0 auto;
     &-title {
       padding: 30px;
-      // padding-bottom: 30px;
       color: #333;
       font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
       font-weight: 700;
@@ -106,8 +109,15 @@
       &-input {
         .field {
           font-size: 14px;
+          font-weight: bold;
           font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
           margin-top: 22px;
+          h3{
+            margin-right: 270px;
+            margin-top: 30px;
+            font-size: 15px;
+            font-weight: bold;
+          }
           &-info {
             &__nickname {
               margin-right: 214px;
@@ -118,9 +128,9 @@
             &__password {
               margin-right: 220px;
             }
-            &__password-comfirm {
-              margin-right: 166px;
-            }
+            // &__password-comfirm {
+            //   margin-right: 166px;
+            // }
             &__fullname {
               margin-right: 192px;
             }
@@ -130,18 +140,18 @@
             &__birth {
               margin-right: 230px;
             }
-            &__cellphone-number {
-              margin-right: 200px;
-            }
-            &__cardnumber {
-              margin-right: 224px;
-            }
-            &__deadline {
-              margin-right: 236px;
-            }
-            &__securitycode {
-              margin-right: 150px;
-            }
+            // &__cellphone-number {
+            //   margin-right: 200px;
+            // }
+            // &__cardnumber {
+            //   margin-right: 224px;
+            // }
+            // &__deadline {
+            //   margin-right: 236px;
+            // }
+            // &__securitycode {
+            //   margin-right: 150px;
+            // }
           }
         }
         .login__info {
@@ -232,30 +242,30 @@
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   &-half {
     height: 47px;
-    width: 150px;
+    width: 144px;
     padding: 0 15px;
     margin-top: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
   }
-  // &-quarter {
-  //   height: 48px;
-  //   width: 100px;
-  //   padding: 10px 16px 8px 16px;
-  //   margin-top: 8px;
-  //   border-radius: 4px;
-  //   border: 1px solid #ccc;
-  //   margin-left: 36px;
-  // }
-  // &-birth {
-  //   height: 48px;
-  //   width: 86px;
-  //   padding: 10px 16px 8px 16px;
-  //   margin-top: 8px;
-  //   border-radius: 4px;
-  //   border: 1px solid #ccc;
-  //   margin-left: 8px;
-  // }
+  &-quarter {
+    height: 48px;
+    width: 100px;
+    padding: 10px 16px 8px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-left: 36px;
+  }
+  &-birth {
+    height: 48px;
+    width: 86px;
+    padding: 10px 16px 8px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-left: 8px;
+  }
   // &__last {
   //   height: 48px;
   //   width: 343px;
@@ -277,7 +287,16 @@
   // font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
-
+#user_birth {
+  height: 48px;
+  width: 80px;
+  padding: 10px 16px 8px 16px;
+  margin: 8px 15px 0 0;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  margin-left: 8px;
+  background-color: #fff;
+}
 
 
 
