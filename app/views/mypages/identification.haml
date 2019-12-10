@@ -1,0 +1,52 @@
+.identification_body
+  .main_body
+    = render '/mypages/partial/sidebar'
+
+    .right_box
+      .right_box__head
+        = link_to "#" do
+          = image_tag "/my_icon.png"
+        .right_box__head__user_name
+          ユーザー
+        .right_box__head__history_box
+          .right_box__head__history_box__evaluation
+            評価
+          .right_box__head__history_box__number
+            0
+          .right_box__head__history_box__exhibit
+            出品数
+          .right_box__head__history_box__number
+            0
+      .right_box__bar_box
+        .right_box__bar_box__notice
+          お知らせ
+        .right_box__bar_box__list
+          やることリスト
+      .right_box__message_item_link
+        .right_box__message_item_link__icon
+          = link_to "#" do
+            = image_tag "/ロゴ.png"
+          .right_box__message_item_link__icon__box
+            .right_box__message_item_link__icon__box__text
+              《新規登録者限定》”最大1,000円分のポイントがもらえる”出品キャンペーン開催中！
+            .right_box__message_item_link__icon__box__time_box
+              .right_box__message_item_link__icon__box__time_box__time_icon
+                %i.fa.fa-clock-o
+              .right_box__message_item_link__icon__box__time_box__times
+                7時間前
+      .right_box__under_bar
+        .right_box__under_bar__in
+          一覧を見る
+      .right_box__foot
+        購入した商品
+      .right_box__under_box
+        .right_box__under_box__left
+          取引中
+        .right_box__under_box__right
+          過去の取引
+      .right_box__ge
+        .right_box__ge__icon
+          = link_to "#" do
+            = image_tag "/ロゴ.png"
+        .right_box__ge__moji
+          取引中の商品がありません
