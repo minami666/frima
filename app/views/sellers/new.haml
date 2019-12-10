@@ -10,6 +10,8 @@
         必須
     .image-text
       最大10枚までアップロードできます
+  = form.fields_for :productsimages do |image|
+    = image.file_field :image
     .sell-upload
       %li ドラッグアンドドロップ
       %li またはクリックしてファイルをアップロード
