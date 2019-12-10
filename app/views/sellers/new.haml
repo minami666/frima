@@ -1,5 +1,5 @@
 = render "partial/sell_bay_header"
-= form_with model: @product class:"sell_new",local: true do |form| #以下入力フォーム
+= form_for(@product, url: {controller:'/sellers', action:'create',method:'POST' }) do |f|
   .sell_title
     商品の情報を入力
   .sell-image
@@ -20,13 +20,13 @@
       .img-head_icon
         必須
     .sell_new
-      = form.text_field placeholder: "商品名（必須40文字まで）",class:"sell_name"
+      = f.text_field :name,placeholder: "商品名（必須40文字まで）",class:"sell_name"
       .img-head
         .img-head_bold
           商品
         .img-head_icon
           必須
-      = form.text_area placeholder: "商品の説明（必須1,000文字まで）",class:"sell_txet"
+      = f.text_area :explanation,placeholder: "商品の説明（必須1,000文字まで）",class:"sell_txet"
   .sell-content
     .sell_box
       .sell-sub_head
@@ -37,17 +37,13 @@
             カテゴリー
           .img-head_icon
             必須
-        %select{name: "cate"}
-          %option{value: "1"} レディース
-          %option{value: "2"} メンズ
+        = f.select :category_id, [["レディース", "1"],["メンズ", "2"]]
         .img-head
           .img-head_bold
             カテゴリー
           .img-head_icon
             必須
-        %select{name: "cate"}
-          %option{value: "1"} 新品
-          %option{value: "2"} 中古
+        = f.select :state, [["新品", "1"],["中古", "2"]]
   .sell-content
     .sell_box
       .sell-sub_head
@@ -58,25 +54,19 @@
             配送料の負担
           .img-head_icon
             必須
-        %select{name: "cate"}
-          %option{value: "1"} 送料込み
-          %option{value: "2"} 着払い
+        = f.select :deliver_how, [["送料込み", "1"],["着払い", "2"]]
         .img-head
           .img-head_bold
             配送元の地域
           .img-head_icon
             必須
-        %select{name: "cate"}
-          %option{value: "1"} 広島
-          %option{value: "2"} 大阪
+        //= f.select :area, [["大阪","1"],["広島", "2"]]
         .img-head
           .img-head_bold
             配送までの日数
           .img-head_icon
             必須
-        %select{name: "cate"}
-          %option{value: "1"} １〜４
-          %option{value: "2"} ４〜１０
+        = f.select :deliver_day, [["１〜４", "1"],["４〜１０", "2"]]
   .sell-content
     .sell_box
       .sell-sub_head
@@ -90,7 +80,7 @@
           .price_new
             .sell-new_icon
               ¥
-            = form.text_field placeholder: "商品名（必須40文字まで）",class:"sell_price"
+            = f.text_field :price,placeholder: "価格",class:"sell_price"
         .sell-margin
           .sell-margin_left
             販売手数料 (10%)
@@ -106,9 +96,8 @@
       %li 禁止されている出品、行為を必ずご確認ください。
       %li またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
       %li また、出品をもちまして加盟店規約に同意したことになります。
-    .sell-btn
-      出品する
+    = f.submit "出品する",class:"sell-btn"
     .sell-btn_back
       もどる
   .sell-footer
-  プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
+    プライバシーポリシー メルカリ利用規約 特定商取引に関する表記

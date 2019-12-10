@@ -8,13 +8,13 @@ class Product < ApplicationRecord
 
 validates :name, presence: true
 validates :deliver_how, presence: true
-validates :deliver_date, presence: true
+validates :deliver_day, presence: true
 validates :price, presence: true
 validates :state, presence: true
-validates :brands_id, presence: true
-validates :sizes_id, presence: true
-validates :user_id, presence: true
-validates :sellers_id, presence: true
+#validates :brands_id, presence: true
+#validates :sizes_id, presence: true
+#validates :user_id, presence: true
+#validates :sellers_id, presence: true
 
 has_many :productsimages, dependent: :destroy
 has_many :productslikes, dependent: :destroy
