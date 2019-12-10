@@ -1,6 +1,6 @@
 .identification_body
-  .main_body
-    = render '/mypages/partial/sidebar'
+  = render partial: 'partial/header'
+  = render partial: 'mypages/partial/sidebar'
 
     .right_box
       .right_box__head
@@ -50,3 +50,6 @@
             = image_tag "/ロゴ.png"
         .right_box__ge__moji
           取引中の商品がありません
+
+  = render partial: '/partial/banner'
+  = render partial: '/partial/footer'
