@@ -109,27 +109,34 @@
             font-weight: bold;
           }
           &-info {
-            &__nickname {
-              margin-right: 214px;
+            &__family_name_knj {
+              margin-right: 265px;
             }
-            &__email {
-              margin-right: 200px;
+            &__family_name_ktkn {
+              margin-right: 240px;
             }
-            &__password {
-              margin-right: 220px;
+            &__postnum {
+              margin-right: 250px;
             }
             // &__password-comfirm {
             //   margin-right: 166px;
             // }
-            &__fullname {
-              margin-right: 192px;
+            &__prefecture {
+              margin-right: 250px;
             }
-            &__kana {
-              margin-right: 164px;
+            &__city {
+              margin-right: 250px;
             }
-            &__birth {
-              margin-right: 230px;
+            &__street_num {
+              margin-right: 280px;
             }
+              &__building_1{
+                margin-right: 260px;
+                font-size: 14px;
+                font-weight: bold;
+                font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                margin-top: 22px;
+              }
             // &__cellphone-number {
             //   margin-right: 200px;
             // }
