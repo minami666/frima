@@ -73,13 +73,7 @@ gem 'active_hash'
 gem 'jp_prefecture'
 gem 'gretel'
 gem 'ancestry'
-
+gem 'fog-aws'
 group :production do
   gem 'unicorn', '5.4.1'
 end
-
-# gem 'capistrano'
-# gem 'capistrano-rbenv'
-# gem 'capistrano-bundler'
-# gem 'capistrano-rails'
-# gem 'capistrano3-unicorn'

@@ -62,7 +62,7 @@
 | ----------------- | --------- | ------------- |
 |  name             |  string   |  null: false  |
 |  deliver_how      |  integer  |  null: false  |
-|  deliver_date     |  date     |  null: false  |
+|  deliver_day     |  integer     |  null: false  |
 |  price            |  integer  |  null: false  |
 |  explanation      |  string   |
 |  state            |  integer  |  null: false  |
