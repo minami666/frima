@@ -1,3 +1,4 @@
+// 住所登録
 .body{
   height:100％;
   width:100%;
@@ -130,13 +131,12 @@
             &__street_num {
               margin-right: 280px;
             }
-              &__building_1{
+            &__building{
                 margin-right: 260px;
-                font-size: 14px;
-                font-weight: bold;
-                font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-                margin-top: 22px;
               }
+            &__tel{
+              margin-right: 270px;
+            }
             // &__cellphone-number {
             //   margin-right: 200px;
             // }
@@ -280,4 +280,12 @@
   padding: 4px;
   border-radius: 2px;
   // font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+.form-require_1 {
+  background-color: #ccc;
+  color: #fff;
+  font-size: 12px;
+  margin-left: 8px;
+  padding: 4px;
+  border-radius: 2px;
 }
