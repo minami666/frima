@@ -240,6 +240,3 @@
 ### Association
 
 - belongs_to :buyer, foreign_key: true, dependent: :destroy
-
-<!-- ユーザーのARNメモ -->
-arn:aws:iam::745407904705:user/frima
