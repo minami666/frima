@@ -6,8 +6,12 @@ class SellersController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
-    redirect_to root_path
+    @product = Product.new
+    if @product.save # 保存失敗して
+      redirect_to root_path
+    else
+      binding.pry
+    end
   end
 
   def edit
@@ -20,7 +24,6 @@ class SellersController < ApplicationController
   end
   private
   def product_params
-    params.require(:product).permit(:name,:deliver_how,:deliver_day,:price,:explanation)
+    params.require(:product).permit(:name,:deliver_how,:deliver_day,:price,:explanation,:category_id,:state)
   end
-
 end
