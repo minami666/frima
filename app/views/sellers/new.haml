@@ -10,11 +10,8 @@
         必須
     .image-text
       最大10枚までアップロードできます
-  = form.fields_for :productsimages do |image|
-    = image.file_field :image
-    .sell-upload
-      %li ドラッグアンドドロップ
-      %li またはクリックしてファイルをアップロード
+    = f.fields_for :productsimages do |image|
+      = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "sell-upload", 'data-image': 0
   .sell-content
     .img-head
       .img-head_bold
@@ -39,25 +36,25 @@
             カテゴリー
           .img-head_icon
             必須
-        = f.select :category_id, [["レディース", "1"],["メンズ", "2"]]
+        = f.select :category_id, [["レディース",1],["メンズ", 2]]
         .img-head
           .img-head_bold
             ブランド
           .img-head_icon
             必須
-        = f.select :state, [["新品", "1"],["中古", "2"]]
+        = f.select :brand_id, [["プーマ", 1],["パーマ", 2]]
         .img-head
           .img-head_bold
             商品の状態
           .img-head_icon
             必須
-        = f.select :state, [["新品", "1"],["中古", "2"]]
+        = f.select :state, [["新品", 1],["中古", 2]]
         .img-head
           .img-head_bold
             サイズ
           .img-head_icon
             必須
-        = f.select :state, [["新品", "1"],["中古", "2"]]
+        = f.select :size_id, [["大", 1],["中", 2]]
   .sell-content
     .sell_box
       .sell-sub_head
@@ -68,19 +65,19 @@
             配送料の負担
           .img-head_icon
             必須
-        = f.select :deliver_how, [["送料込み", "1"],["着払い", "2"]]
+        = f.select :deliver_how, [["送料込み", 1],["着払い", 2]]
         .img-head
           .img-head_bold
             配送元の地域
           .img-head_icon
             必須
-        = f.select :state, [["大阪","1"],["広島", "2"]]
+        //= f.select :state, [["大阪","1"],["広島", "2"]]
         .img-head
           .img-head_bold
             配送までの日数
           .img-head_icon
             必須
-        = f.select :deliver_day, [["１〜４", "1"],["４〜１０", "2"]]
+        = f.select :deliverday, [["１〜４", 1],["４〜１０", 2]]
   .sell-content
     .sell_box
       .sell-sub_head
