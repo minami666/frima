@@ -66,5 +66,6 @@ Rails.application.routes.draw do
   get "/mypages/points", to:"mypages#points"
   get "/mypages/profile", to:"mypages#profile"
   get "/mypages/confirmation", to:"mypages#confirmation"
+  get "/mypages/identification", to:"mypages#identification"
   get "/mypages/destroy", to:"mypages#destroy"
 end
