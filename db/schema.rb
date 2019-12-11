@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_065537) do
-# ActiveRecord::Schema.define(version: 2019_12_10_111718) do
+ActiveRecord::Schema.define(version: 2019_12_10_111718) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
@@ -87,26 +86,17 @@ ActiveRecord::Schema.define(version: 2019_12_10_065537) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "deliver_how", null: false
-    t.integer "deliverday", null: false
+    t.integer "deliverday"
     t.integer "price", null: false
     t.string "explanation"
     t.integer "state", null: false
-    t.integer "category_id", null: false
-    t.integer "size_id", null: false
-    t.integer "brand_id", null: false
-    t.integer "user_id", null: false
-    t.integer "seller_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "size_id"
-    t.integer "brand_id"
-    t.integer "user_id"
-    t.integer "seller_id"
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id", null: false
+    t.integer "product_id"
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -130,7 +120,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_065537) do
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id", null: false
+    t.integer "products_id", null: false
     t.integer "users_id", null: false
     t.integer "seller_evaluates_id", null: false
     t.datetime "created_at", null: false
