@@ -2,18 +2,22 @@
 .id-main{
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 85px 0 auto;
   background-color: #fff;
+  color: #333333;
   font-style: 14px;
   overflow: hidden;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   &__1{
     margin: 0 auto;
-    font-size: 30px;
+    padding: 8px 24px;
+    font-size: 24px;
+    font-weight: normal;
+
   }
   &__2{
     margin: 0 auto;
-    
+    border-top: 0.5px groove #333333;
   }
 
 
