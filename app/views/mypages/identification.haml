@@ -1,6 +1,7 @@
-.wrapper
-  = render "partial/header"
-  = render "mypages/partial/topbar"
+= render "partial/header"
+.top_bar
+  - breadcrumb :identification
+  = breadcrumbs separator: " &rsaquo; "
 
 .main_body
   .id-side
@@ -68,7 +69,5 @@
         = link_to "本人情報の登録について", "/"
         %i.idicon.fa.fa-check
 
-
-.wrapper
-  = render "partial/banner"
-  = render "partial/footer"
+= render "partial/banner"
+= render "partial/footer"
