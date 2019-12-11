@@ -7,15 +7,13 @@ class SellersController < ApplicationController
   end
 
   def create
-    @pro = Product.new(product_params)
-    if @pro.save
-      redirect_to root_path
-    else
-      #binding.pry
-      redirect_to "/products/show"
+    @product = Product.new(product_params)
+    @product.save
+    params[:product_images][:image].each do |image|
+    @product.productsimages.create(image: image)
     end
-
-  end
+    redirect_to "/products/show"
+    end
 
   def edit
   end
@@ -27,7 +25,10 @@ class SellersController < ApplicationController
   end
   private
   def product_params
-    params.require(:product).permit(:name,:deliver_how,:deliver_day,:price,:explanation,:category_id,:state,
-    productsimages_attributes: [:id, :image, :_destroy])
+    params.require(:product).permit(:name,:explanation,:category_id,:brand_id,:state,:size_id,:deliver_how,
+    :deliverday,:price, productsimages_attributes: [:image])
+    .merge(user_id: current_user.id,seller_id: current_user.id)
+  #  params.require(:productsimages).permit!
   end
+
 end
