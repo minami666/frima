@@ -5,15 +5,15 @@
       = link_to image_tag(src="sns_top.svg" ), root_path
     %nav.progress
       %ul.progress-bar
-        %li.step1#active
+        %li.step1#active#done
           会員情報
           .progress-status
           .progress-status_bar
-        %li.step2
+        %li.step2#active#done
           電話番号認証
           .progress-status
           .progress-status_bar
-        %li.step3
+        %li.step3#active
           お届け先住所入力
           .progress-status
           .progress-status_bar
@@ -63,6 +63,7 @@
               %br
             .field-input
               = f.text_field :prefecture, class: "input-default-half", autocomplete: "prefecture", placeholder: "例）北海道"
+              -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
           .field
             .field-info__city
               %label{for: "city"} 市区町村
