@@ -1,6 +1,12 @@
-.id_body
-  = render partial: 'partial/header'
-  = render partial: 'mypages/partial/sidebar'
+.wrapper
+  = render "partial/header"
+  -# = render "mypages/partial/topbar"
 
-= render partial: '/partial/banner'
-= render partial: '/partial/footer'
+.main_body
+  = render "/mypages/partial/sidebar"
+
+
+
+.wrapper
+  = render "partial/banner"
+  = render "partial/footer"
