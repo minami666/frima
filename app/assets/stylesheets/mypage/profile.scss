@@ -1,9 +1,4 @@
-.top_bar{
-  height: 49px;
-  width: 100%;
-  border-top: 1px solid #eee;
-  background-color: yellowgreen;
-}
+
 .main_body{
   &__h{
     height: 568px;
@@ -31,7 +26,7 @@
           margin-top: 72px;
           margin-left: 200px;
           border-radius: 50%;
-        }        
+        }
         .main_body__h__user__imput{
           height: 48px;
           width: 200px;
