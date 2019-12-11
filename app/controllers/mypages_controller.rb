@@ -80,4 +80,9 @@ class MypagesController < ApplicationController
 
   end
 
+  # ログアウト
+  def destroy
+
+  end
+
 end
