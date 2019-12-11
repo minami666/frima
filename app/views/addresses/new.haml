@@ -62,8 +62,8 @@
               %span.form-require 必須
               %br
             .field-input
-              = f.text_field :prefecture, class: "input-default-half", autocomplete: "prefecture", placeholder: "例）北海道"
-              -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+              -# = f.text_field :prefecture, class: "input-default-half", autocomplete: "prefecture", placeholder: "例）北海道"
+              = f.collection_select :prefecture, Prefecture.all, :id, :name
           .field
             .field-info__city
               %label{for: "city"} 市区町村
@@ -88,7 +88,7 @@
                 %label{for: "tel"} 電話
                 %span.form-require_1 任意
               .field-input
-            = f.text_field :tel, class: "input-default", autocomplete: "tel", placeholder: "例）09012345678"
+                = f.text_field :tel, class: "input-default", autocomplete: "tel", placeholder: "例09012345678"
           -# .form__info
           -#   ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           -# .attention
