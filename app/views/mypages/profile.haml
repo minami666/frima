@@ -1,0 +1,21 @@
+.wrapper
+  = render "partial/header"
+.top_bar
+.main_body
+  = render "/mypages/partial/sidebar"
+  .main_body__h
+    .main_body__h__profile
+      プロフィール
+    .main_body__h__user
+      .main_body__h__user__box
+        = image_tag "/ユーザー.png"
+        .main_body__h__user__imput
+          ユーザー名
+    .main_body__h__z
+      .main_body__h__z__comment
+        こんにちは結構きついです
+      .main_body__h__z__change
+        変更する
+.wrapper
+  = render "partial/banner"
+  = render "partial/footer"
