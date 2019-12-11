@@ -6,41 +6,45 @@
   }
   .id-main{
     padding: 0 30px;
-    width: 490px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
 
     &__top{
-      height: 34px;
-      line-height: 40px;
+      height: 40px;
       width: 100%;
+      line-height: 40px;
       background-color: #fff;
-      margin: 0 85px 5px auto;
-      padding: 0 70px;
+      margin: 0 auto;
       text-align: center;
       font-size: 20px;
       font-weight: normal;
+      margin-bottom: 10px;
     }
 
     &__body{
-    width: 100%;
-    padding: 0 70px;
-    width: 490px;
+    width: calc(100% - 120px);
+    padding: 0 60px;
     display: flex;
     flex-direction: column;
     margin: 0 85px 0 auto;
     background-color: #fff;
     font-style: 14px;
       &__1{
+        width: 100%;
         margin: 0 auto;
         margin: 80px 0 0;
       }
 
       &__2{
+        width: 100%;
         margin: 0 auto;
         text-align: right;
         margin: 10px 0 0;
       }
 
       &__3{
+        width: 100%;
         margin: 10px 0 0;
         &__title{
           color: #333333;
@@ -53,98 +57,67 @@
       }
 
       &__4{
+        width: 100%;
         margin: 10px 0 0;
-
+        font-weight: bold;
         &__box{
+          width: 100%;
           margin-top: 5px;
           &--upper{
+            width: 100%;
             display: flex;
+            margin-top: 15px;
             .nini{
+              font-size: 1px;
+              padding: 0.1px;
               margin-left: 5px;
-              padding: 0.8px 0.2px;
-              font-size: 2px;
               color: #fff;
               background-color: #cccccc;
               border-radius: 10%;
             }
           }
           &--lower{
+            width: 100%;
             margin: 1.5px 0;
             .size{
-              height: 25px;
-              width: 490px;
+              width: 100%;
+              padding: 3px 10px;
+              height: 40px;
+              border-radius: 5px;
+              border:1px solid  #cccccc;
+              opacity: 0.5;
+              &--prefecture{
+                width: 100%;
+                padding: 3px 10px;
+                height: 40px;
+                border-radius: 5px;
+                border:1px solid  #cccccc;
+                opacity: 0.5;
+              }
             }
           }
         }
       }
+      &__5{
+        padding: 3px 10px;
+        font-size: 20px;
+        height: 50px;
+        line-height: 50px;
+        width: 100%;
+        margin: 30px 0 30px;
+        font-weight: normal;
+        background-color: #E9352D;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        a{
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+      &__6{
+        text-align: right;
+      }
     }
-
-    // &__h{
-    //   height: 568px;
-    //   width: 700px;
-    //   margin-left: 40px;
-    //   background-color: white;
-
-    //   &__profile{
-    //     height: 50px;
-    //     width: 700px;
-    //     font-size: 24px;
-    //     font-weight: 600;
-    //     text-align: center;
-    //   }
-    //   &__user{
-    //     height: 156px;
-    //     width: 700px;
-    //     text-align: center;
-    //     background-image: url("/shabon.jpg");
-    //     &__box{
-    //       display: flex;
-    //       img{
-    //         height: 60px;
-    //         width: 60px;
-    //         margin-top: 72px;
-    //         margin-left: 200px;
-    //         border-radius: 50%;
-    //       }
-    //       .main_body__h__user__imput{
-    //         height: 48px;
-    //         width: 200px;
-    //         margin-top: 80px;
-    //         margin-left: 10px;
-    //         background-color: white;
-    //         line-height: 48px;
-    //         text-align: left;
-    //         padding-left: 20px;
-    //         border-radius: 4px;
-    //       }
-    //     }
-    //   }
-    //   &__z{
-    //     height: 362px;
-    //     width: 700px;
-    //     position: relative;
-    //     &__comment{
-    //       height: 194px;
-    //       width: 646px;
-    //       padding: 10px;
-    //       background-color: white;
-    //       border: 1px solid red;
-    //       margin-left: 16px;
-    //       position: absolute;
-    //       top: 40px;
-    //     }
-    //     .main_body__h__z__change{
-    //       position: absolute;
-    //       top: 280px;
-    //       background-color: red;
-    //       height: 50px;
-    //       width: 668px;
-    //       margin-left: 16px;
-    //       color: white;
-    //       text-align: center;
-    //       line-height: 50px;
-    //     }
-    //   }
-    // }
   }
 }
