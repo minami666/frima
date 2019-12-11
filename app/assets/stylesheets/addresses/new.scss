@@ -1,6 +1,6 @@
 // 住所登録
 .body{
-  height:100％;
+  height:100%;
   width:100%;
   background-color: #F5F5F5;
   .header{
@@ -80,7 +80,6 @@
     }
   }
   .signup {
-    height: 100%;
     width: 700px;
     background-color: #fff;
     margin: 0 auto;
@@ -102,7 +101,7 @@
           font-size: 14px;
           font-weight: bold;
           font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-          margin-top: 20px;
+          margin-top: 15px;
           h3{
             margin-right: 270px;
             margin-top: 30px;
@@ -180,13 +179,13 @@
           margin-bottom: 12px;
         }
         .next-btn {
-          margin-top: 24px auto 0;
+          margin-top: 20px;
           font-size: 14px;
           height: 50px;
-          width: 343px;
+          width: 355px;
           color: #fff;
           background-color: #ea352d;
-          padding: 18px 144px;
+          padding: 10px 144px;
         }
         .about__user-information {
           margin-top: 38px;
@@ -219,7 +218,7 @@
         // }
         & a:hover {
           text-decoration: underline;
-          color: gray;
+          color: gray;      
         }
       }
     }
