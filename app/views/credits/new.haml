@@ -1,1 +1,71 @@
-クレカ登録
+-# クレカ登録
+.body
+  .header
+    .header__logo
+      = link_to image_tag(src="sns_top.svg" ), root_path
+    %nav.progress
+      %ul.progress-bar
+        %li.step1#active#done
+          会員情報
+          .progress-status
+          .progress-status_bar
+        %li.step2#active#done
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.step3#active
+          お届け先住所入力
+          .progress-status
+          .progress-status_bar
+        %li.step4
+          支払い方法
+          .progress-status
+          .progress-status_bar
+        %li.step5
+          完了
+          .progress-status
+          .progress-status_bar
+          -# #done
+          -# #active
+  = form_for(@credits, url: "/credits/new", method: :get ) do |f|
+    .signup
+      .signup-title
+        支払い方法
+      .signup__box
+        .signup__box-input
+          .field
+            .field-info__number
+              %label{for: "number" } カード番号
+              %span.form-require 必須
+              %br
+            .field-input
+              = f.text_field :number, class: "input-default", autocomplete: "number", placeholder: "例）半角数字のみ"
+          .field
+            .field-info__deadline
+              %label{for: "deadline"} 有効期限
+              %span.form-require 必須
+              %br
+            .field-input
+              = f.text_field :deadline, class: "input-default", autocomplete: "deadline", placeholder: ""
+              月
+              = f.text_field :deadline, class: "input-default", autocomplete: "deadline", placeholder: ""
+              日
+          .field
+            .field-info__security_num
+              %label{for: "security_num"} セキュリティコード
+              %span.form-require 必須
+              %br
+            .field-input
+              -# = f.security_field :security_num, class: "input-default", autocomplete: "security_num, placeholder: "例）カード背面4桁もしくは3桁の番号
+            .field-info__prefecture_select
+              -# = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--"
+          .next__btn
+            = f.submit '次へ進む', class:"next-btn"
+  .footer-user
+    %ul
+      %li= link_to "プライバシーポリシー", '#'
+      %li= link_to "メルカリ利用規約", '#'
+      %li= link_to "特定商取引に関する表記", '#'
+    .footer-user__link
+      = link_to image_tag(src= "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3296506464", class: "mercari-graylogo", height: 80, width: 60), "/"
+      %p © Mercari, Inc.

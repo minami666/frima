@@ -1,3 +1,225 @@
-// Place all the styles related to the credits controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// クレカ登録
+.body{
+  height:100%;
+  width:100%;
+  background-color: #F5F5F5;
+  .header{
+    display: flex;
+    justify-content: center;
+    min-width: 768px;
+    height: 128px;
+    background-color: #F5F5F5;
+    &__logo{
+      height: 49px;
+      width: 185px;
+      margin: 40px 10px 0;
+    }
+    .progress {
+      padding: 40px 0 0 44px;
+      border: 0;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0;
+      text-align: center;
+      &-bar{
+        margin: 0;
+        li{
+          margin: 0 40px 0 0;
+          padding: 0;
+          position: relative;
+          z-index: 40;
+          display: inline-block;
+          min-width: 60px;
+          font-size: 12px;
+          color: gray;
+          .progress-status{
+            position: absolute;
+            left: 40%;
+            width: 12px;
+            height: 12px;
+            margin: 8px auto 0;
+            background: gray;
+            border-radius: 50%;
+            z-index: 30;
+          }
+        }
+      }
+    }
+    // デフォルトのプログレスバー
+    .progress-status_bar {
+      position: absolute;
+      left: 50%;
+      top: 32px;
+      bottom: 5px;
+      display: block;
+      width: 130px;
+      height: 2px;
+      background: gray;
+      z-index: 10;
+    }
+    .step5 .progress-status_bar {
+      width: 0px;
+    }
+    .step4 .progress-status_bar {
+      width: 100px;
+    }
+    #done{
+      color: #ea352d;
+      .progress-status{
+        background: #ea352d;
+      }
+    }
+    #done .progress-status_bar{
+      background: #ea352d;
+    }
+    #active{
+      color: #ea352d;
+      .progress-status{
+        background: #ea352d;
+      }
+    }
+  }
+  .signup {
+    height: 600px;
+    width: 700px;
+    background-color: #fff;
+    margin: 0 auto;
+    &-title {
+      padding: 30px;
+      color: #333;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 1px solid #F5F5F5;
+    }
+    &__box {
+      height: 100%;
+      text-align: center;
+      &-input {
+        .field {
+          font-size: 14px;
+          font-weight: bold;
+          font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+          margin-top: 15px;
+          h3{
+            margin-right: 270px;
+            margin-top: 30px;
+            font-size: 15px;
+            font-weight: bold;
+          }
+          &-info {
+            &__number {
+              margin-right: 265px;
+            }
+            &__deadline {
+              margin-right: 270px;
+            }
+            &__security_num {
+              margin-right: 210px;
+            }
+          }
+        }
+        
+        // .login__info {
+        //   height: 63px;
+        //   width: 343px;
+        //   margin-top: 8px;
+        //   margin-left: 182px;
+        //   color: #333;
+        //   text-align: left;
+        //   font-size: 14px;
+        // }
+        // .form__info {
+        //   height: 63px;
+        //   width: 343px;
+        //   margin-top: 8px;
+        //   margin-left: 182px;
+        //   color: #888;
+        //   text-align: left;
+        //   font-size: 14px;
+        // }
+        // .attention {
+        //   height: 63px;
+        //   width: 343px;
+        //   margin-top: 28px;
+        //   margin-left: 182px;
+        //   color: #333;
+        //   text-align: center;
+        //   font-size: 14px;
+        //   margin-bottom: 12px;
+        // }
+        .next-btn {
+          margin-top: 20px;
+          font-size: 14px;
+          height: 50px;
+          width: 355px;
+          color: #fff;
+          background-color: #ea352d;
+          padding: 10px 144px;
+        }
+        // .about__user-information {
+        //   margin-top: 38px;
+        //   margin-left: 186px;
+        //   font-size: 14px;
+        // }
+      }
+    }
+  }
+  .footer-user {
+    text-align: center;
+    color: #333;
+    background-color: rgb(245, 245, 245);
+    padding-bottom: 30px;
+    ul {
+      display: flex;
+      justify-content: center;
+      font-size: 13px;
+      li {
+        margin-right: 22px;
+        padding-top: 42px;
+        padding-bottom: 26px;
+        color: #333;
+        & a:link {
+          color: #333;
+          text-decoration: none;
+        }
+        & a:hover {
+          text-decoration: underline;
+          color: gray;      
+        }
+      }
+    }
+  }
+}
+// .input-default {
+//   height: 40px;
+//   width: 325px;
+//   padding: 0 15px;
+//   margin-top: 8px;
+//   border-radius: 4px;
+//   border: 1px solid #ccc;
+//   line-height:24px;
+//   font-size: 16px;
+//   font-weight: 400;
+//   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  // &-half {
+  //   height: 40px;
+  //   width: 325px;
+  //   padding: 0 15px;
+  //   margin-top: 8px;
+  //   border-radius: 4px;
+  //   border: 1px solid #ccc;
+  // }
+  // }
+select {
+  box-sizing: border-box;
+  width: 360px;
+  height: 42px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-top: 8px;
+}
