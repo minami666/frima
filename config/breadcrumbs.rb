@@ -6,16 +6,6 @@ crumb :mypages do
   link "マイページ", mypages_index_path
 end
 
-crumb :sns do
-  link "SNS認証", mypages_sns_path
-  parent :mypages
-end
-
-crumb :identification do
-  link "本人確認", mypages_identification_path
-  parent :mypages
-end
-
 crumb :notification do
   link "お知らせ", mypages_notification_path
   parent :mypages
@@ -25,6 +15,11 @@ crumb :todo do
   link "やること", mypages_todo_path
   parent :mypages
 end
+
+# crumb :likes do
+#   link "いいね！一覧", hogehoge_path
+#   parent :mypages
+# end
 
 crumb :listing do
   link "出品中", mypages_listing_path
@@ -63,6 +58,16 @@ end
 
 crumb :support do
   link "サポート", mypages_support_path
+  parent :mypages
+end
+
+crumb :sns do
+  link "SNS認証", mypages_sns_path
+  parent :mypages
+end
+
+crumb :identification do
+  link "本人確認", mypages_identification_path
   parent :mypages
 end
 

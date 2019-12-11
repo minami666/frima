@@ -10,7 +10,7 @@
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "やることリスト",mypages_index_path
+        = link_to "やることリスト",mypages_notification_path
       = fa_icon "chevron-right"
     .details
       .moji2
@@ -18,39 +18,39 @@
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "出品する",mypages_index_path
+        = link_to "出品する",mypages_progress_path
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "出品した商品-出品中",mypages_index_path
+        = link_to "出品した商品-出品中",mypages_listing_path
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "出品した商品-取引中",mypages_index_path
+        = link_to "出品した商品-取引中",mypages_progress_path
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "出品した商品-売却済み",mypages_index_path
+        = link_to "出品した商品-売却済み",mypages_completed_path
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "購入した商品-取引中",mypages_index_path
+        = link_to "購入した商品-取引中",mypages_buying_path
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "購入した商品-過去の取引",mypages_index_path
+        = link_to "購入した商品-過去の取引",mypages_pastransaction_path
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "ニュース一覧",mypages_index_path
+        = link_to "ニュース一覧",mypages_news_path
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "評価一覧",mypages_index_path
+        = link_to "評価一覧",mypages_evaluates_path
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "ガイド",mypages_index_path
+        = link_to "ガイド",mypages_support_path
       = fa_icon "chevron-right"
     .details
       .moji2
@@ -64,14 +64,13 @@
       = fa_icon "chevron-right"
     .details
       .moji2
-        = link_to "ポイント",mypages_index_path
+        = link_to "ポイント",mypages_points_path
       = fa_icon "chevron-right"
     .tyoku
-      = link_to "設定",mypages_index_path
-    = link_to "/mypages/profile" do
+      設定
       .details
         .moji2
-          = link_to "プロフィール",mypages_index_path
+          = link_to "プロフィール",mypages_profile_path
         = fa_icon "chevron-right"
       .details
         .moji2
@@ -87,13 +86,13 @@
         = fa_icon "chevron-right"
       .details
         .moji2
-          = link_to "本人情報",mypages_index_path
+          = link_to "本人情報",mypages_identification_path
         = fa_icon "chevron-right"
       .details
         .moji2
-          = link_to "電話番号の確認",mypages_index_path
+          = link_to "電話番号の確認",mypages_confirmation_path
         = fa_icon "chevron-right"
       .details
         .moji2
-          = link_to "ログアウト",mypages_index_path
+          = link_to "ログアウト",mypages_destroy_path
         = fa_icon "chevron-right"
