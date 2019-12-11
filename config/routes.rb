@@ -48,6 +48,7 @@ Rails.application.routes.draw do
 
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
+  get "/addresses/new", to:"addresses#new"
 
 # ====================== ユーザーのマイページ ======================
   get "/mypages/index", to:"mypages#index"
