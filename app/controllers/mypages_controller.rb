@@ -85,4 +85,8 @@ class MypagesController < ApplicationController
 
   end
 
+  #
+  def tell
+  end
+
 end
