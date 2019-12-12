@@ -1,0 +1,74 @@
+.wrapper
+  = render "partial/header"
+  = render "mypages/partial/topbar"
+
+.main_body
+  .id-side
+    = render "/mypages/partial/sidebar"
+  .id-main
+    .id-main__top
+      %h2 本人情報の登録
+    .id-main__body
+      .id-main__body__1
+        %p 客さまの本人情報をご登録ください。
+        %p 登録された名前・生年月日を変更する場合、
+        %p 本人確認書類の提出が必要になります。
+      .id-main__body__2
+        = link_to "本人確認書類のアップロードについて", "/"
+        %i.idicon.fa.fa-check
+        -# ==== 名前／誕生日 ====
+      .id-main__body__3
+        .id-main__body__3__title
+          %p お名前
+        .id-main__body__3__variable
+          %p 中里南(仮置き)
+        .id-main__body__3__title
+          %p お名前カナ
+        .id-main__body__3__variable
+          %p ナカサトミナミ(仮置き)
+        .id-main__body__3__title
+          %p 生年月日
+        .id-main__body__3__variable
+          %p 1984/12/07(仮置き)
+      .id-main__body__4
+        -# ==== フォーム ====
+        .id-main__body__4__box
+          .id-main__body__4__box--upper
+            %p 郵便番号
+            %p.nini 任意
+          .id-main__body__4__box--lower
+            %input.size{placeholder: "例) 155-0041"}
+        .id-main__body__4__box
+          .id-main__body__4__box--upper
+            %p 都道府県
+            %p.nini 任意
+          .id-main__body__4__box--lower
+            %select.size--prefecture
+        .id-main__body__4__box
+          .id-main__body__4__box--upper
+            %p 市区町村
+            %p.nini 任意
+          .id-main__body__4__box--lower
+            %input.size{placeholder: "例) 東京"}
+        .id-main__body__4__box
+          .id-main__body__4__box--upper
+            %p 番地
+            %p.nini 任意
+          .id-main__body__4__box--lower
+            %input.size{placeholder: "例) 新宿2000丁目"}
+        .id-main__body__4__box
+          .id-main__body__4__box--upper
+            %p 建物名
+            %p.nini 任意
+          .id-main__body__4__box--lower
+            %input.size{placeholder: "ビル"}
+      .id-main__body__5
+        = link_to "登録する", "/"
+      .id-main__body__6
+        = link_to "本人情報の登録について", "/"
+        %i.idicon.fa.fa-check
+
+
+.wrapper
+  = render "partial/banner"
+  = render "partial/footer"
