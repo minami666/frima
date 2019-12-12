@@ -69,5 +69,6 @@ Rails.application.routes.draw do
   get "/mypages/confirmation", to:"mypages#confirmation"
   get "/mypages/identification", to:"mypages#identification"
   get "/mypages/destroy", to:"mypages#destroy"
+  get "/mypages/tell", to:"mypages#tell"
 
 end
