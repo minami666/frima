@@ -240,4 +240,3 @@
 ### Association
 
 - belongs_to :buyer, foreign_key: true, dependent: :destroy
-
