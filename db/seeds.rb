@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Brand.create!(name:'シャネル'text:'カッコ良さの中に香る甘い艶やかなデザイン！世界中の女性を虜に続けるトップブランド！
+シャネルは、1909年通称ココシャネルが設立したブランドです。モノトーン色を基調としたファッションの提案が中心で、服飾の他にも化粧品・香水・宝飾品・時計など幅広い商品が展開されています。「古い価値観にとらわれない女性像」をブランドポリシーとし、今なおファッション界を牽引しています。')
+Brand.create!(name:'ナイキ'text:'世界を代表するスポーツブランド！エアマックスなどのシューズで注目度がさらにアップ！
+ナイキは、1968年創業のアメリカのスポーツブランドです。シューズの歴史が長く、エアジョーダンやエアマックスなど世界的に有名です。かかとや足の裏にかかる衝撃を和らげるためソールに埋め込んでいるエアが特徴で、若者に人気です。最近ではユニフォームやキャップなども展開しています。')
+Brand.create!(name:'ルイ ヴィトン'text:'男女に大人気のお洒落なモノグラム！ラクジュアルなデザインが毎日の生活にスパイスを与えます！
+ヴィトンは、創始者ルイヴィトンが1854年、世界初の旅行鞄専門店として設立したフランスのファッションブランドです。モノグラム・キャンバスに代表される高度なデザイン性と、上質な素材を使用し熟練の職人が生み出した製品は世界中で愛され、幅広い年代に人気です。')
+Brand.create!(name:'アディダス'text:'デザインと機能性を備え、スポーツブランドの誇りとクオリティを持った多様なアイテムを幅広く展開。
+アディダスは、1948年ドイツにて創業した世界的スポーツメーカーで、オリンピックやFIFAワールドカップなどの公式スポンサーです。アディダスといえば3本のライン、三つ葉マーク、円に3本線などのロゴが有名です。スニーカーはデザインと機能性でファンも多く、多数の定番モデルや名作モデルを世に輩出しました。')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')
+Brand.create!(name:''text:'')

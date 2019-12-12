@@ -17,7 +17,7 @@
       - @productsimage.last(10).each do |p|
         .product_one
           .product_img
-            -# = image_tag productimage.image.url 
+            = image_tag p.image.url
             .price_one
               //=.price
           .one_name_box
