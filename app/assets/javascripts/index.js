@@ -1,20 +1,12 @@
 $(function() {
-  $('.categry_box').mouseover(function(){
+  $('.categry_box').click(function(){
     console.log('ぺすお')
-    $(".tach-cate").removeClass("none");
+    $('.tach-cate').toggle(500);('none');
   })
-
-  $('.categry_box').mouseout(function(){
-    $(".tach-cate").addClass("none");
-  })
-  
-  $('.brand_box').mouseover(function(){
+ 
+  $('.brand_box').click(function(){
     console.log('ぺすお')
-    $(".tach-bra").removeClass("none");
-  })
-
-  $('.brand_box').mouseout(function(){
-    $(".tach-bra").addClass("none");
+    $(".tach-bra").toggle(500);("none");
   })
 
   });

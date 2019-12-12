@@ -56,16 +56,26 @@
         line-height: 60px;
         font-size: 14px;
         position: relative;
+        font-weight: bold;
+        
         .none{
           display: none;
         }
         .tach-cate{
-          background-color: yellow;
-          height: 100px;
-          width: 100px;
+          background-color: white;
           z-index: 100;
           position: absolute;
+          top: 50px;
+          color:#333333;
+          line-height: 30px;
+          list-style: none;
+          font-weight: normal;
+          li:hover{
+            background-color:rgb(234,53,45);
+            color: white;
+          }
         }
+
       }
       
       .brand_box{
@@ -74,16 +84,26 @@
         line-height: 60px;
         font-size: 14px;
         position: relative;
+        font-weight: bold;
         .none{
           display: none;
         }
         .tach-bra{
-          background-color: yellow;
-          height: 100px;
-          width: 100px;
+          width: 150px;
+          background-color: white;
           z-index: 100;
           position: absolute;
+          top: 50px;
+          color:#333333;
+          line-height: 30px;
+          list-style: none;
+          font-weight: normal;
+          li:hover{
+            background-color:rgb(234,53,45);
+            color: white;
+          }
         }
+        
       }i{
         color:rgb(234,53,45);
       }
