@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
+    @productsimage = Productsimage.all
   end
 
   def show
