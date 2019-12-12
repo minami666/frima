@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_064015) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
-    t.string "prefecture", null: false
+    t.integer "prefecture", null: false
     t.string "city", null: false
     t.integer "street_num", null: false
     t.string "building"
@@ -93,15 +93,11 @@ ActiveRecord::Schema.define(version: 2019_12_12_064015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "size_id"
-    t.integer "brand_id"
-    t.integer "user_id"
-    t.integer "seller_id"
     t.integer "addresses_id"
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
+    t.integer "products_id", null: false
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -125,7 +121,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_064015) do
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
+    t.integer "products_id", null: false
     t.integer "users_id", null: false
     t.integer "seller_evaluates_id", null: false
     t.datetime "created_at", null: false
