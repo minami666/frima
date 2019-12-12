@@ -75,7 +75,7 @@
             配送元の地域
           .img-head_icon
             必須
-        = f.select :state, [["大阪","1"],["広島", "2"]]
+        = f.collection_select :addresses_id,Prefecture.all, :id, :name, prompt:"--"
         .img-head
           .img-head_bold
             配送までの日数

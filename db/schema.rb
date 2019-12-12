@@ -10,8 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+ActiveRecord::Schema.define(version: 2019_12_12_042438) do
+
 # ActiveRecord::Schema.define(version: 2019_12_10_111718) do
-ActiveRecord::Schema.define(version: 2019_12_11_033026) do
+# ActiveRecord::Schema.define(version: 2019_12_11_033026) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
@@ -95,6 +99,12 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
     t.datetime "updated_at", null: false
     t.integer "category_id"
 
+    t.integer "size_id"
+    t.integer "brand_id"
+    t.integer "user_id"
+    t.integer "seller_id"
+    t.integer "addresses_id"
+
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -122,7 +132,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
+    t.integer "product_id"
     t.integer "users_id", null: false
     t.integer "seller_evaluates_id", null: false
     t.datetime "created_at", null: false
