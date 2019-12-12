@@ -8,7 +8,7 @@ class Product < ApplicationRecord
 
 validates :name, presence: true
 validates :deliver_how, presence: true
-validates :deliver_day, presence: true
+validates :deliverday, presence: true
 validates :price, presence: true
 validates :state, presence: true
 
