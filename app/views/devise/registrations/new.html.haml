@@ -31,7 +31,7 @@
           -# #active
 
   -# = form_for(@user, url: '/addresses/new', method: :get) do |f|
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: '/addresses/new', method: :get ) do |f|
     .signup
       .signup-title
         会員情報入力：テスト

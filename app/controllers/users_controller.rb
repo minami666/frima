@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  # binding.pry
+  binding.pry
 
   def new
-    binding.pry
     @user = User.new
   end
+
+    binding.pry
 
   def create
     @user = User.new
@@ -13,6 +14,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # private
+  private
 
 end
