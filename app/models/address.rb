@@ -1,4 +1,5 @@
 class Address < ApplicationRecord
+
   validates :postnum, presence: true
   validates :prefecture, presence: true
   validates :city, presence: true
@@ -7,3 +8,4 @@ class Address < ApplicationRecord
 
   belongs_to :user
 end
+

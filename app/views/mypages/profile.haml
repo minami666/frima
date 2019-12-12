@@ -1,6 +1,10 @@
-.wrapper
-  = render "partial/header"
+= render "partial/header"
+= render "mypages/partial/topbar"
+
 .top_bar
+  - breadcrumb :profile
+  = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"
+
 .main_body
   = render "/mypages/partial/sidebar"
   .main_body__h
@@ -16,6 +20,6 @@
         こんにちは結構きついです
       .main_body__h__z__change
         変更する
-.wrapper
-  = render "partial/banner"
-  = render "partial/footer"
+
+= render "partial/banner"
+= render "partial/footer"

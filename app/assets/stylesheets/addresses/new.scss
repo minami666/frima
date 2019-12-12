@@ -1,6 +1,6 @@
 // 住所登録
 .body{
-  height:100％;
+  height:100%;
   width:100%;
   background-color: #F5F5F5;
   .header{
@@ -80,7 +80,7 @@
     }
   }
   .signup {
-    height: 100%;
+    height: 970px;
     width: 700px;
     background-color: #fff;
     margin: 0 auto;
@@ -102,7 +102,7 @@
           font-size: 14px;
           font-weight: bold;
           font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-          margin-top: 22px;
+          margin-top: 15px;
           h3{
             margin-right: 270px;
             margin-top: 30px;
@@ -119,9 +119,6 @@
             &__postnum {
               margin-right: 250px;
             }
-            // &__password-comfirm {
-            //   margin-right: 166px;
-            // }
             &__prefecture {
               margin-right: 250px;
             }
@@ -137,18 +134,6 @@
             &__tel{
               margin-right: 270px;
             }
-            // &__cellphone-number {
-            //   margin-right: 200px;
-            // }
-            // &__cardnumber {
-            //   margin-right: 224px;
-            // }
-            // &__deadline {
-            //   margin-right: 236px;
-            // }
-            // &__securitycode {
-            //   margin-right: 150px;
-            // }
           }
         }
         .login__info {
@@ -180,13 +165,13 @@
           margin-bottom: 12px;
         }
         .next-btn {
-          margin-top: 24px auto 0;
+          margin-top: 20px;
           font-size: 14px;
           height: 50px;
-          width: 343px;
+          width: 355px;
           color: #fff;
           background-color: #ea352d;
-          padding: 18px 144px;
+          padding: 10px 144px;
         }
         .about__user-information {
           margin-top: 38px;
@@ -214,19 +199,16 @@
           color: #333;
           text-decoration: none;
         }
-        // & a:visited {
-        //   color: #333;
-        // }
         & a:hover {
           text-decoration: underline;
-          color: gray;
+          color: gray;      
         }
       }
     }
   }
 }
 .input-default {
-  height: 47px;
+  height: 40px;
   width: 325px;
   padding: 0 15px;
   margin-top: 8px;
@@ -237,40 +219,13 @@
   font-weight: 400;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   &-half {
-    height: 47px;
-    width: 144px;
+    height: 40px;
+    width: 325px;
     padding: 0 15px;
     margin-top: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
   }
-  // &-quarter {
-  //   height: 48px;
-  //   width: 100px;
-  //   padding: 10px 16px 8px 16px;
-  //   margin-top: 8px;
-  //   border-radius: 4px;
-  //   border: 1px solid #ccc;
-  //   margin-left: 36px;
-  // }
-  // &-birth {
-  //   height: 48px;
-  //   width: 86px;
-  //   padding: 10px 16px 8px 16px;
-  //   margin-top: 8px;
-  //   border-radius: 4px;
-  //   border: 1px solid #ccc;
-  //   margin-left: 8px;
-  // }
-  // &__last {
-  //   height: 48px;
-  //   width: 343px;
-  //   padding: 10px 16px 8px 16px;
-  //   margin-top: 8px;
-  //   border-radius: 4px;
-  //   border: 1px solid #ccc;
-  //   margin-bottom: 60px;
-  // }
 }
 .form-require {
   background-color: #ea352d;
@@ -279,7 +234,6 @@
   margin-left: 8px;
   padding: 4px;
   border-radius: 2px;
-  // font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 .form-require_1 {
   background-color: #ccc;
@@ -289,3 +243,14 @@
   padding: 4px;
   border-radius: 2px;
 }
+select {
+  box-sizing: border-box;
+  width: 360px;
+  height: 42px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-top: 8px;
+}
+

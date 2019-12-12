@@ -1,4 +1,7 @@
 = render "partial/header"
+.top_bar
+  - breadcrumb :mypages
+  = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"
 .body
   .main_body
     = render '/mypages/partial/sidebar'
