@@ -8,12 +8,18 @@ class SellersController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    params[:product_images][:image].each do |image|
-    @product.productsimages.create(image: image)
+    respond_to do |format|
+    if @product.save
+        params[:product_images][:image].each do |image|
+          @product.productsimages.create(image: image)
+        end
+      format.html{redirect_to root_path}
+    else
+      @product.product_images.build
+      format.html{render action: 'new'}
+      end
     end
-    redirect_to "/products/show"
-    end
+  end
 
   def edit
   end
