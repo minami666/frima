@@ -4,11 +4,9 @@ class User < ApplicationRecord
 
   has_many :sns_credentials, dependent: :destroy
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable
+  devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable,:omniauthable
 
-         mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
   # validates :nickname, presence: true,unique: true
   # validates :tel, presence: true,unique: true
