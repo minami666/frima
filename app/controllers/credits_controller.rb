@@ -1,7 +1,7 @@
 class CreditsController < ApplicationController
 
-  def new
-
+  def new    
+    @credits = Credit.new
   end
 
   def create
