@@ -55,6 +55,17 @@
         width: 50%;
         line-height: 60px;
         font-size: 14px;
+        position: relative;
+        .none{
+          display: none;
+        }
+        .tach-cate{
+          background-color: yellow;
+          height: 100px;
+          width: 100px;
+          z-index: 100;
+          position: absolute;
+        }
       }
       
       .brand_box{
@@ -62,6 +73,17 @@
         width: 50%;
         line-height: 60px;
         font-size: 14px;
+        position: relative;
+        .none{
+          display: none;
+        }
+        .tach-bra{
+          background-color: yellow;
+          height: 100px;
+          width: 100px;
+          z-index: 100;
+          position: absolute;
+        }
       }i{
         color:rgb(234,53,45);
       }
@@ -72,6 +94,7 @@
         color:lightblue;
       }
     }
+    
   .user_box{
     width: 650px;
     height: 42px;
