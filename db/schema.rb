@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_115245) do
+ActiveRecord::Schema.define(version: 2019_12_11_033026) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 2019_12_08_115245) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "family_name_knj"
+    t.string "first_name_knj"
+    t.string "family_name_ktkn"
+    t.string "first_name_ktkn"
+    t.string "tel"
   end
 
   create_table "brand_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -81,17 +86,21 @@ ActiveRecord::Schema.define(version: 2019_12_08_115245) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "deliver_how", null: false
-    t.date "deliver_day", null: false
+    t.integer "deliverday", null: false
     t.integer "price", null: false
     t.string "explanation"
     t.integer "state", null: false
+    t.integer "category_id", null: false
+    t.integer "size_id", null: false
+    t.integer "brand_id", null: false
+    t.integer "user_id", null: false
+    t.integer "seller_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id"
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
+    t.integer "product_id", null: false
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -115,7 +124,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_115245) do
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
+    t.integer "product_id", null: false
     t.integer "users_id", null: false
     t.integer "seller_evaluates_id", null: false
     t.datetime "created_at", null: false

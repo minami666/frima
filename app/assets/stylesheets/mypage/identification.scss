@@ -1,0 +1,140 @@
+.main_body{
+  overflow: hidden;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  display: flex;
+  .id-side{
+  }
+  .id-main{
+    padding: 0 30px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+
+    &__top{
+      height: 40px;
+      width: 100%;
+      line-height: 40px;
+      background-color: #fff;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    &__body{
+    width: calc(100% - 80px);
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 85px 0 auto;
+    background-color: #fff;
+    font-style: 14px;
+      &__1{
+        width: 100%;
+        margin: 0 auto;
+        margin: 80px 0 0;
+      }
+
+      &__2{
+        width: 100%;
+        margin: 0 auto;
+        text-align: right;
+        margin: 10px 0 0;
+        a{
+          text-decoration: none;
+          color: #099BE8;
+        }
+        .idicon{
+          color: #099BE8;
+        }
+      }
+
+      &__3{
+        width: 100%;
+        margin: 10px 0 0;
+        &__title{
+          color: #333333;
+          font-weight: bold;
+          padding: 8px 0;
+        }
+        &__variable{
+          padding-bottom: 30px;
+        }
+      }
+
+      &__4{
+        width: 100%;
+        margin: 30px 0 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+        &__box{
+          width: 100%;
+          margin-top: 20px;
+          &--upper{
+            width: 100%;
+            display: flex;
+            margin: 5px 0;
+            .nini{
+              padding: 0 4px;
+              margin-left: 5px;
+              color: #fff;
+              background-color: #cccccc;
+              border-radius: 10%;
+            }
+          }
+          &--lower{
+            width: 100%;
+            margin: 1.5px 0;
+            .size{
+              width: calc(100% - 20px);
+              padding: 3px 10px;
+              height: 40px;
+              border-radius: 5px;
+              border:1px solid  #cccccc;
+              opacity: 0.5;
+              &--prefecture{
+                width: 100%;
+                padding: 3px 10px;
+                height: 40px;
+                border-radius: 5px;
+                border:1px solid  #cccccc;
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+      &__5{
+        width: calc(100% - 20px);
+        margin: 30px 0 30px;
+        padding: 3px 10px;
+        font-size: 20px;
+        height: 50px;
+        line-height: 50px;
+        font-weight: normal;
+        background-color: #E9352D;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        a{
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+      &__6{
+        text-align: right;
+        margin-bottom: 25px;
+        a{
+          text-decoration: none;
+          color: #099BE8;
+        }
+        .idicon{
+          color: #099BE8;
+        }
+      }
+    }
+  }
+}

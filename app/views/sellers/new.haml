@@ -10,11 +10,12 @@
         必須
     .image-text
       最大10枚までアップロードできます
-  = form.fields_for :productsimages do |image|
-    = image.file_field :image
-    .sell-upload
-      %li ドラッグアンドドロップ
-      %li またはクリックしてファイルをアップロード
+    = f.fields_for :productsimages ,class: "dropzone" do |image|
+      = image.label :image, class: "dropzone-box", for: "upload-image" do
+        .upload
+          .img
+          .upload-image
+            = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "sell-upload", 'data-image': 0
   .sell-content
     .img-head
       .img-head_bold
@@ -39,25 +40,25 @@
             カテゴリー
           .img-head_icon
             必須
-        = f.select :category_id, [["レディース", "1"],["メンズ", "2"]]
+        = f.select :category_id, [["レディース",1],["メンズ", 2]]
         .img-head
           .img-head_bold
             ブランド
           .img-head_icon
             必須
-        = f.select :state, [["新品", "1"],["中古", "2"]]
+        = f.select :brand_id, [["プーマ", 1],["パーマ", 2]]
         .img-head
           .img-head_bold
             商品の状態
           .img-head_icon
             必須
-        = f.select :state, [["新品", "1"],["中古", "2"]]
+        = f.select :state, [["新品", 1],["中古", 2]]
         .img-head
           .img-head_bold
             サイズ
           .img-head_icon
             必須
-        = f.select :state, [["新品", "1"],["中古", "2"]]
+        = f.select :size_id, [["大", 1],["中", 2]]
   .sell-content
     .sell_box
       .sell-sub_head
@@ -68,7 +69,7 @@
             配送料の負担
           .img-head_icon
             必須
-        = f.select :deliver_how, [["送料込み", "1"],["着払い", "2"]]
+        = f.select :deliver_how, [["送料込み", 1],["着払い", 2]]
         .img-head
           .img-head_bold
             配送元の地域
@@ -80,17 +81,13 @@
             配送までの日数
           .img-head_icon
             必須
-        = f.select :deliver_day, [["１〜４", "1"],["４〜１０", "2"]]
+        = f.select :deliverday, [["１〜４", 1],["４〜１０", 2]]
   .sell-content
     .sell_box
       .sell-sub_head
         販売価格(300〜9,999,999)
       .sell-form_box
         .img-head
-          .img-head_bold
-            配送料の負担
-          .img-head_icon
-            必須
           .price_new
             .sell-new_icon
               ¥
@@ -99,19 +96,19 @@
           .sell-margin_left
             販売手数料 (10%)
           .sell-margin_right
-            ￥32
         .sell-margin_bold
           .sell-margin_left
             販売利益
-          .sell-margin_right
-            ￥320
+          .sell-margin_right2
+            = f.number_field :price, style: "display: none", id: "price"
   .sell-content
     .sell-btn_text
       %li 禁止されている出品、行為を必ずご確認ください。
       %li またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
       %li また、出品をもちまして加盟店規約に同意したことになります。
     = f.submit "出品する",class:"sell-btn"
-    .sell-btn_back
-      もどる
+    = link_to root_path do
+      .sell-btn_back
+        もどる
   .sell-footer
     プライバシーポリシー メルカリ利用規約 特定商取引に関する表記

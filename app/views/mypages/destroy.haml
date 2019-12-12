@@ -1,0 +1,15 @@
+= render "partial/header"
+
+.top_bar
+  - breadcrumb :confirmation
+  = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"
+
+.main_body
+  = render "/mypages/partial/sidebar"
+  .main_body__log
+    .main_body__log__bar
+      .main_body__log__bar__out
+        = link_to "ログアウト",user_registration_path, method: :delete
+
+= render "partial/banner"
+= render "partial/footer"
