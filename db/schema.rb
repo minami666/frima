@@ -93,10 +93,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_064015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "size_id"
-    t.integer "brand_id"
-    t.integer "user_id"
-    t.integer "seller_id"
     t.integer "addresses_id"
   end
 
@@ -125,7 +121,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_064015) do
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
+    t.integer "products_id", null: false
     t.integer "users_id", null: false
     t.integer "seller_evaluates_id", null: false
     t.datetime "created_at", null: false
@@ -136,6 +132,15 @@ ActiveRecord::Schema.define(version: 2019_12_12_064015) do
     t.string "size_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -159,4 +164,5 @@ ActiveRecord::Schema.define(version: 2019_12_12_064015) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "sns_credentials", "users"
 end
