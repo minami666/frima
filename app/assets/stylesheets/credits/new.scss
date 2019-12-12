@@ -79,7 +79,7 @@
       }
     }
   }
-  .signup {
+  .signup_4 {
     height: 600px;
     width: 700px;
     background-color: #fff;
@@ -109,9 +109,12 @@
             font-size: 15px;
             font-weight: bold;
           }
-          &-info {
+          &_deadline_4{
+            display: flex;
+          }
+          &-info_4 {
             &__number {
-              margin-right: 265px;
+              margin-right: 240px;
             }
             &__deadline {
               margin-right: 270px;
@@ -121,7 +124,15 @@
             }
           }
         }
-        
+          .field-input{
+            width: 40px;
+            display: flex;
+            margin: 0px 120px;
+            font-size: 15px;
+          }
+          .footer-credits__link{
+            margin-right: 100px;
+          }
         // .login__info {
         //   height: 63px;
         //   width: 343px;
@@ -167,7 +178,7 @@
       }
     }
   }
-  .footer-user {
+  .footer-user_4 {
     text-align: center;
     color: #333;
     background-color: rgb(245, 245, 245);
