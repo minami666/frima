@@ -71,9 +71,25 @@ gem 'devise-i18n-views'
 gem 'active_hash'
 gem 'jp_prefecture'
 gem 'gretel'
+
+# １つのテーブル内で親子を分ける
 gem 'ancestry'
+
+# S3関連
 gem 'fog-aws'
+
+# パンくずリスト
 gem "gretel"
+
+# APIユーザー認証
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+
+# 環境変数の管理
+gem 'dotenv-rails'
+
+# 本番環境unicorn
 group :production do
   gem 'unicorn', '5.4.1'
 end
