@@ -14,14 +14,14 @@
       .show_link
         もっと見る ＞
     .product_show
-      .product_one
-        .product_img
-          = image_tag "/test.jpg",heith:188,width:188
-          .price_one
-            ¥6,900
-        .one_name_box
-          .one_name
-            エアフォース1 ピースマイナス１
+      - @productsimage.last(10).each do |p|
+        .product_one
+          .product_img
+            = image_tag p.image.url
+            .price_one
+              //=.price
+          .one_name_box
+            .one_name
   = render "partial/banner"
   = render "partial/footer"
   = render "partial/sell-btn"

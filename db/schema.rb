@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_033026) do
+ActiveRecord::Schema.define(version: 2019_12_12_064015) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
-    t.integer "prefecture", null: false
+    t.string "prefecture", null: false
     t.string "city", null: false
     t.integer "street_num", null: false
     t.string "building"
@@ -93,10 +93,15 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.integer "size_id"
+    t.integer "brand_id"
+    t.integer "user_id"
+    t.integer "seller_id"
+    t.integer "addresses_id"
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
+    t.integer "product_id"
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -120,7 +125,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
+    t.integer "product_id"
     t.integer "users_id", null: false
     t.integer "seller_evaluates_id", null: false
     t.datetime "created_at", null: false
@@ -128,7 +133,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "size_name"
+    t.string "size_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
