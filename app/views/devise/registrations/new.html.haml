@@ -30,7 +30,8 @@
           -# #done
           -# #active
 
-  = form_for(resource, as: resource_name, url: '/', method: :get ) do |f|
+  -# = form_for(@user, url: '/addresses/new', method: :get) do |f|
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     .signup
       .signup-title
         会員情報入力：テスト
@@ -103,6 +104,10 @@
 
           .form__info
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          %div.im__not__robot
+            %input.registration__check{name: "", type: "checkbox", value: ""}
+            私はロボットではありません。
+          
           .attention
             「次へ進む」のボタンを押すことにより、
             = link_to '利用規約', '/credits/new'
@@ -111,7 +116,7 @@
           .next__btn
             = f.submit '次へ進む', class:"next-btn"
           .about__user-information
-            = link_to '本人情報の登録について 〉', '#'
+            = link_to '本人情報の登録について 〉', '/'
   .footer-user
     %ul
       %li= link_to "プライバシーポリシー", '#'
@@ -127,5 +132,3 @@
       -#     %label{for: "password"} パスワード（確認）
       -#     %span.form-require 必須
       -#     %br
-
-rails g model Address prefecture_id:integer city:string
