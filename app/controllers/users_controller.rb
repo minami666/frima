@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-  # binding.pry
 
   def new
-    binding.pry
     @user = User.new
   end
 
@@ -12,7 +10,5 @@ class UsersController < ApplicationController
       redirect_to '/addresses/new'
     end
   end
-
-  # private
 
 end
