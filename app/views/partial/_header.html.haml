@@ -15,9 +15,17 @@
         .categry_box
           %i.fa.fa-list
           カテゴリーから探す
+          .tach-cate.none
+            - @categorys.each do |category|
+              %li
+                = category.name
         .brand_box
           %i.fa.fa-battery-empty
           ブランドから探す
+          .tach-bra.none
+            - @brands.each do |brand|
+              %li
+                = brand.brand_name
       .user_box
         .like_box
           %i.fa.fa-heart-o
