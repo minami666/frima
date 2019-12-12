@@ -34,13 +34,13 @@
       .signup__box_4
         .signup__box-input_4
           .field_4
-            .field-info__number
+            .field-info__number_4
               %label{for: "number" } カード番号
               %span.form-require 必須
               %br
-            .field-input
+            .field-input_4
               = f.text_field :number, class: "input-default", autocomplete: "number", placeholder: "例）半角数字のみ"
-              .footer-credits__link
+              .footer-credits__link_4
                 = link_to image_tag(src= "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?82960919", class: "mercari-graylogo", width: 49, height: 20), "/"
                 = link_to image_tag(src="//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?82960919", class: "mercari-graylogo", width: 34, height: 20),"/" 
                 = link_to image_tag(src="//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?82960919", class: "mercari-graylogo", width: 30, height: 20),"/"
@@ -48,30 +48,30 @@
                 = link_to image_tag(src="//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?82960919", class: "mercari-graylogo", width: 21, height: 20),"/"
                 = link_to image_tag(src="//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?82960919",class: "mercari-graylogo", width: 32, height: 20),"/"
                 = link_to image_tag(src="//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?82960919",class: "mercari-graylogo", width: 32, height: 20),"/"
-          .field
-            .field-info__deadline
+          .field_4
+            .field-info__deadline_4
               %label{for: "deadline"} 有効期限
               %span.form-require 必須
               %br
-            .field-input
+            .field-input_4
               = f.text_field :deadline, class: "input-default", autocomplete: "deadline", placeholder: ""
               月
               = f.text_field :deadline, class: "input-default", autocomplete: "deadline", placeholder: ""
               年
-          .field
-            .field-info__security_num
+          .field_4
+            .field-info__security_num_4
               %label{for: "security_num"} セキュリティコード
               %span.form-require 必須
               %br
-            .field-input
+            .field-input_4
               = f.text_field :security_num, class: "input-default", autocomplete: "security_num", placeholder: "例）カード背面4桁もしくは3桁の番号"
-              .field-input_mozi
+              .field-input_mozi_4
                 カードの裏面の番号とは？
-            .field-info__prefecture_select
+            .field-info__prefecture_select_4
               -# = f.collection_select :month, Month.all, :id, :name
-          .next__btn
+          .next__btn_4
             = f.submit '次へ進む', class:"next-btn"
-  .footer-user
+  .footer-user_4
     %ul
       %li= link_to "プライバシーポリシー", '#'
       %li= link_to "メルカリ利用規約", '#'

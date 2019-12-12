@@ -84,7 +84,7 @@
     width: 700px;
     background-color: #fff;
     margin: 0 auto;
-    &-title {
+    &-title_4 {
       padding: 30px;
       color: #333;
       font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -94,11 +94,11 @@
       text-align: center;
       border-bottom: 1px solid #F5F5F5;
     }
-    &__box {
+    &__box_4 {
       height: 100%;
       text-align: center;
-      &-input {
-        .field {
+      &-input_4 {
+        .field_4 {
           font-size: 14px;
           font-weight: bold;
           font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -113,24 +113,24 @@
             display: flex;
           }
           &-info_4 {
-            &__number {
+            &__number_4 {
               margin-right: 240px;
             }
-            &__deadline {
+            &__deadline_4 {
               margin-right: 270px;
             }
-            &__security_num {
+            &__security_num_4 {
               margin-right: 210px;
             }
           }
         }
-          .field-input{
+          .field-input_4{
             width: 40px;
             display: flex;
             margin: 0px 120px;
             font-size: 15px;
           }
-          .footer-credits__link{
+          .footer-credits__link_4{
             margin-right: 100px;
           }
         // .login__info {
@@ -161,7 +161,7 @@
         //   font-size: 14px;
         //   margin-bottom: 12px;
         // }
-        .next-btn {
+        .next-btn_4 {
           margin-top: 20px;
           font-size: 14px;
           height: 50px;

@@ -28,69 +28,69 @@
           -# #done
           -# #active
   = form_for(@addresses, url: "/addresses/new", method: :get ) do |f|
-    .signup
-      .signup-title
+    .signup_3
+      .signup-title_3
         発送元・お届け先住所登録
-      .signup__box
-        .signup__box-input
-          .field
-            .field-info__family_name_knj
+      .signup__box_3
+        .signup__box-input_3
+          .field_3
+            .field-info__family_name_knj_3
               %label{for: "family_name_knj" } お名前
               %span.form-require 必須
               %br
-            .field-input
+            .field-input_3
               = f.text_field :family_name_knj, class: "input-default", autocomplete: "family_name_knj", placeholder: "例）芽瑠"
               = f.text_field :first_name_knj, class: "input-default", autocomplete: "family_name_knj", placeholder: "例）加莉"
-          .field
-            .field-info__family_name_ktkn
+          .field_3
+            .field-info__family_name_ktkn_3
               %label{for: "family_name_ktkn"} お名前カナ
               %span.form-require 必須
               %br
-            .field-input
+            .field-input_3
               = f.text_field :family_name_ktkn, class: "input-default", autocomplete: "family_name_ktkn", placeholder: "例）メル"
               = f.text_field :first_name_ktkn, class: "input-default", autocomplete: "family_name_ktkn", placeholder: "例）カリ"
-          .field
-            .field-info__postnum
+          .field_3
+            .field-info__postnum_3
               %label{for: "postnum"} 郵便番号
               %span.form-require 必須
               %br
-            .field-input
+            .field-input_3
               = f.text_field :postnum, class: "input-default", autocomplete: "postnum", placeholder: "例）123-4567"
-          .field
-            .field-info__prefecture
+          .field_3
+            .field-info__prefecture_3
               %label{for: "prefecture"} 都道府県
               %span.form-require 必須
               %br
-            .field-info__prefecture_select
+            .field-info__prefecture_select_3
               = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--"
-          .field  
-            .field-info__city
+          .field_3
+            .field-info__city_3
               %label{for: "city"} 市区町村
               %span.form-require 必須
               %br
-            .field-input
+            .field-input_3
               = f.text_field :city, class: "input-default-half", autocomplete: "city", placeholder: "例）横浜市緑区"
-          .field
-            .field-info__street_num
+          .field_3
+            .field-info__street_num_3
               %label{for: "street_num"} 番地
               %span.form-require 必須
-            .field-input
+            .field-input_3
               = f.text_field :street_num, class: "input-default", autocomplete: "street_num", placeholder: "例）青山1-1-1"
-            .field
-              .field-info__building
+            .field_3
+              .field-info__building_3
                 %label{for: "building"} 建物名
                 %span.form-require_1 任意
-              .field-input
+              .field-input_3
                 = f.text_field :building, class: "input-default", autocomplete: "building", placeholder: "例）柳ビル103"
-            .field
-              .field-info__tel
+            .field_3
+              .field-info__tel_3
                 %label{for: "tel"} 電話
                 %span.form-require_1 任意
-              .field-input
+              .field-input_3
             = f.text_field :tel, class: "input-default", autocomplete: "tel", placeholder: "例）09012345678"
-          .next__btn
-            = f.submit '次へ進む', class:"next-btn"
-  .footer-user
+          .next__btn_3
+            = f.submit '次へ進む', class:"next-btn_3"
+  .footer-user_3
     %ul
       %li= link_to "プライバシーポリシー", '#'
       %li= link_to "メルカリ利用規約", '#'
