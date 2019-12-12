@@ -30,3 +30,17 @@ Brand.create!(name:'フェラガモ'text:'フェラガモ の商品は2千点以
 Brand.create!(name:'ユニクロ'text:'ユニクロ の商品は70万点以上あります。人気のある商品は「値下げ！UNIQLO グラフチェックワンピース」や「【A♡A様専用】カシミヤ　クルーネックセーター　女性M 黒　ブラック」や「UNIQLO。大人気ハイネックニット。」があります。これまでにUNIQLO で出品された商品は70万点以上あります。')
 Brand.create!(name:'吉田カバン'text:'国内での流通を中心にした、日本のビジネスマンを中心に指示されている鞄メーカーです！
 吉田カバンは株式会社吉田が作る鞄の総称です。ニューヨークに直営店も構えての世界進出をしつつ、国内での流通を中心とする経営に、ビジネスマンから支持されている日本有数の鞄メーカーです。職人気質溢れるシンプルなデザインが特徴で、海外からも日本の硬派な雰囲気が感じられるとして支持されています。')
+
+Category.create!(name:'レディース')
+Category.create!(name:'メンズ')
+Category.create!(name:'ベビー・キッズ')
+Category.create!(name:'インテリア・住まい・小物')
+Category.create!(name:'本・音楽・ゲーム')
+Category.create!(name:'おもちゃ・ホビー・グッズ')
+Category.create!(name:'コスメ・香水・美容')
+Category.create!(name:'家電・スマホ・カメラ')
+Category.create!(name:'スポーツ・レジャー')
+Category.create!(name:'ハンドメイド')
+Category.create!(name:'チケット')
+Category.create!(name:'自動車・オートバイ')
+Category.create!(name:'その他')
