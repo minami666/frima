@@ -6,6 +6,13 @@ class AddressesController < ApplicationController
 
   def create
     @addresses = Address.new(address_params)
+    if @user.save
+      # @userはuser_path(@user) に自動変換される
+      redirect_to new_credit_path
+    else
+      # ValidationエラーなどでDBに保存できない場合 new.html.erb を再表示
+      render 'new'
+    end
   end
 
   def edit
