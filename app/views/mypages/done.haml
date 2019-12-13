@@ -1,4 +1,40 @@
-= link_to "メルカリをはじめる",root_path
+.body
+  .header
+    .header__logo
+      = link_to image_tag(src="sns_top.svg" ), root_path
+    %nav.progress
+      %ul.progress-bar
+        %li.step1#active#done
+          会員情報
+          .progress-status
+          .progress-status_bar
+        %li.step2#active#done
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.step3#active#done
+          お届け先住所入力
+          .progress-status
+          .progress-status_bar
+        %li.step4#active#done
+          支払い方法
+          .progress-status
+          .progress-status_bar
+        %li.step5#active#done
+          完了
+          .progress-status
+          .progress-status_bar
+
+  .done
+    .done__text1
+      %p 会員登録完了
+    .done__text2
+      %p ありがとうございます。
+      %p 会員登録が完了しました。
+    .done__button
+      = link_to "メルカリをはじめる",root_path,class: ".done_button--red"
+
+
 = render "partial/banner"
 .user_login_bottom
   %ul.user_login_bottom_text

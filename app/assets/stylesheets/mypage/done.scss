@@ -1,0 +1,40 @@
+.done{
+  display: flex;
+  flex-direction: column;
+  &__text1{
+
+  }
+  &__text2{
+
+  }
+  &__button{
+    &--red{
+
+    }
+  }
+}
+
+
+.user_login_bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .user_login_bottom_text{
+    margin: 100px 0px 0px;
+    font-size: 13px;
+    line-height: 13px;
+    display: flex;
+    justify-content: center;
+    li{
+      margin-right: 20px;
+    }
+  }
+  &_box{
+    opacity: 0.5;
+    margin: 50px 0 0;
+  }
+  &_mozi{
+    font-size: 13px;
+    margin: 0 auto;
+  }
+}
