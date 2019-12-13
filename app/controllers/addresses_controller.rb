@@ -6,11 +6,11 @@ class AddressesController < ApplicationController
 
   def create
     @addresses = Address.new(address_params)
-    if @user.save
-      # @userはuser_path(@user) に自動変換される
+
+    if @addresses.save
       redirect_to new_credit_path
     else
-      # ValidationエラーなどでDBに保存できない場合 new.html.erb を再表示
+      # binding.pry
       render 'new'
     end
   end
@@ -26,7 +26,7 @@ class AddressesController < ApplicationController
   private
 
     def address_params
-      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:user_id)
+      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building)
     end
 
 end
