@@ -5,7 +5,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-
+    @addresses = Address.new(address_params)
   end
 
   def edit
@@ -19,6 +19,7 @@ class AddressesController < ApplicationController
   private
 
     def address_params
+      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:user_id)
     end
 
 end
