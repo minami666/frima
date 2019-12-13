@@ -85,8 +85,13 @@ class MypagesController < ApplicationController
 
   end
 
+
+  # ログイン画面ボタンいっぱい
+  def loginbutton
+
   #
   def tell
+
   end
 
   # 新規登録の完了画面
