@@ -55,3 +55,28 @@
     }
   }
 }
+.shita{
+  text-align: center;
+  color: #333;
+  background-color: rgb(245, 245, 245);
+  padding-bottom: 30px;
+  ul {
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    li {
+      margin-right: 22px;
+      padding-top: 42px;
+      padding-bottom: 26px;
+      color: #333;
+      & a:link {
+        color: #333;
+        text-decoration: none;
+      }
+      & a:hover {
+        text-decoration: underline;
+        color: gray;      
+      }
+    }
+  }
+}
