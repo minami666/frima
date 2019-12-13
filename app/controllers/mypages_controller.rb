@@ -89,4 +89,8 @@ class MypagesController < ApplicationController
   def tell
   end
 
+  # 新規登録の完了画面
+  def done
+  end
+
 end
