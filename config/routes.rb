@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'purchase/index'
+  get 'purchase/done'
+  get 'card/new'
+  get 'card/show'
   #====================== デバイス ======================
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -45,10 +49,9 @@ Rails.application.routes.draw do
 
   # ====================== クレジットカード ======================
   resources :credits, only: [:new,:create,:edit,:update]
-
+  get "/credicts/new", to:"addresses#new"
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
-  get "/addresses/new", to:"addresses#new"
 
 # ====================== ユーザーのマイページ ======================
 
@@ -69,5 +72,22 @@ Rails.application.routes.draw do
   get "/mypages/confirmation", to:"mypages#confirmation"
   get "/mypages/identification", to:"mypages#identification"
   get "/mypages/destroy", to:"mypages#destroy"
+
+
+
+ resources :card, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'card#pay'
+       post 'delete', to: 'card#delete'
+    end
+  end
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
+
 
 end

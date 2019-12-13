@@ -1,11 +1,16 @@
 class CreditsController < ApplicationController
 
   def new    
-    @credits = Credit.new
+    @credit = Credit.new
   end
 
   def create
-
+    @credit = Credit.new(credit_params)
+    if @credit.save
+      redirect_to root_path
+    else
+      binding.pry
+    end
   end
 
   def edit
@@ -15,5 +20,11 @@ class CreditsController < ApplicationController
   def update
 
   end
+
+  private
+  def credit_params
+    params.require(:credit).permit(:name, :number, :deadline, :security_num)
+  end
+
 
 end
