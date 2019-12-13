@@ -10,7 +10,6 @@ class AddressesController < ApplicationController
     if @addresses.save
       redirect_to new_credit_path
     else
-      # binding.pry
       render 'new'
     end
   end
