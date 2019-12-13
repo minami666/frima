@@ -53,11 +53,14 @@
               %label{for: "deadline"} 有効期限
               %span.form-require 必須
               %br
-            .field-input_4
+            .field-input_4_1
               = f.text_field :deadline, class: "input-default", autocomplete: "deadline", placeholder: ""
-              月
-              = f.text_field :deadline, class: "input-default", autocomplete: "deadline", placeholder: ""
-              年
+              .field-input_4_2
+                月
+              .field-input_4_3
+                = f.text_field :deadline, class: "input-default", autocomplete: "deadline", placeholder: ""
+              .field-input_4_4
+                年
           .field_4
             .field-info__security_num_4
               %label{for: "security_num"} セキュリティコード
@@ -65,12 +68,12 @@
               %br
             .field-input_4
               = f.text_field :security_num, class: "input-default", autocomplete: "security_num", placeholder: "例）カード背面4桁もしくは3桁の番号"
-              .field-input_mozi_4
-                カードの裏面の番号とは？
+            .field-input_mozi_4
+              カードの裏面の番号とは？
             .field-info__prefecture_select_4
               -# = f.collection_select :month, Month.all, :id, :name
           .next__btn_4
-            = f.submit '次へ進む', class:"next-btn"
+            = f.submit '次へ進む', class:"next-btn_4"
   .footer-user_4
     %ul
       %li= link_to "プライバシーポリシー", '#'

@@ -70,6 +70,6 @@ Rails.application.routes.draw do
   get "/mypages/identification", to:"mypages#identification"
   get "/mypages/destroy", to:"mypages#destroy"
   get "/mypages/loginbutton", to:"mypages#loginbutton"
-  
+  get "/mypages/tell", to:"mypages#tell"
 
 end
