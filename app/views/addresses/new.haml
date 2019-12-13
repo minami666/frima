@@ -62,7 +62,7 @@
               %label{for: "prefecture"} 都道府県
               %span.form-require 必須
               %br
-            .field-info__prefecture_select_3
+            .field-info__prefecture_select_3.select
               = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--"
           .field_3
             .field-info__city_3
