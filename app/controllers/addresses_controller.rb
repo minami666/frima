@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
 
-  def new    
+  def new
     @addresses = Address.new
   end
 
@@ -15,5 +15,10 @@ class AddressesController < ApplicationController
   def update
 
   end
+
+  private
+
+    def address_params
+    end
 
 end
