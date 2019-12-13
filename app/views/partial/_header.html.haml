@@ -1,42 +1,76 @@
-.header
-  .header_content
-    .header_top
-      .header_icon
-        = link_to root_path do
-          = image_tag "/fmarket_logo_red.svg",class: "image"
-      .header_seach
-        = form_with( local: true, method: :get, class: "search-form") do |form|
-          = form.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
-          %label
-            %i.fa.fa-search
-            = form.submit "検索", class: "search-btn"
-    .header_bottom
-      .select_box
-        .categry_box
-          %i.fa.fa-list
-          カテゴリーから探す
-          .tach-cate.none
-            - @categorys.each do |category|
-              %li
-                = category.name
-        .brand_box
-          %i.fa.fa-battery-empty
-          ブランドから探す
-          .tach-bra.none
-            - @brands.each do |brand|
-              %li
-                = brand.brand_name
-      .user_box
-        .like_box
-          %i.fa.fa-heart-o
-          いいね！一覧
-        .new_box
-          %i.fa.fa-bell-o
-          お知らせ
-        .list_box
-          %i.fa.fa-check
-          やることリスト
-        .my_box
-          .my-image
-          .my_text
-            マイページ
+- if user_signed_in?
+
+  .header
+    .header_content
+      .header_top
+        .header_icon
+          = link_to root_path do
+            = image_tag "/fmarket_logo_red.svg",class: "image"
+        .header_search
+          = form_with( local: true, method: :get, class: "search-form") do |form|
+            = form.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
+            %label
+              %i.fa.fa-search
+              = form.submit "検索", class: "search-btn"
+      .header_bottom
+        .select_box
+          .categry_box
+            %i.fa.fa-list
+            カテゴリーから探す
+            .tach-cate.none
+              - @categorys.each do |category|
+                %li
+                  = category.name
+          .brand_box
+            %i.fa.fa-battery-empty
+            ブランドから探す
+            .tach-bra.none
+              - @brands.each do |brand|
+                %li
+                  = brand.brand_name
+        .user_box
+          .like_box
+            %i.fa.fa-heart-o
+            いいね！一覧
+          .new_box
+            %i.fa.fa-bell-o
+            お知らせ
+          .list_box
+            %i.fa.fa-check
+            やることリスト
+          .my_box
+            .my-image
+            .my_text
+              マイページ
+- else
+  .header
+    .header_content
+      .header_top
+        .header_icon
+          = link_to root_path do
+            = image_tag "/fmarket_logo_red.svg",class: "image"
+        .header_search
+          = form_with( local: true, method: :get, class: "search-form") do |form|
+            = form.text_field :keyword, placeholder: "何かお探しですか？", class: "search-input"
+            %label
+              %i.fa.fa-search
+              = form.submit "検索", class: "search-btn"
+      .header_bottom2
+        .header_bottom2__select_box
+          .header_bottom2__select_box__categry_box
+            %i.fa.fa-list
+            カテゴリーから探す
+            .header_bottom2__select_box__categry_box--tach-cate.none
+              - @categorys.each do |category|
+                %li
+                  = category.name
+          .brand_box2
+            %i.fa.fa-battery-empty
+            ブランドから探す
+            .brand_box2__tach-bra.none
+              - @brands.each do |brand|
+                %li
+                  = brand.brand_name
+        .header_bottom2__right_box
+          = link_to "新規会員登録",new_user_registration_path,class: "header_bottom2__right_box__registration"
+          = link_to "ログイン",new_user_session_path, method: :get,class: "header_bottom2__right_box__login"
