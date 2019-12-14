@@ -283,11 +283,12 @@
       margin: 0 auto;
       background-color:white;
       padding-bottom: 40px;
+      cursor: pointer;
       .show_mini_con{
         display: flex;
         margin-top: 16px;
 
-      .show_box_like{
+      .show_box_like1{
         width: 116px;
         height: 33px;
         background-color:  #eeecec;
@@ -300,6 +301,22 @@
           color: grey;
         }
       }
+
+      .show_box_like2{
+        display: none;
+        width: 116px;
+        height: 33px;
+        background-color:  red;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 33px;
+        font-size: 14px;
+        color: #fff;
+        i{
+          color: yellow;
+        }
+      }
+
       .bad_item{
         width: 180px;
         height: 33px;

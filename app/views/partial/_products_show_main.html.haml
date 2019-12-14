@@ -27,7 +27,7 @@
           .show_bra_name
             ブランド
           .show_bra_name_right
-            バーバリー ブルーレーベル
+            -# = @product.brands.brand_name
         .show_con4
           .show_size_name
             サイズ
@@ -92,8 +92,12 @@
       サイズ 38
       .show_mini_con
         .show_box_like
-          %i.fa.fa-heart-o
-          いいね!
+          .show_box_like1
+            いいね!
+            %i.fa.fa-heart-o#likes
+          .show_box_like2
+            いいね!
+            %i.fa.fa-heart-o#likes
         .bad_item
           %i.fa.fa-flag
           不適切な商品の報告
