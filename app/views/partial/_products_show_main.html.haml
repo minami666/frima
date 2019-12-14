@@ -37,17 +37,29 @@
           .show_con_name
             商品の状態
           .show_con_name_right
-            未使用に近い
+            - case @product.state
+              - when 0
+                未使用
+              - when 1
+                使い込んでいる
         .show_con5
           .show_del_name
             配送料の負担
           .show_del_name_right
-            送料込み(出品者負担)
+            - case @product.deliver_how
+              - when 0
+                ラクラクメルカリ便
+              - when 1
+                送料込み(出品者負担)
         .show_con6
           .show_del2_name
             配送の方法
           .show_del2_name_right
-            らくらくメルカリ便
+            - case @product.deliver_how
+              - when 0
+                ラクラクメルカリ便
+              - when 1
+                手渡し
         .show_con7
           .show_area_name
             配送元地域
@@ -57,11 +69,16 @@
           .show_day_name
             発送日の目安
           .show_day_name_right
-            1~2日で発送
+            - case @product.deliverday
+              - when 0
+                1~2日で発送します
+              - when 1
+                3〜4日で発送します
     .show_price_box
       .show_price_bold
-        = @product.price
-        円
+        = @product.price{class: "price1"}
+        .price2
+          円
       .show_price_sub
         (税込)
       .show_price_dell
