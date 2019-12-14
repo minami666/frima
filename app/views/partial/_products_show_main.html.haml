@@ -5,6 +5,7 @@
     .show_item_content
       .show_images
         .item_main_image
+          -# = @product.productsimages.image.url
           = image_tag "/test.jpg",height:300,width:300
         .item_sub_image
           = image_tag "/test.jpg",height:60,width:60
@@ -14,7 +15,7 @@
             出品者
           .show_sell_name_right
             .show_my_name
-              清水かんた
+              = @product.explanation
         .show_con2
           .show_cate_name
             カテゴリー
@@ -59,7 +60,8 @@
             1~2日で発送
     .show_price_box
       .show_price_bold
-        ¥6,200
+        = @product.price
+        円
       .show_price_sub
         (税込)
       .show_price_dell
