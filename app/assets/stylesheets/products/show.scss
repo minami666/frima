@@ -1,8 +1,6 @@
 .show_main{
   width: 100%;
-  //position: fixed;
-   background-color: #f5f5f5;
-  //background-color: black;
+  background-color: #f5f5f5;
   padding-top: 40px;
   .show_content{
     width: 700px;
@@ -244,6 +242,7 @@
         height: 63px;
         text-align: center;
         margin-left:180px;
+        display: flex;
       }
       .show_price_sub{
         font-size: 10px;
@@ -278,7 +277,6 @@
       .show_mini_con{
         display: flex;
         margin-top: 16px;
-        //margin-bottom: 16px;
 
       .show_box_like{
         width: 116px;
