@@ -8,7 +8,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @productsimages = Productsimage.where(product_id: params[:id])
-
   end
 
   def search
