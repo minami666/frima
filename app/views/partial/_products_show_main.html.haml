@@ -5,34 +5,32 @@
     .show_item_content
       .show_images
         .item_main_image
-          -# = @product.productsimages.image.url
-          = image_tag "/test.jpg",height:300,width:300
+          = image_tag "#{@productsimages[0].image}",size: "300x300"
         .item_sub_image
-          = image_tag "/test.jpg",height:60,width:60
+          - @productsimages.each do |product|
+            = image_tag product.image.url, height:60,width:60
       .show_contents
         .show_con1
           .show_sell_name
             出品者
           .show_sell_name_right
             .show_my_name
-              = @product.explanation
+              = @product.user.nickname
         .show_con2
           .show_cate_name
             カテゴリー
           .show_cate_name_right
-            レディース
-            %li >ワンピース
-            %li >ひざ丈ワンピース
+            = @product.category.name
         .show_con3
           .show_bra_name
             ブランド
           .show_bra_name_right
-            -# = @product.brands.brand_name
+            = @product.brand.brand_name
         .show_con4
           .show_size_name
             サイズ
           .show_size_name_right
-            M
+            = @product.size.size_name
         .show_con4
           .show_con_name
             商品の状態
@@ -87,9 +85,7 @@
     .show_buy_btn
       =link_to "購入画面へ進む","/buyers/new"
     .show_txet_box
-      バーバリー・ブルーレーベ
-      ワンピース
-      サイズ 38
+      = @product.explanation
       .show_mini_con
         .show_box_like
           .show_box_like1

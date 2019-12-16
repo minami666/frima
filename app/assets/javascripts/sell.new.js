@@ -1,25 +1,50 @@
 $(function() {
+  let images = [];
+  function buildHTML(imgSrc){
+    let html =  `<div class="preview-box">
+                   <div class="preview-box__img-box">
+                    <img src="${imgSrc}">
+                  </div>
+                  <div class="preview-box__select">
+                     <div class="preview-box__select--edit">
+                    <p>編集</p>
+                  </div>
+                  <div class="preview-box__select--delete">
+                    <p>削除</p>
+                  </div>
+                </div>
+              </div>`
+    $('.drop-zone').prepend(html);
+  };
 
-$(document).on('change','input[type= "file"].sell-upload',function(event) {
-  var images = [];
-  var inputs  =[];
-  console.log('ぱすお')
-  var file = $(this).prop('files')[0];
-  var reader = new FileReader();
-  images.push($(this));
-  var img = $(`<div class= "img_view"><img></div>`);
-  reader.onload = function(e) {
-    var btn_wrapper = $('<div class="btn_wrapper"><div class="btn edit">編集</div><div class="btn delete">削除</div></div>');
-    $('.img').append(img);
-    //$('.img').append(btn_wrapper);
-    img.find('img').attr({
-      src: e.target.result
-    })
-  }
-  reader.readAsDataURL(file);
-  inputs.push(img);
+  $('#upload-image').change(function(e){
+    let files = e.target.files;
+    for (var i = 0, f; f = files[i]; i++){
+      let reader = new FileReader();
+      reader.readAsDataURL(f);
+      reader.onload = function(){
+        let imgSrc = reader.result;
+        buildHTML(imgSrc);
+        images.push(imgSrc);
+    }
+    }
+  });
+  $('.sell-box__img--input').on('drop', function(e) {
+    console.log('お')
+    e.preventDefault();
+    e.stopPropagation();
+    let dropImages = e.originalEvent.dataTransfer.files;
+      for(let i = 0; i < dropImages.length; i++ ) {
+        let imgSrc = URL.createObjectURL(dropImages[i]);
+        buildHTML(imgSrc);
+        images.push(dropImages[i].name);
+      }
+  });
 
-});
+  $(document).on('click', '.preview-box__select--delete p', function(){
+    $(this).closest('.preview-box').remove();
+  });
+
 
 $('#product_price').on('input',function() {
   console.log('あぴぽ')
@@ -31,5 +56,6 @@ $('#product_price').on('input',function() {
   $('.sell-margin_right2').html(profit)
   $('.sell-margin_right2').prepend('¥')
   })
+
 });
 
