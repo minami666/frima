@@ -17,6 +17,7 @@ $(function() {
     $('.drop-zone').prepend(html);
   };
 
+
   $('#upload-image').change(function(e){
     let files = e.target.files;
     for (var i = 0, f; f = files[i]; i++){
@@ -44,10 +45,7 @@ $(function() {
   $(document).on('click', '.preview-box__select--delete p', function(){
     $(this).closest('.preview-box').remove();
   });
-
-
 $('#product_price').on('input',function() {
-  console.log('あぴぽ')
   var data = $('#product_price').val();
   var profit = Math.round(data * 0.9)
   var fee = (data - profit)
