@@ -1,3 +1,9 @@
+.header {
+  @include header
+}
+.header__logo{
+  @include logo
+
 .body{
   height:100%;
   width:100%;
@@ -188,33 +194,55 @@
     border-radius: 4px;
     border: 1px solid #ccc;
   }
+
 }
-.form-require {
-  background-color: #ea352d;
-  color: #fff;
-  font-size: 12px;
-  margin-left: 8px;
-  padding: 4px;
-  border-radius: 2px;
+
+.progress {
+  @include progress
 }
-.form-require_1 {
-  background-color: #ccc;
-  color: #fff;
-  font-size: 12px;
-  margin-left: 8px;
-  padding: 4px;
-  border-radius: 2px;
+
+li {
+  @include li
 }
-.select_3 {
-  box-sizing: border-box;
-  width: 360px;
-  height: 42px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  margin-top: 8px;
+
+
+.progress-status {
+  @include progress-status
+  .select_3 {
+    box-sizing: border-box;
+    width: 360px;
+    height: 42px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-top: 8px;
+  }
 }
+
+
+.progress-status_bar {
+  @include progress-status_bar
+}
+
+.step4 .progress-status_bar {
+  @include step4_progress-status_bar
+}
+
+.step5 .progress-status_bar {
+  @include step5_progress-status_bar
+}
+
+#active {
+  @include active
+}
+
+#done {
+  @include done
+}
+
+.signup {
+  @include signup
 }
 
 .select select{
