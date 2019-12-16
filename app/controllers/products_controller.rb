@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @categorys = Category.all
+    @brands = Brand.all
   end
 
   def search #検索機能用

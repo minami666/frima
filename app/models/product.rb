@@ -12,6 +12,7 @@ validates :deliverday, presence: true
 validates :price, presence: true
 validates :state, presence: true
 
+#
 has_many :productsimages, dependent: :destroy
 accepts_nested_attributes_for :productsimages
 

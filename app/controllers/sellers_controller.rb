@@ -8,14 +8,15 @@ class SellersController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    #binding.pry
     respond_to do |format|
     if @product.save
-        params[:product_images][:image].each do |image|
-          @product.productsimages.create(image: image)
+        params[:productsimages][:image].each do |image|
+          @product.productsimages.create!(image: image)
         end
       format.html{redirect_to root_path}
     else
-      @product.product_images.build
+      @product.productsimages.build
       format.html{render action: 'new'}
       end
     end
@@ -29,10 +30,11 @@ class SellersController < ApplicationController
 
   def delete
   end
+  
   private
   def product_params
     params.require(:product).permit(:name,:explanation,:category_id,:brand_id,:state,:size_id,:deliver_how,
-    :deliverday,:price,:addresses_id,productsimages_attributes: [:image])
+    :deliverday,:price,:addresses_id)
     .merge(user_id: current_user.id,seller_id: current_user.id)
   #  params.require(:productsimages).permit!
   end
