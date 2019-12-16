@@ -1,8 +1,6 @@
 .show_main{
   width: 100%;
-  //position: fixed;
-   background-color: #f5f5f5;
-  //background-color: black;
+  background-color: #f5f5f5;
   padding-top: 40px;
   .show_content{
     width: 700px;
@@ -26,6 +24,9 @@
         width: 300px;
         height: 370px;
         background-color: #fafafa;
+        
+          
+        
 
         .item_main_image{
           width: 300px;
@@ -35,6 +36,7 @@
         .item_sub_image{
           width: 60px;
           height:60px;
+          display: flex;
         }
       }
       .show_contents{
@@ -244,6 +246,7 @@
         height: 63px;
         text-align: center;
         margin-left:180px;
+        display: flex;
       }
       .show_price_sub{
         font-size: 10px;
@@ -257,6 +260,9 @@
         right: 133px;
       }
     }
+
+
+
     .show_buy_btn{
       width: 620px;
       height: 60px;
@@ -269,18 +275,24 @@
       color: white;
       line-height: 60px;
       margin-bottom: 18px;
+      a{
+        text-decoration: none;
+        color: white;
+      }
     }
+
+
     .show_txet_box{
       width: 620px;
       margin: 0 auto;
       background-color:white;
       padding-bottom: 40px;
+      cursor: pointer;
       .show_mini_con{
         display: flex;
         margin-top: 16px;
-        //margin-bottom: 16px;
 
-      .show_box_like{
+      .show_box_like1{
         width: 116px;
         height: 33px;
         background-color:  #eeecec;
@@ -293,6 +305,22 @@
           color: grey;
         }
       }
+
+      .show_box_like2{
+        display: none;
+        width: 116px;
+        height: 33px;
+        background-color:  red;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 33px;
+        font-size: 14px;
+        color: #fff;
+        i{
+          color: yellow;
+        }
+      }
+
       .bad_item{
         width: 180px;
         height: 33px;

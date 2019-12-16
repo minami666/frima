@@ -10,8 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_114514) do
+
+# ActiveRecord::Schema.define(version: 2019_12_13_114514) do
 # ActiveRecord::Schema.define(version: 2019_12_13_052436) do
+
+ActiveRecord::Schema.define(version: 2019_12_16_090447) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
@@ -83,6 +87,11 @@ ActiveRecord::Schema.define(version: 2019_12_13_114514) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "productimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_productimages_on_product_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "deliver_how", null: false
@@ -121,11 +130,12 @@ ActiveRecord::Schema.define(version: 2019_12_13_114514) do
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
-    t.integer "users_id", null: false
-    t.integer "seller_evaluates_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.bigint "user_id"
+    t.bigint "seller_evaluates_id"
+    t.index ["product_id"], name: "index_sellers_on_product_id"
+    t.index ["seller_evaluates_id"], name: "index_sellers_on_seller_evaluates_id"
+    t.index ["user_id"], name: "index_sellers_on_user_id"
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -165,5 +175,9 @@ ActiveRecord::Schema.define(version: 2019_12_13_114514) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "productimages", "products"
+  add_foreign_key "sellers", "products"
+  add_foreign_key "sellers", "seller_evaluates", column: "seller_evaluates_id"
+  add_foreign_key "sellers", "users"
   add_foreign_key "sns_credentials", "users"
 end
