@@ -3,7 +3,7 @@
 }
 .header__logo{
   @include logo
-
+}
 .body{
   height:100%;
   width:100%;
@@ -207,7 +207,7 @@ li {
 
 
 .progress-status {
-  @include progress-status
+  @include progress-status;
   .select_3 {
     box-sizing: border-box;
     width: 360px;
@@ -257,4 +257,5 @@ li {
   border: 1px solid #ccc;
   background: #fff;
   margin-top: 8px;
+}
 }
