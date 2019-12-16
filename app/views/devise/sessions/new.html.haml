@@ -27,8 +27,12 @@
   .undertw
     .undertw__form
       = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
     .undertw__form2
       = f.label :password
+      %br/
+      = f.password_field :password, autocomplete: "current-password"
     .undertw__robo
       .undertw__robo__check
       .undertw__robo__font
