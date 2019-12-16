@@ -88,6 +88,7 @@ class MypagesController < ApplicationController
 
   # ログイン画面ボタンいっぱい
   def loginbutton
+  end
 
   #
   def tell
