@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
   before_action :basic_auth
-  before_action :authenticate_user!, except: [:index, :new, :create, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index, :new, :create, :update, :destroy]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
