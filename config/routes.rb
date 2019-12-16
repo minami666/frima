@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   #end
 
   # ====================== 商品：表示 ======================
-  get "/products/show",to:"products#show"
+  # get "/products/show",to:"products#show"
   resources :products, only: [:index, :show] do
               # ===== いいね(商品と紐づくからネスト) =====
     resources :productslikes, only: [:new, :create,:edit,:update]

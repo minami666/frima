@@ -18,7 +18,7 @@
             %i.fa.fa-list
             カテゴリーから探す
             .tach-cate.none
-              - @categorys.each do |category|
+              - @categories.each do |category|
                 %li
                   = category.name
           .brand_box
@@ -61,7 +61,7 @@
             %i.fa.fa-list
             カテゴリーから探す
             .header_bottom2__select_box__categry_box--tach-cate.none
-              - @categorys.each do |category|
+              - @categories.each do |category|
                 %li
                   = category.name
           .brand_box2
