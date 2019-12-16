@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
   # ====================== クレジットカード ======================
-  resources :credits, only: [:new,:create,:edit,:update]
+  resources :card, only: [:new,:create,:edit,:update]
   get "/credicts/new", to:"addresses#new"
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]

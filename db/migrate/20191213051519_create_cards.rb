@@ -6,11 +6,6 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :card_id, null: false
       t.string :name, null: false
 
-      t.integer :number,  null: false
-      t.string :name,  null: false
-      t.integer :deadline,  null: false
-      t.integer :security_num,  null: false
-
       t.timestamps
     end
   end

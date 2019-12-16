@@ -84,5 +84,6 @@ class MypagesController < ApplicationController
   def destroy
 
   end
-
+  
+  
 end

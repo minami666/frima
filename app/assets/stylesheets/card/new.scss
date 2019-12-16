@@ -102,6 +102,27 @@
     display: flex;
     padding: 10px;
     justify-content: space-between;
+    .footer-credits__link_4_1{
+      margin-left: 8px;
+    }
+    .footer-credits__link_4_2{
+      margin-left: 8px;
+    }
+    .footer-credits__link_4_3{
+      margin-left: 8px;
+    }
+    .footer-credits__link_4_3{
+      margin-left: 8px;
+    }
+    .footer-credits__link_4_4{
+      margin-left: 8px;
+    }
+    .footer-credits__link_4_5{
+      margin-left: 8px;
+    }
+    .footer-credits__link_4_6{
+      margin-left: 8px;
+    }
   }
   .field_4 {
     font-size: 13px;
@@ -110,19 +131,7 @@
       メイリオ, Meiryo, sans-serif;
     margin-top: 15px;
   }
-  // h3{
-  //   margin-right: 270px;
-  //   margin-top: 30px;
-  //   font-size: 15px;
-  //   font-weight: bold;
-  // }
 }
-// .field-info__deadline_4{
-//   display: flex;
-// }
-// .footer-credits__link_4_1{
-//   display: flex;
-// }
 .field-info__number_4 {
   margin-right: 240px;
 }
@@ -135,15 +144,21 @@
 .field-input_4 {
   width: 40px;
   margin-left: 175px;
-  // .birthdate_month {
-  //   width: 100px;
-  // }
 }
 .field-input_4_1 {
   margin-left: 175px;
-  width: 300px;
+  width: 350px;
   display: flex;
   line-height: 55px;;
+  .field-input_4_2{
+    margin-left: 20px;
+  }
+  .field-input_4_3{
+    margin-left: 20px;
+  }
+  .field-input_4_4{
+    margin-left: 20px;
+  }
 .birthdate_month {
   width: 50px;
   padding: 5px;
@@ -151,43 +166,21 @@
   }
 }
 .field-input_mozi_4 {
-  font-size: 2px;
+  font-size: 10px;
   margin-left: 250px;
+  color: #0099e8;
+  margin-left: 337px;
+.iii{
+  height: 125px;
+  width: 325px;
+  background-color: #dddddd;
+  color: #333;
+  margin-right: 500px;
+  font-size: 14px;
+  padding: 15px;
+  margin-top: -25px;
 }
-
-// .field-input_4 {
-//   padding: 10px;
-// }
-
-
-// .login__info {
-//   height: 63px;
-//   width: 343px;
-//   margin-top: 8px;
-//   margin-left: 182px;
-//   color: #333;
-//   text-align: left;
-//   font-size: 14px;
-// }
-// .form__info {
-//   height: 63px;
-//   width: 343px;
-//   margin-top: 8px;
-//   margin-left: 182px;
-//   color: #888;
-//   text-align: left;
-//   font-size: 14px;
-// }
-// .attention {
-//   height: 63px;
-//   width: 343px;
-//   margin-top: 28px;
-//   margin-left: 182px;
-//   color: #333;
-//   text-align: center;
-//   font-size: 14px;
-//   margin-bottom: 12px;
-// }
+}
 .next-btn_4 {
   margin-top: 20px;
   font-size: 14px;
@@ -197,11 +190,6 @@
   background-color: #ea352d;
   padding: 10px 144px;
 }
-// .about__user-information {
-//   margin-top: 38px;
-//   margin-left: 186px;
-//   font-size: 14px;
-// }
 .footer-user_4 {
   text-align: center;
   color: #333;
@@ -257,4 +245,42 @@ select {
   border: 1px solid #ccc;
   background: #fff;
   margin-top: 8px;
+}
+.credits_card{
+  width: 200px;
+  height: 80px;
+}
+.gnav {
+  display: flex;
+  height: 2rem;
+  margin-left: 10px;
+  width: 1000px;
+}
+.gnav > li {/*親階層のみ幅を25%にする*/
+  width: 25%;
+}
+/*全てのリスト・リンク共通*/
+.gnav li {
+  list-style: none;
+  position: relative;
+}
+.gnav li a {
+  background: #fff;
+  color: skyblue;
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+.gnav li li {
+  height: 0;
+  overflow: hidden;
+  transition: .1s;
+  right: 174px;
+}
+.gnav li:active > ul > li {
+  height: 2rem;
+  overflow: visible;
 }
