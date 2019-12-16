@@ -1,11 +1,17 @@
 class AddressesController < ApplicationController
 
-  def new    
+  def new
     @addresses = Address.new
   end
 
   def create
+    @addresses = Address.new(address_params)
 
+    if @addresses.save
+      redirect_to new_credit_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -15,5 +21,11 @@ class AddressesController < ApplicationController
   def update
 
   end
+
+  private
+
+    def address_params
+      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building)
+    end
 
 end
