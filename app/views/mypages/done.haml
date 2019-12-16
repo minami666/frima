@@ -1,0 +1,47 @@
+.body
+  .header
+    .header__logo
+      = link_to image_tag(src="sns_top.svg" ), root_path
+    %nav.progress
+      %ul.progress-bar
+        %li.step1#active#done
+          会員情報
+          .progress-status
+          .progress-status_bar
+        %li.step2#active#done
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.step3#active#done
+          お届け先住所入力
+          .progress-status
+          .progress-status_bar
+        %li.step4#active#done
+          支払い方法
+          .progress-status
+          .progress-status_bar
+        %li.step5#active#done
+          完了
+          .progress-status
+          .progress-status_bar
+
+  .done
+    .done__text1
+      %h1 会員登録完了
+    .done__text2
+      %p ありがとうございます。
+      %p 会員登録が完了しました。
+    .done__button
+      = link_to "メルカリをはじめる",root_path,class: "done__button--red"
+
+
+= render "partial/banner"
+.user_login_bottom
+  %ul.user_login_bottom_text
+    %li= link_to "プライバシーポリシー","#"
+    %li= link_to "メルカリ利用規約","#"
+    %li= link_to "特定商取引に関する表記","#"
+  .user_login_bottom_box
+    = link_to image_tag(src= "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3296506464", class: "mercari-graylogo", height: 80, width: 60), "/"
+  .user_login_bottom_mozi
+    © Mercari, Inc.

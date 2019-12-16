@@ -7,6 +7,7 @@ body{margin: 0;
     img{
       height: 390px;
       width: 100%;
+      z-index: 0;
   }}
   .favorite_categry{
     width: 100%;
@@ -35,9 +36,11 @@ body{margin: 0;
       }
     }
     .product_show{
+      flex-wrap: wrap;
       width: 1040px;
       height: 544px;
-      margin: 0 auto;
+      margin-left: 180px;
+      display: flex;
       .product_one{
         width: 188px;
         height: 252px;
@@ -47,6 +50,10 @@ body{margin: 0;
           width: 188px;
           height: 188px;
           position: relative;
+          img{
+          width: 188px;
+          height: 188px;
+          }
           .price_one{
             height: 28px;
             width: 90px;
