@@ -64,13 +64,13 @@
 @import 'mypage/sns';
 @import 'mypage/support';
 @import 'mypage/todo';
-
 @import 'mypage/identification';
 @import 'mypage/partial/sidebar';
 @import 'mypage/partial/topbar';
-
 @import 'mypage/partial/sidebar';
 @import 'mypage/destroy';
-@import 'mypage/loginbutton';
 @import 'mypage/tell';
 @import 'mypage/done';
+
+// devise
+@import 'devise/login';
