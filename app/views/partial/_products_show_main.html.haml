@@ -20,6 +20,7 @@
           .show_cate_name
             カテゴリー
           .show_cate_name_right
+
             = @product.category.name
         .show_con3
           .show_bra_name
@@ -82,13 +83,15 @@
         (税込)
       .show_price_dell
         送料込み
+
     .show_buy_btn
-      =link_to "購入画面へ進む","/buyers/new"
+      =link_to "購入画面へ進む",new_buyer_path
     .show_txet_box
       = @product.explanation
       .show_mini_con
         .show_box_like
           .show_box_like1
+
             いいね!
             %i.fa.fa-heart-o#likes
           .show_box_like2

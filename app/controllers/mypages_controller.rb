@@ -1,5 +1,7 @@
 class MypagesController < ApplicationController
 
+before_action :set_action
+
   # マイページ／一覧
   def index
 
@@ -94,5 +96,17 @@ class MypagesController < ApplicationController
   def tell
 
   end
+
+  # 新規登録の完了画面
+  def done
+  end
+
+  private
+
+    def set_action
+      @productsimage = Productsimage.all
+      @categorys = Category.all
+      @brands = Brand.all
+    end
 
 end
