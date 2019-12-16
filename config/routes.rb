@@ -49,7 +49,7 @@ Rails.application.routes.draw do
 
   # ====================== クレジットカード ======================
   resources :card, only: [:new,:create,:edit,:update]
-  get "/credicts/new", to:"addresses#new"
+  # get "/card/new", to:"addresses#new"
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
 
