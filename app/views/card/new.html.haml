@@ -75,15 +75,17 @@
             .field-input_4
               = f.text_field :security_num, class: "input-default", placeholder: "例）カード背面4桁もしくは3桁の番号"
             .field-input_mozi_4
-              %ul.gnav
-                %li
-                  %a{:href => ""} カードの裏面の番号とは？
-                  %ul
-                    %li
-                      %a{:href => ""}
-                      .iii
-                        カードの裏面をご参照ください。
-                        = image_tag "seq-card.png", size: "242x111" 
+              = link_to "#" do
+                %ul.gnav
+                  %li
+                    %a{:href=> ""} カードの裏面の番号とは？
+                    %ul
+                      %li
+                        %a{:href => ""}
+                        .iii
+                          = link_to "#" do
+                            カードの裏面をご参照ください。
+                            = image_tag "seq-card.png", size: "242x111" 
           .field_4
           .next__btn_4
             = f.submit '次へ進む', class:"next-btn_4"
