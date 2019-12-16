@@ -87,22 +87,18 @@ ActiveRecord::Schema.define(version: 2019_12_16_090447) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "deliver_how", null: false
-    t.date "deliver_day", null: false
+    t.integer "deliverday"
     t.integer "price", null: false
     t.string "explanation"
     t.integer "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "size_id"
-    t.integer "brand_id"
-    t.integer "user_id"
-    t.integer "seller_id"
     t.integer "addresses_id"
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
+    t.integer "product_id"
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -140,6 +136,15 @@ ActiveRecord::Schema.define(version: 2019_12_16_090447) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -166,4 +171,5 @@ ActiveRecord::Schema.define(version: 2019_12_16_090447) do
   add_foreign_key "sellers", "products"
   add_foreign_key "sellers", "seller_evaluates", column: "seller_evaluates_id"
   add_foreign_key "sellers", "users"
+  add_foreign_key "sns_credentials", "users"
 end
