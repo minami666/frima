@@ -1,0 +1,83 @@
+.show_main
+  .show_content
+    .show_name
+      新品INGNIイング大判厚手ストール
+    .show_item_content
+      .show_images
+        .item_main_image
+          = image_tag "/test.jpg",heith:300,width:300
+        .item_sub_image
+          = image_tag "/test.jpg",heith:60,width:60
+      .show_contents
+        .show_con1
+          .show_sell_name
+            出品者
+          .show_sell_name_right
+            .show_my_name
+              清水かんた
+        .show_con2
+          .show_cate_name
+            カテゴリー
+          .show_cate_name_right
+            レディース
+            %li >ワンピース
+            %li >ひざ丈ワンピース
+        .show_con3
+          .show_bra_name
+            ブランド
+          .show_bra_name_right
+            バーバリー ブルーレーベル
+        .show_con4
+          .show_size_name
+            サイズ
+          .show_size_name_right
+            M
+        .show_con4
+          .show_con_name
+            商品の状態
+          .show_con_name_right
+            未使用に近い
+        .show_con5
+          .show_del_name
+            配送料の負担
+          .show_del_name_right
+            送料込み(出品者負担)
+        .show_con6
+          .show_del2_name
+            配送の方法
+          .show_del2_name_right
+            らくらくメルカリ便
+        .show_con7
+          .show_area_name
+            配送元地域
+          .show_area_name_right
+            神奈川県
+        .show_con8
+          .show_day_name
+            発送日の目安
+          .show_day_name_right
+            1~2日で発送
+    .show_price_box
+      .show_price_bold
+        ¥6,200
+      .show_price_sub
+        (税込)
+      .show_price_dell
+        送料込み
+    =link_to "/buyers/new" do
+      .show_buy_btn
+        購入画面へ進む
+      .show_txet_box
+        バーバリー・ブルーレーベ
+        ワンピース
+        サイズ 38
+        .show_mini_con
+          .show_box_like
+            %i.fa.fa-heart-o
+            いいね!
+          .bad_item
+            %i.fa.fa-flag
+            不適切な商品の報告
+          .show_key
+            %i.fa.fa-lock
+            あんしん・あんぜんへの取り組み
