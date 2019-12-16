@@ -1,11 +1,13 @@
 class ProductslikesController < ApplicationController
 
+before_action :like_action
+
   def new
-    @likes = Productslike.find(id: params[:id])
+
   end
 
   def create
-    @likes = Productslike.find(id: params[:id])
+    
   end
 
   def edit
@@ -18,6 +20,10 @@ class ProductslikesController < ApplicationController
 
     def likes_params
       params.require(:productslike).permit(:products_likes)
+    end
+
+    def like_action
+      @likes = Productslike.find(id: params[:id])
     end
 
 end

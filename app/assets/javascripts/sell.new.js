@@ -30,7 +30,6 @@ $(function() {
     }
   });
   $('.sell-box__img--input').on('drop', function(e) {
-    console.log('お')
     e.preventDefault();
     e.stopPropagation();
     let dropImages = e.originalEvent.dataTransfer.files;
