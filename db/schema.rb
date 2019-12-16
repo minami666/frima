@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_033026) do
+ActiveRecord::Schema.define(version: 2019_12_13_052436) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
@@ -18,14 +18,10 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
     t.string "city", null: false
     t.integer "street_num", null: false
     t.string "building"
-    t.integer "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "family_name_knj"
-    t.string "first_name_knj"
-    t.string "family_name_ktkn"
-    t.string "first_name_ktkn"
-    t.string "tel"
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "brand_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,6 +89,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.integer "addresses_id"
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -128,9 +125,18 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "size_name"
+    t.string "size_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -154,4 +160,6 @@ ActiveRecord::Schema.define(version: 2019_12_11_033026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "sns_credentials", "users"
 end

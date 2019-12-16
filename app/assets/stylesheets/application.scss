@@ -25,7 +25,6 @@
 
 // 購入者
 @import 'buyers/new';
-@import 'buyers/show';
 
 // ブランド
 @import 'brands/index';
@@ -75,6 +74,6 @@
 
 @import 'mypage/partial/sidebar';
 @import 'mypage/destroy';
-
-
-
+@import 'mypage/loginbutton';
+@import 'mypage/tell';
+@import 'mypage/done';
