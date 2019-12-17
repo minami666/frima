@@ -78,3 +78,6 @@ gem "payjp"
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+# SNS認証Gem
+gem 'omniauth-facebook'
