@@ -44,7 +44,7 @@ class CardController < ApplicationController
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
-      redirect_to action: "show"
+      redirect_to product: "index"
     end
   end
 end
