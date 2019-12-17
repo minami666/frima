@@ -74,6 +74,7 @@ gem 'gretel'
 gem 'ancestry'
 gem 'fog-aws'
 gem "gretel"
+gem "payjp"
 group :production do
   gem 'unicorn', '5.4.1'
 end
