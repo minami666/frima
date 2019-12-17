@@ -40,8 +40,10 @@
             やることリスト
           .my_box
             .my-image
+              = link_to "#" do
+                = image_tag "/my_icon.png"
             .my_text
-              マイページ
+              = link_to "マイページ",mypages_index_path,method: :get
 - else
   .header
     .header_content
