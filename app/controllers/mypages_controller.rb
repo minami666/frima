@@ -105,7 +105,7 @@ before_action :set_action
 
     def set_action
       @productsimage = Productsimage.all
-      @categorys = Category.all
+      @categories = Category.all
       @brands = Brand.all
     end
 
