@@ -69,6 +69,11 @@
           font-size: 14px;
           margin: 0 auto;
           font-weight: 400px;
+          a{
+            display: block;
+            text-decoration: none;
+            color: white;
+          }
         }
       }
       &_3{
@@ -87,6 +92,12 @@
           font-weight: 400px;
           font-size: 14px;
           margin: 0 auto;
+          a{
+            display: block;
+            text-decoration: none;
+            color: white;
+          }
+
         }
       }
     }
