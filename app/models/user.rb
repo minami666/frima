@@ -8,6 +8,19 @@ class User < ApplicationRecord
 
          mount_uploader :image, ImageUploader
 
+  has_many :products
+  has_many :productslikes
+  has_many :messages
+  has_one :credit
+  has_many :addresses
+  has_many :sns_credentials, dependent: :destroy
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :year
+  belongs_to_active_hash :month
+  belongs_to_active_hash :day
+
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -15,15 +28,5 @@ class User < ApplicationRecord
     end
   end
 
-  has_many :products
-  has_many :productslikes
-  has_many :messages
-  has_one :credit
-  has_many :addresses
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :year
-  belongs_to_active_hash :month
-  belongs_to_active_hash :day
 
 end
