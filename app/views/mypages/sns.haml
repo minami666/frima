@@ -12,11 +12,11 @@
       .user_login_sns_2
         = fa_icon 'facebook-square', class: 'icon'
         .user_login_sns_2_b
-          Facebookで登録する
+          = link_to "facebookで登録", user_facebook_omniauth_authorize_path, method: :post
       .user_login_sns_3
         = fa_icon 'google', class: 'icon'
         .user_login_sns_3_c
-          Googleで登録する
+          = link_to "googleで登録",user_google_oauth2_omniauth_authorize_path, method: :post
   .user_login_bottom
     %ul.user_login_bottom_text
       %li= link_to "プライバシーポリシー","#"
