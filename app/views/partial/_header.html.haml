@@ -43,7 +43,7 @@
               = link_to "#" do
                 = image_tag "/my_icon.png"
             .my_text
-              = link_to "マイページ","/mypages/index"
+              = link_to "マイページ",mypages_index_path,method: :get
 - else
   .header
     .header_content
