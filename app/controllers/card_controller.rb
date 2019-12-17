@@ -1,5 +1,5 @@
 class CardController < ApplicationController
-  before_action :set_card,only: [:index, :payjp]
+  before_action :set_card,only: [:index, :pay]
 
   require "payjp"
 
@@ -26,7 +26,6 @@ class CardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    card = Card.where(user_id: current_user.id).first
     if @card.blank?
       redirect_to controller: "card", action: "new"
     else
@@ -39,7 +38,6 @@ class CardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
     else
@@ -53,5 +51,5 @@ end
 
 private
 def set_card
-  @card = Card.find_by(user_id: current_user.id)
+  @card = Card.find_by(user_id: current_user.id).first
 end
