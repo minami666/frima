@@ -14,11 +14,11 @@
       .singlee__mainlogin__face
         = fa_icon "facebook-official", class: "iconn"
         .singlee__mainlogin__face__moji
-          Facebookでログイン
+          %a Facebookでログイン
       .singlee__mainlogin__goog
         = fa_icon "google", class: "iconn"
         .singlee__mainlogin__face__moji2
-          Gogleでログイン
+          %a Gogleでログイン
 
 
 
@@ -26,12 +26,8 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .undertw
     .undertw__form
-      = f.label :email
-      %br/
       = f.email_field :email, autofocus: true, autocomplete: "email"
     .undertw__form2
-      = f.label :password
-      %br/
       = f.password_field :password, autocomplete: "current-password"
     .undertw__robo
       .undertw__robo__check
@@ -41,8 +37,8 @@
         = fa_icon "refresh", class: "rere"
         .undertw__robo__tit
           CAPTCHA
-      .undertw__robo__kkk
-        プライバシー･利用規約
+        .undertw__robo__kkk
+          プライバシー･利用規約
     .undertw__in
       .undertw__in__ji
         = f.submit "ログイン"
