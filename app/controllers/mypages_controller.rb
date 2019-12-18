@@ -99,7 +99,6 @@ class MypagesController < ApplicationController
 
   #
   def tell
-
   end
 
   # 新規登録の完了画面
@@ -110,7 +109,7 @@ class MypagesController < ApplicationController
 
     def set_action
       @productsimage = Productsimage.all
-      @categorys = Category.all
+      @categories = Category.all
       @brands = Brand.all
     end
 

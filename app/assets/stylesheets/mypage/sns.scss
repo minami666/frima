@@ -43,13 +43,19 @@
         display: flex;
         background-color: #EA352D;
         color: #FFFFFF;
-        border-style: solid; border-width: thin; 
+        border-style: solid; border-width: thin;
         border-color: #979797;
         &_a{
           font-size: 14px;
           margin: 0 auto;
           font-weight: 400px;
           font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+          a{
+            text-decoration: none;
+            display: block;
+            color: white;
+            font-weight: bold;
+          }
         }
 
       }
@@ -69,6 +75,12 @@
           font-size: 14px;
           margin: 0 auto;
           font-weight: 400px;
+          a{
+            text-decoration: none;
+            display: block;
+            color: white;
+            font-weight: bold;
+          }
         }
       }
       &_3{
@@ -87,6 +99,13 @@
           font-weight: 400px;
           font-size: 14px;
           margin: 0 auto;
+          a{
+            text-decoration: none;
+            display: block;
+            color: red;
+            font-weight: bold;
+          }
+
         }
       }
     }

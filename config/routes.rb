@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   #====================== デバイス ======================
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
@@ -44,11 +44,10 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
   # ====================== クレジットカード ======================
-  resources :credits, only: [:new,:create,:edit,:update]
-
+  resources :card, only: [:new,:create,:edit,:update]
+  
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
-  get "/addresses/new", to:"addresses#new"
 
 # ====================== ユーザーのマイページ ======================
 
@@ -75,4 +74,13 @@ Rails.application.routes.draw do
 
   get "/sellers/:id/edit2", to:"sellers#edit2"
 
+
+
+
+ resources :card, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'card#pay'
+       post 'delete', to: 'card#delete'
+    end
+  end
 end
