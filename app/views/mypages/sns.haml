@@ -8,15 +8,15 @@
       .user_login_sns_1
         = fa_icon 'envelope', class: 'icon'
         .user_login_sns_1_a
-          メールアドレスで登録する
+          = link_to "メールアドレスで登録する",new_user_registration_path,class: "header_bottom2__right_box__registration"
       .user_login_sns_2
         = fa_icon 'facebook-square', class: 'icon'
         .user_login_sns_2_b
-          Facebookで登録する
+          =link_to "Facebookで登録する",root_path
       .user_login_sns_3
         = fa_icon 'google', class: 'icon'
         .user_login_sns_3_c
-          Googleで登録する
+          =link_to "Googleで登録する",root_path
   .user_login_bottom
     %ul.user_login_bottom_text
       %li= link_to "プライバシーポリシー","#"

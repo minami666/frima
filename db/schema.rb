@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_12_18_094156) do
+# ActiveRecord::Schema.define(version: 2019_12_16_090447) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postnum", null: false
@@ -60,6 +61,18 @@ ActiveRecord::Schema.define(version: 2019_12_18_094156) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "number"
+    t.string "name"
+    t.integer "deadline"
+    t.integer "security_num"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "text"
@@ -84,21 +97,30 @@ ActiveRecord::Schema.define(version: 2019_12_18_094156) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "productimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_productimages_on_product_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "deliver_how", null: false
-    t.date "deliver_day", null: false
+    t.integer "deliverday", null: false
     t.integer "price", null: false
     t.string "explanation"
     t.integer "state", null: false
+    t.integer "category_id", null: false
+    t.integer "size_id", null: false
+    t.integer "brand_id", null: false
+    t.integer "user_id", null: false
+    t.integer "seller_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id"
     t.integer "addresses_id"
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
+    t.integer "product_id", null: false
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -122,11 +144,12 @@ ActiveRecord::Schema.define(version: 2019_12_18_094156) do
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "products_id", null: false
-    t.integer "users_id", null: false
-    t.integer "seller_evaluates_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.bigint "user_id"
+    t.bigint "seller_evaluates_id"
+    t.index ["product_id"], name: "index_sellers_on_product_id"
+    t.index ["seller_evaluates_id"], name: "index_sellers_on_seller_evaluates_id"
+    t.index ["user_id"], name: "index_sellers_on_user_id"
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -157,4 +180,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_094156) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "productimages", "products"
+  add_foreign_key "sellers", "products"
+  add_foreign_key "sellers", "seller_evaluates", column: "seller_evaluates_id"
+  add_foreign_key "sellers", "users"
 end

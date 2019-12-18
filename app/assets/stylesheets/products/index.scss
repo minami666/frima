@@ -1,9 +1,10 @@
-body{margin: 0;
+.body{margin: 0;
   overflow: scroll;}
 .wrapper{
   height: 100px;
   width: 100%;
- .slide_image{ 
+  
+  .slide_image{
     img{
       height: 390px;
       width: 100%;
@@ -11,11 +12,11 @@ body{margin: 0;
   }}
   .favorite_categry{
     width: 100%;
-    height: 170px;
+    height: 150px;
     font-size:28px;
     color:#333333;
     text-align: center;
-    line-height: 170px;
+    line-height: 130px;
     font-weight: bold;
   }
   .product_box{
@@ -50,9 +51,11 @@ body{margin: 0;
           width: 188px;
           height: 188px;
           position: relative;
+
           img{
           width: 188px;
           height: 188px;
+          
           }
           .price_one{
             height: 28px;
@@ -96,8 +99,8 @@ body{margin: 0;
   text-align: center;
   color: white;
   line-height: 100px;
-  font-weight: bold;
-  font-size:20px;
+  font-weight: 15px;
+  font-size:22px;
   display: inline-block;
   position: fixed;
   right: 20px;
@@ -107,7 +110,7 @@ body{margin: 0;
     color: white;
     position: absolute;
     top:70px;
-    left:60px;
-    font-size:40px;
+    left:50px;
+    font-size:60px;
   }
 }

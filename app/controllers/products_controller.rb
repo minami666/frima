@@ -1,16 +1,22 @@
 class ProductsController < ApplicationController
+  before_action :set_action, only: [:index,:show]
 
   def index
     @productsimage = Productsimage.all
-    @categorys = Category.all
-    @brands = Brand.all
   end
 
   def show
+    @product = Product.find(params[:id])
+    @productsimages = Productsimage.where(product_id: params[:id])
   end
 
-  def search #検索機能用
+  def search
     @products = Product.search(params[:keyword])
+  end
+
+  def set_action
+    @categories = Category.all
+    @brands = Brand.all
   end
 
 end

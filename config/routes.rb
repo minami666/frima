@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   #end
 
   # ====================== 商品：表示 ======================
-  get "/products/show",to:"products#show"
+  # get "/products/show",to:"products#show"
   resources :products, only: [:index, :show] do
               # ===== いいね(商品と紐づくからネスト) =====
     resources :productslikes, only: [:new, :create,:edit,:update]
@@ -44,11 +44,10 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
   # ====================== クレジットカード ======================
-  resources :credits, only: [:new,:create,:edit,:update]
-
+  resources :card, only: [:new,:create,:edit,:update]
+  
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
-  get "/addresses/new", to:"addresses#new"
 
 # ====================== ユーザーのマイページ ======================
 
@@ -73,4 +72,12 @@ Rails.application.routes.draw do
   get "/mypages/tell", to:"mypages#tell"
   get "/mypages/done", to:"mypages#done"
 
+
+
+ resources :card, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'card#pay'
+       post 'delete', to: 'card#delete'
+    end
+  end
 end

@@ -49,3 +49,5 @@ Size.create!(size_name:'S')
 Size.create!(size_name:'M')
 Size.create!(size_name:'L')
 Size.create!(size_name:'LL')
+
+

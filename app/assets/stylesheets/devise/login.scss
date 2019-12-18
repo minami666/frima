@@ -70,6 +70,12 @@
         margin-left: 50px;
         line-height: 30px;
         height: 30px;
+        a{
+          text-decoration: none;
+          display: block;
+          color: white;
+          font-weight: bold;
+        }
       }
     }
     &__goog {
@@ -93,6 +99,12 @@
         line-height: 30px;
         height: 30px;
         color: black;
+        a{
+          text-decoration: none;
+          display: block;
+          color: red;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -103,23 +115,15 @@
   height: 350px;
   margin: 0 auto;
   padding: 24px 64px 32px;
-  &__form {
-    background-color: #e8f0fe;
-    padding: 10px 16px 8px;
-    height: 30px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-  }
-  &__form2 {
-    background-color: #e8f0fe;
-    padding: 10px 16px 8px;
-    height: 30px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+  border-radius: 4px;
+  &__form2{
     margin-top: 25px;
   }
+    input{
+      height: 46px;
+      width: 324px;
+      border-radius: 4px;
+    }
   &__robo {
     background-color: #f5f5f5;
     width: 300px;
@@ -128,58 +132,50 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     display: flex;
-    position: relative;
     &__check {
       background-color: white;
-      width: 26px;
-      height: 26px;
+      width: 30px;
+      height: 27px;
       border: 1px solid #d3d3d3;
-      margin-top: 20px;
+      margin-top: 25px;
       margin-left: 15px;
     }
     &__font {
       font-size: 14px;
       width: 140px;
       height: 76px;
-      margin-top: 17px;
+      margin-top: 22px;
       margin-left: 13px;
     }
     &__ref {
       margin-top: 14px;
-      margin-left: 50px;
       .rere {
         margin-left: 15px;
         font-size: 30px;
+        margin-left: 40px;
       }
     }
     &__tit {
-      margin-right: 20px;
       font-size: 1px;
       opacity: 0, 1;
+      margin-left: 30px;
     }
     &__kkk {
       font-size: 1px;
-      
-      padding-right: 2px;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      text-align: right;
-      width: 276p;
-      margin-right: 10px;
+      width: 110px;
     }
   }
   &__in {
-    background-color: red;
-    width: 326px;
-    height: 48px;
-    margin-top: 25px;
-    border: 1px solid #ccc;
-    color: white;
-    font-size: 14px;
-    text-align: center;
     &__ji {
       margin-top: 15px;
+      input{
+        background-color: red;
+        width: 326px;
+        height: 48px;
+        color: white;
+        border-radius: 0px;
+        font-size: 14px;
+      }
     }
   }
   &__pw {
@@ -188,5 +184,9 @@
     color: #0099e8;
     font-size: 14px;
     margin-top: 40px;
+    a{
+    text-decoration: none;
+    color: #0099E8;
+    }
   }
 }
