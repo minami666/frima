@@ -14,11 +14,12 @@
       .singlee__mainlogin__face
         = fa_icon "facebook-official", class: "iconn"
         .singlee__mainlogin__face__moji
-          = link_to "Facebookでログイン",user_facebook_omniauth_authorize_path do
+          = link_to "Facebookでログイン",user_facebook_omniauth_authorize_path, method: :post
       .singlee__mainlogin__goog
         = fa_icon "google", class: "iconn"
         .singlee__mainlogin__face__moji2
-          = link_to "Googleでログイン",user_google_oauth2_omniauth_authorize_path do
+          = link_to "Googleでログイン",user_google_oauth2_omniauth_authorize_path, method: :post
+          -# = link_to "Googleでログイン", "/auth/google_oauth2", method: :post
 
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .undertw
