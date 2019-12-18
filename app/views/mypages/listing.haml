@@ -2,9 +2,23 @@
 .top_bar
   - breadcrumb :listing
   = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"
-
-.listing
-  出品中
-
+.body
+  .main_body
+    = render '/mypages/partial/sidebar'
+    .right_box
+      .right_box__foot
+        購入した商品
+      .right_box__under_box
+        .right_box__under_box__left
+          出品中
+        .right_box__under_box__right
+          取引中
+        .right_box__under_box__right
+          売却済
+      .right_box__ge-li
+        = link_to "/sellers/93/edit" do
+          - @productsimage.last(10).each do |p|
+            .listing-img
+              = image_tag p.image.url,height:60,width:60
 = render "partial/banner"
 = render "partial/footer"
