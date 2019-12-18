@@ -24,8 +24,10 @@ class PurchaseController < ApplicationController
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
     )
-    
-    redirect_to action: 'done' #完了画面に移動
+    if @card.blank?
+      redirect_to action: 'done' #完了画面に移動
+    else
+      redirect_to product: "index"
   end
 
 end

@@ -7,6 +7,8 @@ class BuyersController < ApplicationController
   end
 
   def show
+    render addresses: "postnum"
+    numbar = Product.find(id: params[:id])
   end
 
 end

@@ -1,13 +1,14 @@
 class CardController < ApplicationController
-  before_action :set_card,only: [:index, :pay]
+  before_action :set_card,only: [:index, :create]
 
   require "payjp"
 
   def new
-    @card = Card.new
+    @newcard = Card.new
+
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
+  def create(card_params) #payjpとCardのデータベース作成を実施します。
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -16,11 +17,11 @@ class CardController < ApplicationController
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
-      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      if @card.save
+      @newcard = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      if @newcard.save
         redirect_to action: "show"
       else
-        redirect_to action: "pay"
+        redirect_to action: "create"
       end
     end
   end
@@ -52,4 +53,8 @@ end
 private
 def set_card
   @card = Card.find_by(user_id: current_user.id).first
+end
+
+def card_params
+  params.require(:card).permit(:customer_id, :card_id, :created_at, :updated_at, :number, :name, :deadline, :security_num)
 end
