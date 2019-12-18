@@ -10,12 +10,10 @@
         必須
     .image-text
       最大10枚までアップロードできます
-    = f.fields_for :productsimages ,class: "dropzone" do |image|
-      = image.label :image, class: "dropzone-box", for: "upload-image" do
-        .upload
-          .img
-          .upload-image
-            = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "sell-upload", 'data-image': 0
+    .drop-zone
+      %label.sell-box__img--input
+        = f.fields_for :productsimages do |image|
+          = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image"
   .sell-content
     .img-head
       .img-head_bold

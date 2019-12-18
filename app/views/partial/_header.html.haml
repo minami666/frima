@@ -18,7 +18,7 @@
             %i.fa.fa-list
             カテゴリーから探す
             .tach-cate.none
-              - @categorys.each do |category|
+              - @categories.each do |category|
                 %li
                   = category.name
           .brand_box
@@ -40,8 +40,10 @@
             やることリスト
           .my_box
             .my-image
+              = link_to "#" do
+                = image_tag "/my_icon.png"
             .my_text
-              マイページ
+              = link_to "マイページ",mypages_index_path,method: :get
 - else
   .header
     .header_content
@@ -61,7 +63,7 @@
             %i.fa.fa-list
             カテゴリーから探す
             .header_bottom2__select_box__categry_box--tach-cate.none
-              - @categorys.each do |category|
+              - @categories.each do |category|
                 %li
                   = category.name
           .brand_box2
@@ -72,5 +74,5 @@
                 %li
                   = brand.brand_name
         .header_bottom2__right_box
-          = link_to "新規会員登録",new_user_registration_path,class: "header_bottom2__right_box__registration"
+          = link_to "新規会員登録",mypages_sns_path,class: "header_bottom2__right_box__registration"
           = link_to "ログイン",new_user_session_path, method: :get,class: "header_bottom2__right_box__login"

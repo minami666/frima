@@ -94,7 +94,6 @@ before_action :set_action
 
   #
   def tell
-
   end
 
   # 新規登録の完了画面
@@ -105,7 +104,7 @@ before_action :set_action
 
     def set_action
       @productsimage = Productsimage.all
-      @categorys = Category.all
+      @categories = Category.all
       @brands = Brand.all
     end
 
