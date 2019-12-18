@@ -27,7 +27,7 @@
           .progress-status
           .progress-status_bar
 
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: user_registration_path) do |f|
     .signup
       .signup__title
         会員情報入力：テスト
@@ -79,12 +79,15 @@
               %label{for: "birthday"} 生年月日
               %span.form-require 必須
             .field__input
-            = f.collection_select :birth, Year.all, :id, :name, class: "birthdate_year"
-            年
-            = f.collection_select :birth, Month.all, :id, :name, class: "birthdate_month"
-            月
-            = f.collection_select :birth, Day.all, :id, :name, class: "birthdate_day"
-            日
+              != sprintf(f.date_select(:birth, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 18), default: Date.new(1989, 1, 1), date_separator: '%s'),'年 ', '月 ') + '日' 
+
+            
+            -# = f.collection_select :birth, Year.all, :id, :name, class: "birthdate_year"
+            -# 年
+            -# = f.collection_select :birth, Month.all, :id, :name, class: "birthdate_month"
+            -# 月
+            -# = f.collection_select :birth, Day.all, :id, :name, class: "birthdate_day"
+            -# 日
 
           .form__info
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
