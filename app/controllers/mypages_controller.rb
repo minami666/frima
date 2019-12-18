@@ -1,10 +1,12 @@
 class MypagesController < ApplicationController
 
-before_action :set_action
+  before_action :set_action, only: [:index,:show]
 
   # マイページ／一覧
   def index
-
+    @categories = Category.all
+    # binding.pry
+    @products = Product.where(user_id: current_user.id)
   end
 
   # 本人確認
@@ -29,7 +31,10 @@ before_action :set_action
 
   # 出品した商品 - 出品中
   def listing
-
+    @categories = Category.all
+    @brands = Brand.all
+    @productsimage = Productsimage.all
+    # @products = Product.find(params[:id])
   end
 
   # 出品した商品 - 取引中

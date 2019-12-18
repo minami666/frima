@@ -1,1 +1,96 @@
-出品した商品を編集
+= render "partial/header"
+.show_main
+  .show_content-edit
+    .show_name
+      = @product.name
+    .show_item_content
+      .show_images
+        .item_main_image
+          = image_tag "#{@productsimages[0].image}",size: "300x300"
+        .item_sub_image
+          - @productsimages.each do |product|
+            = image_tag product.image.url, height:60,width:60
+      .show_contents
+        .show_con1
+          .show_sell_name
+            出品者
+          .show_sell_name_right
+            .show_my_name
+              = @product.user.nickname
+        .show_con2
+          .show_cate_name
+            カテゴリー
+          .show_cate_name_right
+
+            = @product.category.name
+        .show_con3
+          .show_bra_name
+            ブランド
+          .show_bra_name_right
+            = @product.brand.brand_name
+        .show_con4
+          .show_size_name
+            サイズ
+          .show_size_name_right
+            = @product.size.size_name
+        .show_con4
+          .show_con_name
+            商品の状態
+          .show_con_name_right
+            - case @product.state
+              - when 0
+                未使用
+              - when 1
+                使い込んでいる
+        .show_con5
+          .show_del_name
+            配送料の負担
+          .show_del_name_right
+            - case @product.deliver_how
+              - when 0
+                ラクラクメルカリ便
+              - when 1
+                送料込み(出品者負担)
+        .show_con6
+          .show_del2_name
+            配送の方法
+          .show_del2_name_right
+            - case @product.deliver_how
+              - when 0
+                ラクラクメルカリ便
+              - when 1
+                手渡し
+        .show_con7
+          .show_area_name
+            配送元地域
+          .show_area_name_right
+            神奈川県
+        .show_con8
+          .show_day_name
+            発送日の目安
+          .show_day_name_right
+            - case @product.deliverday
+              - when 0
+                1~2日で発送します
+              - when 1
+                3〜4日で発送します
+    .show_price_box
+      .show_price_bold
+        .price2
+          = @product.price
+        .price2
+          円
+      .show_price_sub
+        (税込)
+      .show_price_dell
+        送料込み
+  .edit-btn_box
+    = link_to "/sellers/#{@product.id}/edit2" do
+      .edit_buy_btn
+        編集
+    .or-text
+      or
+    = link_to "/sellers/#{@product.id}", method: :delete, data:{turbolinks: false} do
+      .edit_des_btn
+        削除
+= render "partial/footer"
