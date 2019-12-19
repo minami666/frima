@@ -6,9 +6,8 @@ class AddressesController < ApplicationController
 
   def create
     @addresses = Address.new(address_params)
-
     if @addresses.save
-      redirect_to new_credit_path
+      redirect_to new_card_path
     else
       render 'new'
     end
@@ -25,7 +24,7 @@ class AddressesController < ApplicationController
   private
 
     def address_params
-      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building)
+      params.permit(:postnum,:prefecture,:city,:street_num,:building,:tel).merge(user_id: current_user.id)
     end
 
 end
