@@ -6,9 +6,6 @@ $(function() {
                     <img src="${imgSrc}">
                   </div>
                   <div class="preview-box__select">
-                     <div class="preview-box__select--edit">
-                    <p>編集</p>
-                  </div>
                   <div class="preview-box__select--delete">
                     <p>削除</p>
                   </div>

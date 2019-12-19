@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
   #====================== デバイス ======================
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
 
   # ====================== ルートパス ＝ 商品一覧ページ ======================
   root to: 'products#index'
@@ -21,12 +20,12 @@ Rails.application.routes.draw do
   end
 
   # ====================== 商品：出品 ======================
-  resources :sellers, only: [:new,:create,:edit,:update,:delete] do
+  resources :sellers, only: [:new,:create,:edit,:update,:destroy] do
               # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
     resources :sellersevaluates, only: [:new, :create]
   end
   # ====================== 商品：画像 ======================
-  resources :productsimages, only: [:new,:create,:edit,:update,:delete]
+  resources :productsimages, only: [:new,:create,:edit,:update,:destroy]
 
   # ====================== 商品メッセージ ======================
   resources :messages, only: [:index,:new,:create,:edit,:update,:delete]
@@ -45,7 +44,7 @@ Rails.application.routes.draw do
 
   # ====================== クレジットカード ======================
   resources :card, only: [:new,:create,:edit,:update]
-  
+
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
 
@@ -71,6 +70,9 @@ Rails.application.routes.draw do
   get "/mypages/loginbutton", to:"mypages#loginbutton"
   get "/mypages/tell", to:"mypages#tell"
   get "/mypages/done", to:"mypages#done"
+
+  get "/sellers/:id/edit2", to:"sellers#edit2"
+
 
 
 
