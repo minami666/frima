@@ -70,5 +70,3 @@ set :unicorn_rack_env, "production"
 # role-based syntax
 # ==================
 
-#master keyの指定漏れを防ぐため
-config.require_master_key = true
