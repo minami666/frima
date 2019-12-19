@@ -1,6 +1,5 @@
 class SellersController < ApplicationController
 
-  # 商品の出品画面(もっとも難易度が高そうなので時間をかける)
   def new
     @product = Product.new
     @product.productsimages.build
@@ -43,7 +42,7 @@ class SellersController < ApplicationController
   def update
     @product = Product.find(params[:id])
     respond_to do |format|
-    if @product.update(product_params2) 
+    if @product.update(product_params2)
         params[:productsimages][:image].each do |image| #params[:productsimages][:image]の中に新規の画像が居る
           @product.productsimages.create(image: image) #この中に既存の画像が居る
         end
@@ -54,8 +53,7 @@ class SellersController < ApplicationController
     end
     end
   end
-  
-  
+
   private
   def product_params
     params.require(:product).permit(:name,:explanation,:category_id,:brand_id,:state,:size_id,:deliver_how,
