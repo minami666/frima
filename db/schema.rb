@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(version: 2019_12_18_094156) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number", null: false
+    t.string "name", null: false
+    t.integer "deadline", null: false
+    t.integer "security_num", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text", null: false
     t.integer "products_id", null: false
@@ -95,7 +104,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_094156) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "deliver_how", null: false
-    t.integer "deliverday"
+    t.date "deliver_day", null: false
     t.integer "price", null: false
     t.string "explanation"
     t.integer "state", null: false
@@ -106,7 +115,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_094156) do
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
+    t.integer "products_id", null: false
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -170,8 +179,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_094156) do
     t.string "birth"
     t.string "tel"
     t.string "profile"
-    t.string "provider"
-    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
