@@ -78,3 +78,8 @@ gem "payjp"
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'

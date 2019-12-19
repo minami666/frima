@@ -19,6 +19,6 @@ belongs_to :user
 belongs_to :category
 
 has_many :productsimages, dependent: :destroy
-accepts_nested_attributes_for :productsimages
+accepts_nested_attributes_for :productsimages, allow_destroy: true
 
 end

@@ -239,20 +239,25 @@
       height: 78px;
       > img {
         width: 100%;
-        max-height: 70px;
-        object-fit: cover;
+        max-height: 110px;
+        object-fit: contain;
       }
     }
     &__select {
       padding-top: 2rem;
       display: flex;
       justify-content: space-around;
+      a{
+        width: 80px;
+        text-align: center;
+        margin:0 auto;
+      }
       &--edit, &--delete {
         cursor: pointer;
         text-align: center;
-        width: 50%;
         line-height: 2rem;
         height: 2rem;
+     
         &:hover {
           opacity: .6;
         }

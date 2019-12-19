@@ -12,7 +12,13 @@ class ProductsimagesController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    @productsimage = Productsimage.find(params[:id])
+    @url = @productsimage.product_id
+    @productsimage.destroy
+
+    redirect_to "/sellers/#{@url}/edit2"
+    
   end
 
 end
