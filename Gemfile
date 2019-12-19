@@ -70,7 +70,6 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'active_hash'
 gem 'jp_prefecture'
-gem 'gretel'
 gem 'ancestry'
 gem 'fog-aws'
 gem "gretel"
