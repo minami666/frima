@@ -14,7 +14,7 @@ class PurchaseController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
-
+  
   def pay
     amount = Product.find(id: params[:id])
     pamount = amount.price
