@@ -44,13 +44,11 @@
   z-index: 30;
 }
 
-// デフォルトのプログレスバー
 @mixin progress-status_bar() {
   position: absolute;
   left: 50%;
   top: 32px;
   bottom: 5px;
-  // display: block;
   width: 130px;
   height: 2px;
   background: gray;
