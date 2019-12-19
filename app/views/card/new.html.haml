@@ -25,9 +25,7 @@
           完了
           .progress-status
           .progress-status_bar
-          -# #done
-          -# #active
-  -# = form_for(@card, url: {controller:'/card', method:'POST' ,action:'create'}) do |f|
+
   = form_with( url: mypages_done_path, local: true, method: :get, class: "") do |f|
 
     .signup_4
