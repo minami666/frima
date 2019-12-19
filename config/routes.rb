@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
   #====================== デバイス ======================
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
 
   # ====================== ルートパス ＝ 商品一覧ページ ======================
   root to: 'products#index'
@@ -45,7 +44,7 @@ Rails.application.routes.draw do
 
   # ====================== クレジットカード ======================
   resources :card, only: [:new,:create,:edit,:update]
-  
+
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
 
