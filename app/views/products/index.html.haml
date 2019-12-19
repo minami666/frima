@@ -1,31 +1,28 @@
 .wrapper
   = render "partial/header"
   .slide_image
-    = image_tag "/slide_1.jpeg",class: "image1"
-    = image_tag "/slide_2.jpeg",class: "image1"
+    = image_tag "/slide_1.webp",class: "image1"
+    = image_tag "/slide_2.jpg",class: "image1"
   .favorite_categry
-    人気のカテゴリ
+    新着アイテム
   .bay_btn
     出品
     %i.fa.fa-camera
   .product_box
     .categry_name
-      レディース新着アイテム
+      商品一覧
       .show_link
-        もっと見る ＞
     .product_show
-      - @productsimage.last(10).each do |p|
-        .product_one
-          .product_img
-            = image_tag p.image.url
-            .price_one
-
-          .one_name_box
-            .one_name
+      - @products.last(10).each do |product|
+        = link_to "/products/#{product.id}" do
+          .product_one
+            .product_img
+              = image_tag product.productsimages[0].image.url
+              .price_one
+                = "¥#{product.price}"
+            .one_name_box
+              .one_name
+                = product.name
   = render "partial/banner"
   = render "partial/footer"
   = render "partial/sell-btn"
-  = link_to "#","/products/show"
-  = link_to "##","/mypages/index"
-  = link_to "#######","/card/new"
-  = link_to "tell","/mypages/tell"

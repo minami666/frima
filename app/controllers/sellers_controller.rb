@@ -43,7 +43,7 @@ class SellersController < ApplicationController
   def update
     @product = Product.find(params[:id])
     respond_to do |format|
-    if @product.update(product_params2) 
+    if @product.update(product_params2)
         params[:productsimages][:image].each do |image| #params[:productsimages][:image]の中に新規の画像が居る
           @product.productsimages.create(image: image) #この中に既存の画像が居る
         end

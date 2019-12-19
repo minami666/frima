@@ -1,41 +1,41 @@
 .show_main
   .show_content
     .show_name
-      = @product.name
+      = @products.name
     .show_item_content
       .show_images
         .item_main_image
-          = image_tag "#{@productsimages[0].image}",size: "300x300"
+          = image_tag @productImages[0].image.url, height:300,width:300
         .item_sub_image
-          - @productsimages.each do |product|
-            = image_tag product.image.url, height:60,width:60
+          - @productImages.each do |img|
+            = image_tag img.image.url, height:60,width:60
       .show_contents
         .show_con1
           .show_sell_name
             出品者
           .show_sell_name_right
             .show_my_name
-              = @product.user.nickname
+              = @products.user.nickname
         .show_con2
           .show_cate_name
             カテゴリー
           .show_cate_name_right
-            = @product.category.name
+            = @products.category.name
         .show_con3
           .show_bra_name
             ブランド
           .show_bra_name_right
-            = @product.brand.brand_name
+            = @products.brand.brand_name
         .show_con4
           .show_size_name
             サイズ
           .show_size_name_right
-            = @product.size.size_name
+            = @products.size.size_name
         .show_con4
           .show_con_name
             商品の状態
           .show_con_name_right
-            - case @product.state
+            - case @products.state
               - when 0
                 未使用
               - when 1
@@ -44,7 +44,7 @@
           .show_del_name
             配送料の負担
           .show_del_name_right
-            - case @product.deliver_how
+            - case @products.deliver_how
               - when 0
                 ラクラクメルカリ便
               - when 1
@@ -53,7 +53,7 @@
           .show_del2_name
             配送の方法
           .show_del2_name_right
-            - case @product.deliver_how
+            - case @products.deliver_how
               - when 0
                 ラクラクメルカリ便
               - when 1
@@ -67,7 +67,7 @@
           .show_day_name
             発送日の目安
           .show_day_name_right
-            - case @product.deliverday
+            - case @products.deliverday
               - when 0
                 1~2日で発送します
               - when 1
@@ -75,7 +75,7 @@
     .show_price_box
       .show_price_bold
         .price2
-          = @product.price
+          = @products.price
         .price2
           円
       .show_price_sub
@@ -83,9 +83,9 @@
       .show_price_dell
         送料込み
     .show_buy_btn
-      =link_to "購入画面へ進む",new_buyer_path
+      =link_to "購入画面へ進む", new_product_buyer_path(@products)
     .show_txet_box
-      = @product.explanation
+      = @products.explanation
       .show_mini_con
         .show_box_like
           .show_box_like1
