@@ -25,7 +25,8 @@
           完了
           .progress-status
           .progress-status_bar
-  = form_for(@addresses, url: "/addresses/new", method: :get ) do |f|
+
+  = form_with( url: new_card_path, local: true, method: :get) do |f|
     .signup
       .signup__title
         発送元・お届け先住所登録

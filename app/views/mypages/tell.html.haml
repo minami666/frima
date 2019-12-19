@@ -1,7 +1,7 @@
 .body
   .header
     .header__logo
-      = link_to image_tag(src="/" ), root_path
+      = link_to image_tag(src="sns_top.svg"), root_path
     %nav.progress
       %ul.progress-bar
         %li.step1#active#done
@@ -26,7 +26,7 @@
           .progress-status_bar
   .head-tell
     電話番号の確認
-  = form_with( local: true, method: :get, class: "tell-form") do |form|
+  = form_with( url: new_address_path, local: true, method: :get, class: "tell-form") do |form|
     .tell-box
       携帯電話の番号
       = form.text_field  placeholder: "携帯電話の番号を入力", class: "tell-input"
@@ -39,6 +39,3 @@
         電話番号の確認が必要な理由
   .sell-footer
     プライバシーポリシー メルカリ利用規約 特定商取引に関する表
-
-
-
