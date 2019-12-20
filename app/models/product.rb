@@ -12,11 +12,11 @@ validates :deliverday, presence: true
 validates :price, presence: true
 validates :state, presence: true
 
-belongs_to :seller
-belongs_to :brand
-belongs_to :size
-belongs_to :user
-belongs_to :category
+belongs_to :seller,optional: true
+belongs_to :brand,optional: true
+belongs_to :size,optional: true
+belongs_to :user,optional: true
+belongs_to :category,optional: true
 
 has_many :messages
 has_many :productsimages, dependent: :destroy
