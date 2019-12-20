@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_inactive_sign_up_path_for(resource)
-    # sellers_path
+
   end
 
   # password = Devise.friendly_token.first(7)
