@@ -6,6 +6,7 @@ class AddReferencesToProducts < ActiveRecord::Migration[5.2]
       t.integer :brand_id, foreign_key: true
       t.integer :user_id, foreign_key: true
       t.integer :addresses_id, foreign_key: true
+      t.integer :seller_id,foreign_key: true
     end
   end
 end
