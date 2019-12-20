@@ -1,17 +1,20 @@
 .message
-  -# - @messages.each do |message|
-  .message-show
-    .message-img
-    .message-name
-      清水かんた
-      .message-name_text
-        = @messages.text
-        .time-box
-          .time-box_show
-            １時間前
-          %i.fa.fa-flag
-  = form_for(@message, url: {controller:'/messages', action:'create',method:'POST' }) do |f|
+  - @messages.each do |message|
+    .message-show
+      .message-img
+      .message-name
+        清水かんた
+        .message-name_text
+          = message.text
+          .time-box
+            .time-box_show
+              = message.created_at.strftime('%Y/%m/%d %H:%M')
+            %i.fa.fa-flag
+  = form_for(@message, url: "/products/#{@products.id}/messages",method: :post) do |f|
     .message-warning
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    = f.text_area :text,placeholder: "text" ,class: :text_new
+    = f.text_area :text ,placeholder: "text" ,class: :text_new
+    = f.hidden_field :user_id,value: current_user.id
+    = f.hidden_field :product_id,value: @products.id
     = f.submit "コメントする",class: :submit_new
+        

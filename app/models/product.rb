@@ -6,11 +6,11 @@ class Product < ApplicationRecord
     Tweet.where('name LIKE(?)', "%#{search}%")
   end
 
-# validates :name, presence: true
-# validates :deliver_how, presence: true
-# validates :deliverday, presence: true
-# validates :price, presence: true
-# validates :state, presence: true
+ validates :name, presence: true
+ validates :deliver_how, presence: true
+ validates :deliverday, presence: true
+ validates :price, presence: true
+ validates :state, presence: true
 
 
  belongs_to :seller
@@ -19,13 +19,7 @@ class Product < ApplicationRecord
  belongs_to :user
  belongs_to :category
 
-# belongs_to :seller
-# belongs_to :brand
-# belongs_to :size
-# belongs_to :user
-# belongs_to :category
-
-
+has_many :messages
 has_many :productsimages, dependent: :destroy
 accepts_nested_attributes_for :productsimages, allow_destroy: true
 

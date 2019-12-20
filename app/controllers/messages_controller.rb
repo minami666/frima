@@ -7,9 +7,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(message_params)
-    binding.pry
-    redirect_to "/products/1"
+    @message = Message.new(message_params)
+    if @message.save!
+      redirect_to "/products/1"
+    else
+      binding.pry
+    end
   end
 
   def edit
@@ -23,7 +26,8 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:text)
+    @product_id = params[:product_id]
+    params.require(:message).permit!
   end
 
 end
