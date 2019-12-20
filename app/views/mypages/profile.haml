@@ -1,5 +1,5 @@
 = render "partial/header"
-= render "mypages/partial/topbar"
+//= render "mypages/partial/topbar"
 
 .top_bar
   - breadcrumb :profile
@@ -13,13 +13,10 @@
     .main_body__h__user
       .main_body__h__user__box
         = image_tag "/ユーザー.png"
-        .main_body__h__user__imput
-          ユーザー名
-    .main_body__h__z
-      .main_body__h__z__comment
-        こんにちは結構きついです
-      .main_body__h__z__change
-        変更する
-
+      = form_for(@user,url:{controller:'/mypages',action:'update',method:'PATCH'})  do |f|
+        = f.text_field :nickname,class: "main_body__h__user__imput"
+        .main_body__h__z
+          = f.text_area :profile,class:" main_body__h__z__comment"
+          = f.submit "変更する",class:"main_body__h__z__change"
 = render "partial/banner"
 = render "partial/footer"
