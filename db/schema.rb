@@ -85,7 +85,6 @@ ActiveRecord::Schema.define(version: 2019_12_20_072418) do
     t.integer "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "transtate"
     t.integer "category_id"
     t.integer "size_id"
     t.integer "brand_id"
