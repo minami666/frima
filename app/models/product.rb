@@ -18,7 +18,7 @@ belongs_to :size,optional: true
 belongs_to :user,optional: true
 belongs_to :category,optional: true
 
-has_many :messagesdependent: :destroy
+has_many :messages,dependent: :destroy
 has_many :productsimages, dependent: :destroy
 accepts_nested_attributes_for :productsimages, allow_destroy: true
 
