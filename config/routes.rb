@@ -45,9 +45,17 @@ Rails.application.routes.draw do
 
   # ====================== クレジットカード ======================
   resources :card, only: [:new,:create,:edit,:update]
-
+  
+  resources :purchase, only: [:index] do
+    member do
+      post 'pay'
+      get 'done'
+      patch 'pay'
+    end
+  end
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
+
 
 # ====================== ユーザーのマイページ ======================
 
@@ -75,7 +83,7 @@ Rails.application.routes.draw do
   get "/sellers/:id/edit2", to:"sellers#edit2"
 
 
-
+  get "/purchase/index", to:"purchase#index"
 
  resources :card, only: [:new, :show] do
     collection do
