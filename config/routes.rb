@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show] do
               # ===== いいね(商品と紐づくからネスト) =====
     resources :productslikes, only: [:new, :create,:edit,:update]
-    resources :buyers, only: [:new]
   end
 
   # ====================== 商品：出品 ======================
@@ -32,7 +31,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:index,:new,:create,:edit,:update,:delete]
 
   # ====================== 商品：購入 ======================
-  resources :buyers, only: [:create, :show] do
+  resources :buyers, only: [:new, :create, :show] do
               # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
     resources :buyersevaluates, only: [:new, :create]
   end
@@ -45,9 +44,17 @@ Rails.application.routes.draw do
 
   # ====================== クレジットカード ======================
   resources :card, only: [:new,:create,:edit,:update]
-
+  
+  resources :purchase, only: [:index] do
+    member do
+      post 'pay'
+      get 'done'
+      patch 'pay'
+    end
+  end
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]
+
 
 # ====================== ユーザーのマイページ ======================
 
@@ -75,7 +82,7 @@ Rails.application.routes.draw do
   get "/sellers/:id/edit2", to:"sellers#edit2"
 
 
-
+  get "/purchase/index", to:"purchase#index"
 
  resources :card, only: [:new, :show] do
     collection do
