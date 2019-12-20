@@ -179,6 +179,11 @@
     }
   }
 .sell-content{
+  a{
+    text-decoration: none;
+    color: white;
+    display: block;
+  }
   .sell-btn_text{
     list-style: none;
     font-size: 14px;

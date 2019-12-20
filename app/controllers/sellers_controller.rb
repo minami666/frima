@@ -6,6 +6,7 @@ class SellersController < ApplicationController
   end
 
   def create
+    # binding.pry
     @product = Product.new(product_params)
     respond_to do |format|
     if @product.save
