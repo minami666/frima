@@ -131,12 +131,17 @@
   .buy-btn{
     width: 343px;
     height: 50px;
-    background-color: #888888;
+    background-color: #EA352D;
     margin-top:20px;
     color: white;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     line-height: 50px;
+    .buy_btn2{
+      text-decoration: none;
+      color: #fff;
+      display: block;
+    }
   }
 }

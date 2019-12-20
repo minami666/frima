@@ -31,13 +31,14 @@
         .buy-info_link
           変更する
       .buy-user_info
-        %li 〒214-0012
-        %li 神奈川県 川崎市多摩区中野島 ３−１５−５
-        %li 清水 幹太
+        %li #{@address.postnum}
+        %li #{@address. prefecture}
+        %li #{@address.city}
+        
     .buy-red_text
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .buy-btn
-      購入する
+      = link_to "購入する",'/',class: "buy_btn2"
 .sell-footer
   プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
 = render "partial/banner"
