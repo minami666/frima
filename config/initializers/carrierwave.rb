@@ -1,9 +1,7 @@
-# カリキュラムの記述↓
 require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
-# Qiita記事の記述　https://qiita.com/dir_sh0606/items/e9160464e02324b8f5dc
 CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage = :fog
