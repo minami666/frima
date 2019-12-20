@@ -1,1 +1,25 @@
-カテゴリ詳細
+.wrapper
+  = render "partial/header"
+  .favorite_categry
+    = "#{@cate.name}アイテム"
+  .bay_btn
+    出品
+    %i.fa.fa-camera
+  .product_box
+    .categry_name
+      商品一覧
+      .show_link
+    .product_show
+      - @products.last(50).each do |product|
+        = link_to "/products/#{product.id}" do
+          .product_one
+            .product_img
+              = image_tag product.productsimages[0].image.url
+              .price_one
+                = "¥#{product.price}"
+            .one_name_box
+              .one_name
+                = product.name
+  = render "partial/banner"
+  = render "partial/footer"
+  = render "partial/sell-btn"

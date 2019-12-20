@@ -2,11 +2,16 @@ class ProductsController < ApplicationController
   before_action :set_action, only: [:index,:show]
 
   def index
-    @productsimage = Productsimage.all
+    @products = Product.all
   end
 
   def show
-    @product = Product.find(params[:id])
+    @products = Product.find(params[:id])
+    @productImages = @products.productsimages
+    @message = Message.new
+    @messages = Message.find(params[:id])
+    #@messages = Message.where(product_id: params[:id])
+    #@mesages = @products.message.includes(:user)
   end
 
   def search

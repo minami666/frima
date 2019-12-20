@@ -42,27 +42,27 @@ body{background-color: #f5f5f5;}
     }
   }
   .message_new{
-    .message-warning{
-      height: 44px;
-      width: 100%;
-      background-color: #fff6de;
-      font-size: 14px;
-      color: #333333;
-    }
-    textarea{
-      width: 652px;
-      height: 104px;
-      padding: 10px;
-      margin-top: 10px;
-    }
-    .submit_new{
-      width: 674px;
-      height: 50px;
-      background-color: #aaaaaa;
-      margin: 0 auto;
-      color: white;
-      font-size: 14px;
-    }
     
-
-}}
+  }
+  .message-warning{
+    height: 44px;
+    width: 100%;
+    background-color: #fff6de;
+    font-size: 14px;
+    color: #333333;
+  }
+  textarea{
+    width: 652px;
+    height: 104px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .submit_new{
+    width: 674px;
+    height: 50px;
+    background-color: #aaaaaa;
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
+  }
+}

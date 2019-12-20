@@ -5,5 +5,4 @@ class Buyer < ApplicationRecord
 
   belongs_to :product, foreign_key: true
   belongs_to :user, foreign_key: true
-  has_one :buyer_evaluate, dependent: :destroy
 end

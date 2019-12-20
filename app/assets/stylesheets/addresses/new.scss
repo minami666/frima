@@ -175,84 +175,84 @@
       }
     }
   }
-.input-default {
-  height: 40px;
-  width: 325px;
-  padding: 0 15px;
-  margin-top: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  line-height:24px;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  &-half {
+  .input-default {
     height: 40px;
-    width: 150px;
+    width: 325px;
     padding: 0 15px;
     margin-top: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    line-height:24px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    &-half {
+      height: 40px;
+      width: 150px;
+      padding: 0 15px;
+      margin-top: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
   }
-}
 
-.progress {
-  @include progress
-}
+  .progress {
+    @include progress
+  }
 
-li {
-  @include li
-}
+  li {
+    @include li
+  }
 
 
-.progress-status {
-  @include progress-status;
-  .select_3 {
+  .progress-status {
+    @include progress-status;
+    .select_3 {
+      box-sizing: border-box;
+      width: 360px;
+      height: 42px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      margin-top: 8px;
+    }
+  }
+
+
+  .progress-status_bar {
+    @include progress-status_bar
+  }
+
+  .step4 .progress-status_bar {
+    @include step4_progress-status_bar
+  }
+
+  .step5 .progress-status_bar {
+    @include step5_progress-status_bar
+  }
+
+  #active {
+    @include active
+  }
+
+  #done {
+    @include done
+  }
+
+  .signup {
+    @include signup
+  }
+
+  .select select{
+    appearance: none;
     box-sizing: border-box;
-    width: 360px;
-    height: 42px;
+    width: 76px;
+    height: 48px;
     padding: 10px 16px 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
     background: #fff;
     margin-top: 8px;
   }
-}
-
-
-.progress-status_bar {
-  @include progress-status_bar
-}
-
-.step4 .progress-status_bar {
-  @include step4_progress-status_bar
-}
-
-.step5 .progress-status_bar {
-  @include step5_progress-status_bar
-}
-
-#active {
-  @include active
-}
-
-#done {
-  @include done
-}
-
-.signup {
-  @include signup
-}
-
-.select select{
-  appearance: none;
-  box-sizing: border-box;
-  width: 76px;
-  height: 48px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  margin-top: 8px;
-}
 }
