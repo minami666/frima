@@ -14,9 +14,9 @@ class ProductsimagesController < ApplicationController
 
   def destroy
     @productsimage = Productsimage.find(params[:id])
-    @url = @productsimage.product_id
     @productsimage.destroy
 
+    @url = @productsimage.product_id
     redirect_to "/sellers/#{@url}/edit2"
     
   end

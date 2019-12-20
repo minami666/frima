@@ -11,7 +11,7 @@ class SellersController < ApplicationController
     if @product.save
         params[:product_images][:image].each do |image|
           @product.productsimages.create(image: image)
-        end
+    end
       format.html{redirect_to root_path}
     else
       @product.product_images.build

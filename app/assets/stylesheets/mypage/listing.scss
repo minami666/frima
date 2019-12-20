@@ -1,7 +1,24 @@
 .right_box__ge-li{
   background-color: white;
-  .listing-img{
-    padding-top: 15px;
-    margin-left: 15px;
-  }
 }
+.listing-zone{
+  display: flex;
+    .listing-img{
+      padding-top: 15px;
+      margin-left: 15px;
+    }
+    .listing-name{
+      line-height: 80px;
+      width: 70px;
+      padding-left: 35px;
+      display: inline-block;
+    }
+    li{text-decoration: none!important;
+      color:rgb(61, 54, 54)!important;
+      list-style: none!important;
+      font-size: 20px;}
+    
+  
+      
+      
+  }
