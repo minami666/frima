@@ -14,10 +14,10 @@ class User < ApplicationRecord
   has_one :credit
   has_many :addresses
 
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :year
-  belongs_to_active_hash :month
-  belongs_to_active_hash :day
+  # extend ActiveHash::Associations::ActiveRecordExtensions
+  # belongs_to_active_hash :year
+  # belongs_to_active_hash :month
+  # belongs_to_active_hash :day
 
   def self.find_oauth(auth)
     uid = auth.uid
@@ -38,7 +38,7 @@ class User < ApplicationRecord
           nickname: auth.info.name,
           email:    auth.info.email,
           password: Devise.friendly_token[0, 20],
-          telephone: "08000000000"
+          # telephone: "08000000000"
           )
         SnsCredential.create(
           uid: uid,

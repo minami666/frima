@@ -1,9 +1,6 @@
 class MypagesController < ApplicationController
 
-  before_action :set_action, only: [:index,:show,:identfication,:sns,:notification,:todo,
-                                    :listing,:progress,:completed,:buying,:pastransaction,
-                                    :news,:evaluates,:support,:points,:profile,:confirmation,
-                                    :destroy,:loginbutton,:tell,:done]
+  before_action :set_action
 
   # マイページ／一覧
   def index
@@ -13,7 +10,7 @@ class MypagesController < ApplicationController
 
   # 本人確認
   def identfication
-
+    @categories = Category.all
   end
 
   # SNS認証ページ(APIでfacebookやtwitterアカウントでのログインを行う)
