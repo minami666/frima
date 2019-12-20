@@ -30,7 +30,6 @@ Rails.application.routes.draw do
   resources :productsimages, only: [:new,:create,:edit,:update,:destroy]
 
   # ====================== 商品メッセージ ======================
-  
 
   # ====================== 商品：購入 ======================
   resources :buyers, only: [:create, :show] do
@@ -78,10 +77,10 @@ Rails.application.routes.draw do
 
 
 
- resources :card, only: [:new, :show] do
+resources :card, only: [:new, :show] do
     collection do
       post 'pay', to: 'card#pay'
-       post 'delete', to: 'card#delete'
+      post 'delete', to: 'card#delete'
     end
   end
 end
