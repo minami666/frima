@@ -12,7 +12,11 @@ class Product < ApplicationRecord
 # validates :price, presence: true
 # validates :state, presence: true
 
+<<<<<<< Updated upstream
 # belongs_to :seller
+=======
+ belongs_to :seller
+>>>>>>> Stashed changes
  belongs_to :brand
  belongs_to :size
  belongs_to :user
