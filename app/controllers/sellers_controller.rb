@@ -9,14 +9,14 @@ class SellersController < ApplicationController
     # binding.pry
     @product = Product.new(product_params)
     respond_to do |format|
-    if @product.save
-        params[:product_images][:image].each do |image|
-          @product.productsimages.create(image: image)
-    end
-      format.html{redirect_to root_path}
-    else
-      @product.product_images.build
-      format.html{render action: 'edit2'}
+      if @product.save
+          params[:product_images][:image].each do |image|
+            @product.productsimages.create(image: image)
+          end
+        format.html{redirect_to root_path}
+      else
+        @product.product_images.build
+        format.html{render action: 'edit2'}
       end
     end
   end
