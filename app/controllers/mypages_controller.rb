@@ -1,6 +1,9 @@
 class MypagesController < ApplicationController
 
-  before_action :set_action, only: [:index,:show]
+  before_action :set_action, only: [:index,:show,:identfication,:sns,:notification,:todo,
+                                    :listing,:progress,:completed,:buying,:pastransaction,
+                                    :news,:evaluates,:support,:points,:profile,:confirmation,
+                                    :destroy,:loginbutton,:tell,:done]
 
   # マイページ／一覧
   def index
@@ -31,10 +34,7 @@ class MypagesController < ApplicationController
 
   # 出品した商品 - 出品中
   def listing
-    @categories = Category.all
-    @brands = Brand.all
-    @productsimage = Productsimage.all
-    # @products = Product.find(params[:id])
+    @products = Product.all
   end
 
   # 出品した商品 - 取引中

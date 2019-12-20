@@ -16,9 +16,13 @@
         .right_box__under_box__right
           売却済
       .right_box__ge-li
-        = link_to "/sellers/93/edit" do
-          - @productsimage.last(10).each do |p|
-            .listing-img
-              = image_tag p.image.url,height:60,width:60
+        - @products.last(10).each do |product|
+          = link_to edit_seller_path(product.id) do
+            .listing-zone
+              .listing-img
+                = image_tag product.productsimages[0].image.url,height:60,width:60
+              .listing-name
+                %li
+                  = product.name
 = render "partial/banner"
 = render "partial/footer"

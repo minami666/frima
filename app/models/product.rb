@@ -12,11 +12,19 @@ class Product < ApplicationRecord
 # validates :price, presence: true
 # validates :state, presence: true
 
+
+ belongs_to :seller
+ belongs_to :brand
+ belongs_to :size
+ belongs_to :user
+ belongs_to :category
+
 # belongs_to :seller
 # belongs_to :brand
 # belongs_to :size
 # belongs_to :user
 # belongs_to :category
+
 
 has_many :productsimages, dependent: :destroy
 accepts_nested_attributes_for :productsimages, allow_destroy: true

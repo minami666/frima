@@ -8,7 +8,10 @@ class ProductsController < ApplicationController
   def show
     @products = Product.find(params[:id])
     @productImages = @products.productsimages
-    
+    @message = Message.new
+    @messages = Message.find(params[:id])
+    #@messages = Message.where(product_id: params[:id])
+    #@mesages = @products.message.includes(:user)
   end
 
   def search
