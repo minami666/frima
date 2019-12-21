@@ -17,15 +17,13 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show] do
               # ===== いいね(商品と紐づくからネスト) =====
     resources :productslikes, only: [:new, :create,:edit,:update]
-    resources :buyers, only: [:new]
+    resources :buyers, only: [:new,:create]
     resources :messages, only: [:index,:new,:create,:edit,:update,:delete]
-    
   end
 
   # ====================== 商品：出品 ======================
   resources :sellers, only: [:new,:create,:edit,:update,:destroy] do
               # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
-    resources :sellersevaluates, only: [:new, :create]
   end
   # ====================== 商品：画像 ======================
   resources :productsimages, only: [:new,:create,:edit,:update,:destroy]
@@ -34,10 +32,8 @@ Rails.application.routes.draw do
   
 
   # ====================== 商品：購入 ======================
-  resources :buyers, only: [:create, :show] do
+  
               # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
-    resources :buyersevaluates, only: [:new, :create]
-  end
 
   # ====================== ブランド ======================
   resources :brands, only: [:index, :show]
