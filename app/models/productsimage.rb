@@ -1,6 +1,4 @@
 class Productsimage < ApplicationRecord
-  #validates :product_id, presence: true
-  #validates :image, presence: true
-  belongs_to :product
+  belongs_to :product, foreign_key: true
   mount_uploader :image, ImageUploader
 end

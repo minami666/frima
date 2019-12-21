@@ -13,7 +13,7 @@
     .drop-zone
       %label.sell-box__img--input
         = f.fields_for :productsimages do |image|
-          = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image"
+          = image.file_field :image, multiple: true, allow_destroy: true,name: 'product_images[image][]', id: "upload-image"
   .sell-content
     .img-head
       .img-head_bold
