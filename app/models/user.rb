@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
          mount_uploader :image, ImageUploader
 
-  has_many :sns_credentials
+  has_many :sns_credentials,dependent: :destroy
   has_many :products,dependent: :destroy
   has_many :messages,dependent: :destroy
   has_many :addresses,dependent: :destroy
@@ -31,7 +31,7 @@ class User < ApplicationRecord
           nickname: auth.info.name,
           email:    auth.info.email,
           password: Devise.friendly_token[0, 20],
-          telephone: "08000000000"
+          # telephone: "08000000000"
           )
         SnsCredential.create(
           uid: uid,
