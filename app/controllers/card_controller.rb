@@ -51,5 +51,9 @@ end
 
 private
 def set_card
-  @card = Card.find_by(user_id: current_user.id).first
+  @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+end
+
+def card_params
+  params.permit(:number,:deadline,:security_num,:name,:card_id).merge(user_id: current_user.id)
 end
