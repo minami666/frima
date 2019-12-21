@@ -89,7 +89,6 @@ class MypagesController < ApplicationController
 
   # ログアウト
   def destroy
-
   end
 
 

@@ -9,7 +9,6 @@
   .main_body__log
     .main_body__log__bar
       .main_body__log__bar__out
-        = link_to "ログアウト",user_registration_path, method: :delete
-
+        = link_to "ログアウト",destroy_user_session_path, method: :delete
 = render "partial/banner"
 = render "partial/footer"

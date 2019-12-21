@@ -57,7 +57,7 @@ class SellersController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:name,:explanation,:category_id,:brand_id,:state,:size_id,:deliver_how,
-    :deliverday,:price,:addresses_id,productsimages_attributes: [:image])
+    :deliverday,:price,:addresses_id,:transtate,productsimages_attributes: [:image])
     .merge(user_id: current_user.id,seller_id: current_user.id)
   end
 
@@ -66,7 +66,4 @@ class SellersController < ApplicationController
     :deliverday,:price,:addresses_id)
     .merge(user_id: current_user.id,seller_id: current_user.id)
   end
-
-
-
 end

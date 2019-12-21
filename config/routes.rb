@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # ====================== ルートパス ＝ 商品一覧ページ ======================
-  root to: 'products#index'
-
+  root to: 'products#index'do
+ 
+  end
+  resources :searches,only: [:index]
   # ====================== ヘッダーの検索機能用 ======================
-  #collection do
-  # get 'search'
-  #end
+  
 
   # ====================== 商品：表示 ======================
   # get "/products/show",to:"products#show"
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :productslikes, only: [:new, :create,:edit,:update]
     resources :buyers, only: [:new]
     resources :messages, only: [:index,:new,:create,:edit,:update,:delete]
+    
   end
 
   # ====================== 商品：出品 ======================
@@ -72,9 +73,10 @@ Rails.application.routes.draw do
   get "/mypages/loginbutton", to:"mypages#loginbutton"
   get "/mypages/tell", to:"mypages#tell"
   get "/mypages/done", to:"mypages#done"
-
   get "/sellers/:id/edit2", to:"sellers#edit2"
 
+
+  
 
 
 
