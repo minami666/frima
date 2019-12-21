@@ -5,26 +5,25 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # ====================== ルートパス ＝ 商品一覧ページ ======================
-  root to: 'products#index'
-
+  root to: 'products#index'do
+ 
+  end
+  resources :searches,only: [:index]
   # ====================== ヘッダーの検索機能用 ======================
-  #collection do
-  # get 'search'
-  #end
+  
 
   # ====================== 商品：表示 ======================
   # get "/products/show",to:"products#show"
   resources :products, only: [:index, :show] do
               # ===== いいね(商品と紐づくからネスト) =====
     resources :productslikes, only: [:new, :create,:edit,:update]
-    resources :buyers, only: [:new]
+    resources :buyers, only: [:new,:create]
     resources :messages, only: [:index,:new,:create,:edit,:update,:delete]
   end
 
   # ====================== 商品：出品 ======================
   resources :sellers, only: [:new,:create,:edit,:update,:destroy] do
               # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
-    resources :sellersevaluates, only: [:new, :create]
   end
   # ====================== 商品：画像 ======================
   resources :productsimages, only: [:new,:create,:edit,:update,:destroy]
@@ -32,10 +31,8 @@ Rails.application.routes.draw do
   # ====================== 商品メッセージ ======================
 
   # ====================== 商品：購入 ======================
-  resources :buyers, only: [:create, :show] do
+  
               # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
-    resources :buyersevaluates, only: [:new, :create]
-  end
 
   # ====================== ブランド ======================
   resources :brands, only: [:index, :show]
@@ -71,9 +68,10 @@ Rails.application.routes.draw do
   get "/mypages/loginbutton", to:"mypages#loginbutton"
   get "/mypages/tell", to:"mypages#tell"
   get "/mypages/done", to:"mypages#done"
-
   get "/sellers/:id/edit2", to:"sellers#edit2"
 
+
+  
 
 
 

@@ -12,9 +12,6 @@ class ProductsController < ApplicationController
     @messages = Message.where(product_id: params[:id])
   end
 
-  def search
-    @products = Product.search(params[:keyword])
-  end
 
   def set_action
     @categories = Category.all
