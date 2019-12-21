@@ -12,7 +12,6 @@ class SellersController < ApplicationController
           params[:product_images][:image].each do |image|
             @product.productsimages.create(image: image)
           end
-          # binding.pry
         format.html{redirect_to root_path}
       else
         @product.product_images.build
@@ -58,7 +57,7 @@ class SellersController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:name,:explanation,:category_id,:brand_id,:state,:size_id,:deliver_how,
-    :deliverday,:price,:addresses_id,productsimages_attributes: [:image]).merge(user_id: current_user.id,seller_id: current_user.id)
+    :deliverday,:price,:addresses_id,productsimages_attributes: [:image,:_destroy]).merge(user_id: current_user.id,seller_id: current_user.id)
   end
 
   def product_params2
