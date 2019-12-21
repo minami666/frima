@@ -4,26 +4,28 @@
 .buy-product
   .buy-content
     .buy-image
-      = image_tag "/test.jpg"
+      = image_tag @product.productsimages[0].image.url
     .buy-data
       .buy-data_name
-        フレアアンクルジーンズ
+        = @product.name
       .buy-price
         .buy-price_1
-          ¥1,700
+          = @product.price
         .buy-price_2
-          （税込）送料込み
+          円（税込）
 .buy-pra
   .buy-form
     .buy_a
       .buy-form_text
         支払い金額
       .buy-form_price
-        ¥1,700
+        = @product.price
+        %span 円
     .buy-label
       ポイントを使用 (所持ポイント: P0)
     .buy-how
-      支払い方法
+      支払い方法</br>
+      ゆうゆうメルカリ便
     .buy-info
       .buy-info_a
         .buy-info_text
