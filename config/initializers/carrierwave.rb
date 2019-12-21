@@ -3,7 +3,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  本番環境の場合↓
+  # 本番環境の場合↓
   if Rails.env.production?
     config.storage = :fog
     config.fog_provider = 'fog/aws'
@@ -15,7 +15,7 @@ CarrierWave.configure do |config|
     }
     config.fog_directory  = 'frimateam'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/frimateam'
-  開発環境の場合↓
+  # 開発環境の場合↓
   else
     config.storage :file
     config.enable_processing = false if Rails.env.test?
