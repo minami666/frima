@@ -6,17 +6,16 @@ class SellersController < ApplicationController
   end
 
   def create
-    # binding.pry
     @product = Product.new(product_params)
     respond_to do |format|
-    if @product.save
-        params[:product_images][:image].each do |image|
-          @product.productsimages.create(image: image)
-    end
-      format.html{redirect_to root_path}
-    else
-      @product.product_images.build
-      format.html{render action: 'edit2'}
+      if @product.save
+          params[:product_images][:image].each do |image|
+            @product.productsimages.create(image: image)
+          end
+        format.html{redirect_to root_path}
+      else
+        @product.product_images.build
+        format.html{render action: 'edit2'}
       end
     end
   end
@@ -60,8 +59,6 @@ class SellersController < ApplicationController
     params.require(:product).permit(:name,:explanation,:category_id,:brand_id,:state,:size_id,:deliver_how,
     :deliverday,:price,:addresses_id,:transtate,productsimages_attributes: [:image])
     .merge(user_id: current_user.id,seller_id: current_user.id)
-
-
   end
 
   def product_params2

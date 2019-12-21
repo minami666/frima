@@ -94,5 +94,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #master keyの指定漏れを防ぐため
-  config.require_master_key = true
+  # config.require_master_key = true
 end
