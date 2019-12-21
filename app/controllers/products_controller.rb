@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
     @productImages = @products.productsimages
     @message = Message.new
     @messages = Message.where(product_id: params[:id])
-    #@messages = @products.message.includes(:user)
   end
 
   def search

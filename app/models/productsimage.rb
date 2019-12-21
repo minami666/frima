@@ -1,4 +1,4 @@
 class Productsimage < ApplicationRecord
-  belongs_to :product, foreign_key: true
+  belongs_to :product
   mount_uploader :image, ImageUploader
 end
