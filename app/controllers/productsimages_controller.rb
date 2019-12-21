@@ -18,7 +18,6 @@ class ProductsimagesController < ApplicationController
 
     @url = @productsimage.product_id
     redirect_to "/sellers/#{@url}/edit2"
-    
   end
 
 end
