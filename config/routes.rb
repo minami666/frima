@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   # ====================== ルートパス ＝ 商品一覧ページ ======================
   root to: 'products#index'do
- 
+
   end
   resources :searches,only: [:index]
   # ====================== ヘッダーの検索機能用 ======================
-  
+
 
   # ====================== 商品：表示 ======================
   # get "/products/show",to:"products#show"
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   # ====================== 商品メッセージ ======================
 
   # ====================== 商品：購入 ======================
-  
+
               # 取引が終わってから「"#{---}"さんを評価しよう」ページに遷移
 
   # ====================== ブランド ======================
@@ -44,7 +44,14 @@ Rails.application.routes.draw do
   resources :card, only: [:new,:create,:edit,:update]
 
   # ====================== 住所 ======================
-  resources :addresses, only: [:new,:create,:edit,:update]
+  # resources :addresses, only: [:new,:create,:edit,:update]
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
 
 # ====================== ユーザーのマイページ ======================
 
