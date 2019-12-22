@@ -4,6 +4,7 @@ class MypagesController < ApplicationController
 
   # マイページ／一覧
   def index
+    @categories = Category.all
     @products = Product.where(user_id: current_user.id)
   end
 
@@ -74,7 +75,6 @@ class MypagesController < ApplicationController
 
   # プロフィール
   def profile
-
   end
 
   # 電話番号の確認
@@ -99,7 +99,19 @@ class MypagesController < ApplicationController
   def done
   end
 
+  def  update
+    if current_user.update(user_params)
+      redirect_to mypages_profile_path
+    else
+      
+    end
+  end
+
   private
+
+  def user_params
+    params.require(:user).permit(:nickname,:profile)
+  end
 
     def set_action
       @productsimage = Productsimage.all

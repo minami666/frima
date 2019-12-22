@@ -68,12 +68,8 @@ Rails.application.routes.draw do
   get "/mypages/loginbutton", to:"mypages#loginbutton"
   get "/mypages/tell", to:"mypages#tell"
   get "/mypages/done", to:"mypages#done"
+  patch "/mypages/profile", to:"mypages#update"
   get "/sellers/:id/edit2", to:"sellers#edit2"
-
-
-  
-
-
 
 resources :card, only: [:new, :show] do
     collection do
