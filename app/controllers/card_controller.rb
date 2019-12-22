@@ -13,9 +13,9 @@ class CardController < ApplicationController
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-      description: '登録テスト', #なくてもOK
-      email: current_user.email, #なくてもOK
+      amount: 300,#決済金額の事。変数も使えるので後で解説
       card: params['payjp-token'],
+      currency: 'jpy',
       metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
