@@ -6,6 +6,11 @@
       .show_images
         .item_main_image
           = image_tag @productImages[0].image.url, height:300,width:300
+          - if @sold != nil
+            .sold
+              .sold-p
+                .sold-text
+                  SOLD
         .item_sub_image
           - @productImages.each do |img|
             = image_tag img.image.url, height:60,width:60
@@ -86,8 +91,12 @@
         (税込)
       .show_price_dell
         送料込み
-    .show_buy_btn
-      =link_to "購入画面へ進む", new_product_buyer_path(@products)
+    - if @sold != nil
+      .show_buy_btn2
+        売り切れました
+    - else
+      .show_buy_btn
+        =link_to "購入画面へ進む", new_product_buyer_path(@products)
     .show_txet_box
       = @products.explanation
       .show_mini_con
