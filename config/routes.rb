@@ -41,15 +41,15 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
   # ====================== クレジットカード ======================
-  resources :card, only: [:new,:create,:edit,:update]
+  # resources :card, only: [:new,:create,:edit,:update,:show,:delete,:index]
 
-  # resources :card, only: [:new, :show] do
-  #   collection do
-  #     post 'show', to: 'card#show'
-  #     post 'pay', to: 'card#pay'
-  #     post 'delete', to: 'card#delete'
-  #   end
-  # end
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
 
   # ====================== 住所 ======================
   resources :addresses, only: [:new,:create,:edit,:update]

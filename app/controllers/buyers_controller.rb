@@ -3,7 +3,7 @@ class BuyersController < ApplicationController
   def new
     @product = Product.find(params[:product_id])
     @productImages = @product.productsimages
-    @add = Address.find(current_user.id)
+    @add = Address.find_by(user_id: [current_user.id])
     @pre = Prefecture.find(@add.prefecture)
     @buyer = Buyer.new
     @user = User.find(current_user.id)

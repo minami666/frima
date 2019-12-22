@@ -103,7 +103,6 @@ class MypagesController < ApplicationController
     if current_user.update(user_params)
       redirect_to mypages_profile_path
     else
-      
     end
   end
 

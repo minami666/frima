@@ -1,6 +1,8 @@
 class PurchaseController < ApplicationController
   before_action :set_card
 
+  require 'payjp'
+
   def index
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -24,7 +26,7 @@ class PurchaseController < ApplicationController
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
     )
-    
+
     redirect_to action: 'done' #完了画面に移動
   end
 
