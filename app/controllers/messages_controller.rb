@@ -11,7 +11,6 @@ class MessagesController < ApplicationController
     if @message.save!
       redirect_to "/products/1"
     else
-      binding.pry
     end
   end
 
