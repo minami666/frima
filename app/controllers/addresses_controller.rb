@@ -24,13 +24,15 @@ class AddressesController < ApplicationController
     if @address.update(address_params)
       redirect_to new_product_buyer_path(@product)
     else
+      binding.pry
     end
   end
 
   private
 
     def address_params
-      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:tel).merge(user_id: current_user.id)
+      # params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:tel).merge(user_id: current_user.id)
+      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:family_name_knj,:first_name_knj,:family_name_ktkn,:first_name_ktkn,:tel).merge(user_id: current_user.id)
     end
 
 end
