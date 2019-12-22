@@ -60,7 +60,7 @@
               %label{for: "prefecture"} 都道府県
               %span.form-require 必須
               %br
-            .field__input 
+            .field__input
               = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--", class: "input-default"
           .field
             .field__info__city
