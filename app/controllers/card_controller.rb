@@ -1,10 +1,10 @@
 class CardController < ApplicationController
-  before_action :set_card,only: [:index, :pay]
 
   require "payjp"
 
   def new
-    @card = Card.new
+    card = Card.where(user_id: current_user.id)
+    redirect_to action: "show" if card.exists?
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
@@ -13,6 +13,8 @@ class CardController < ApplicationController
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
+      description: '登録テスト', #なくてもOK
+      email: current_user.email, #なくてもOK
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
@@ -26,8 +28,8 @@ class CardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    if @card.blank?
-      redirect_to controller: "card", action: "new"
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
@@ -38,18 +40,13 @@ class CardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
+    card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new"
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
-      redirect_to product: "index"
     end
   end
-end
-
-private
-def set_card
-  @card = Card.find_by(user_id: current_user.id).first
 end
