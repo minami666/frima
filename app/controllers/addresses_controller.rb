@@ -5,7 +5,6 @@ class AddressesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @addresses = Address.new(address_params)
     if @addresses.save
       redirect_to new_card_path

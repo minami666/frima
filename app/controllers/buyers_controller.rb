@@ -23,7 +23,6 @@ class BuyersController < ApplicationController
 
   def buy_params
     params.require(:buyer).permit!
-    #(:user_id,:product_id,:buyer_evaluate_id)
   end
 
 end
