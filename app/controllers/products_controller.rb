@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    
   end
 
   def show
@@ -10,6 +11,7 @@ class ProductsController < ApplicationController
     @productImages = @products.productsimages
     @message = Message.new
     @messages = Message.where(product_id: params[:id])
+    @sold = Buyer.find_by(product_id:@products.id)
   end
 
 

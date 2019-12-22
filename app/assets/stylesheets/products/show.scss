@@ -29,6 +29,27 @@
           width: 300px;
           height: 300px;
           border:1px solid black;
+          position: relative;
+          .sold{
+            position: absolute;
+            top: 0;
+            .sold-p{
+              position: relative;
+              border-top: 60px #ea352e solid;
+              border-bottom: 60px transparent solid;
+              border-right: 60px transparent solid;
+              border-left:60px #ea352e solid ;
+              .sold-text{
+                font-size: 28px;
+                font-weight: 600;
+                color: #f5f5f5;
+                transform: rotate(-45deg);
+                position: absolute;
+                left: -62px;
+                top: -34px;
+              }
+          }
+          }
         }
         .item_sub_image{
           width: 60px;
@@ -273,6 +294,7 @@
         text-decoration: none;
         color: white;
       }
+      
     }
     .show_txet_box{
       width: 620px;
@@ -337,3 +359,22 @@
     }
   }
 }
+
+.show_buy_btn2{
+  width: 620px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 16px;
+  background-color: rgb(110, 105, 105);
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  line-height: 60px;
+  margin-bottom: 18px;
+  a{
+    text-decoration: none;
+    color: white;
+  }
+}
+

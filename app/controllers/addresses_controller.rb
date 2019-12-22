@@ -29,7 +29,8 @@ class AddressesController < ApplicationController
   private
 
     def address_params
-      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:tel).merge(user_id: current_user.id)
+      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:tel,:family_name_knj,:first_name_knj,:family_name_ktkn,:first_name_ktkn)
+      .merge(user_id: current_user.id)
     end
 
 end

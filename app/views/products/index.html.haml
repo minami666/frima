@@ -18,6 +18,12 @@
           .product_one
             .product_img
               = image_tag product.productsimages[0].image.url
+              - @sold = Buyer.find_by(product_id:product)
+              - if @sold != nil
+                .sold
+                  .sold-p
+                    .sold-text
+                      SOLD
               .price_one
                 = "¥#{product.price}"
             .one_name_box
