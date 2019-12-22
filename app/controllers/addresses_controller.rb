@@ -24,7 +24,6 @@ class AddressesController < ApplicationController
     if @address.update(address_params)
       redirect_to new_product_buyer_path(@product)
     else
-      binding.pry
     end
   end
 
