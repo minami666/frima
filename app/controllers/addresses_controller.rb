@@ -14,17 +14,23 @@ class AddressesController < ApplicationController
   end
 
   def edit
-
+    @address = Address.find(params[:id])
   end
 
   def update
-
+    @product = Product.find(params[:id])
+    @address = Address.find(params[:id])
+    if @address.update(address_params)
+      redirect_to new_product_buyer_path(@product)
+    else
+      binding.pry
+    end
   end
 
   private
 
     def address_params
-      params.permit(:postnum,:prefecture,:city,:street_num,:building,:tel).merge(user_id: current_user.id)
+      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:tel).merge(user_id: current_user.id)
     end
 
 end
