@@ -4,8 +4,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_fit: [800, 800]
 
-  # Choose what kind of storage to use for this uploader:
-  storage :file
+  # 開発環境と本番環境で、画像の保存先を分岐させる↓
 
   if Rails.env.development?
     storage :file

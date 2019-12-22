@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 2019_12_20_072418) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "brand_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "categories_id"
+    t.integer "brands_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brand_name", null: false
     t.string "text", null: false
@@ -36,13 +43,21 @@ ActiveRecord::Schema.define(version: 2019_12_20_072418) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "buyers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "user_id"
+  create_table "buyer_evaluates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "buyers_id", null: false
+    t.integer "good", default: 0
+    t.integer "ordinary", default: 0
+    t.integer "bad", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_buyers_on_product_id"
-    t.index ["user_id"], name: "index_buyers_on_user_id"
+  end
+
+  create_table "buyers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+    t.integer "buyer_evaluates_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -66,40 +81,63 @@ ActiveRecord::Schema.define(version: 2019_12_20_072418) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "text", null: false
-    t.bigint "product_id"
-    t.bigint "user_id"
+  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number", null: false
+    t.string "name", null: false
+    t.integer "deadline", null: false
+    t.integer "security_num", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_messages_on_product_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text", null: false
+    t.integer "product_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "deliver_how", null: false
-    t.integer "deliverday", null: false
+    t.integer "deliverday"
     t.integer "price", null: false
     t.string "explanation"
     t.integer "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "transtate"
     t.integer "category_id"
     t.integer "size_id"
     t.integer "brand_id"
     t.integer "user_id"
-    t.integer "addresses_id"
     t.integer "seller_id"
-  end
+    t.integer "addresses_id"
+    t.integer "transtate"
+    end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "product_id"
-    t.string "image", null: false
+    t.integer "product_id"
+    t.string "image", default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "productslikes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "products_likes", default: 0
+    t.integer "users_id"
+    t.integer "products_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_productsimages_on_product_id"
+  end
+
+  create_table "seller_evaluates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "sellers_id", null: false
+    t.integer "good", default: 0
+    t.integer "ordinary", default: 0
+    t.integer "bad", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sellers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,7 +148,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_072418) do
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "size_name"
+    t.string "size_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -146,12 +184,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_072418) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "buyers", "products"
-  add_foreign_key "buyers", "users"
   add_foreign_key "cards", "cards"
-  add_foreign_key "messages", "products"
-  add_foreign_key "messages", "users"
-  add_foreign_key "productsimages", "products"
   add_foreign_key "sellers", "products"
   add_foreign_key "sellers", "users"
   add_foreign_key "sns_credentials", "users"

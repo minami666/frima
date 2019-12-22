@@ -7,7 +7,7 @@ before_action :like_action
   end
 
   def create
-    
+
   end
 
   def edit

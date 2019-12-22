@@ -27,7 +27,8 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -93,5 +94,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #master keyの指定漏れを防ぐため
-  config.require_master_key = true
+  # config.require_master_key = true
 end

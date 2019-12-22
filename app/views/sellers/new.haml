@@ -13,7 +13,7 @@
     .drop-zone
       %label.sell-box__img--input
         = f.fields_for :productsimages do |image|
-          = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image"
+          = image.file_field :image, multiple: true, allow_destroy: true,name: 'product_images[image][]', id: "upload-image"
   .sell-content
     .img-head
       .img-head_bold
@@ -104,6 +104,7 @@
       %li 禁止されている出品、行為を必ずご確認ください。
       %li またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
       %li また、出品をもちまして加盟店規約に同意したことになります。
+    = f.hidden_field :transtate ,value:0
     = f.submit "出品する",class:"sell-btn"
     = link_to root_path do
       .sell-btn_back
