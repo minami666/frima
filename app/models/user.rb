@@ -7,17 +7,10 @@ class User < ApplicationRecord
 
          mount_uploader :image, ImageUploader
 
-  has_many :sns_credentials, dependent: :destroy
-  has_many :products
-  has_many :productslikes
-  has_many :messages
-  has_one :credit
-  has_many :addresses
-
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to_active_hash :year
-  # belongs_to_active_hash :month
-  # belongs_to_active_hash :day
+  has_many :sns_credentials,dependent: :destroy
+  has_many :products,dependent: :destroy
+  has_many :messages,dependent: :destroy
+  has_many :addresses,dependent: :destroy
 
   def self.find_oauth(auth)
     uid = auth.uid

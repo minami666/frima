@@ -6,6 +6,11 @@
       .show_images
         .item_main_image
           = image_tag @productImages[0].image.url, height:300,width:300
+          - if @sold != nil
+            .sold
+              .sold-p
+                .sold-text
+                  SOLD
         .item_sub_image
           - @productImages.each do |img|
             = image_tag img.image.url, height:60,width:60
@@ -15,22 +20,26 @@
             出品者
           .show_sell_name_right
             .show_my_name
-              = @products.user.nickname
+              - @user = User.find(@products.user_id)
+              = @user.nickname
         .show_con2
           .show_cate_name
             カテゴリー
           .show_cate_name_right
-            = @products.category.name
+            - @category = Category.find(@products.category_id)
+            = @category.name
         .show_con3
           .show_bra_name
             ブランド
           .show_bra_name_right
-            = @products.brand.brand_name
+            - @brand = Brand.find(@products.brand_id)
+            = @brand.brand_name
         .show_con4
           .show_size_name
             サイズ
           .show_size_name_right
-            = @products.size.size_name
+            - @size = Size.find(@products.size_id)
+            = @size.size_name
         .show_con4
           .show_con_name
             商品の状態
@@ -82,8 +91,12 @@
         (税込)
       .show_price_dell
         送料込み
-    .show_buy_btn
-      =link_to "購入画面へ進む", new_product_buyer_path(@products)
+    - if @sold != nil
+      .show_buy_btn2
+        売り切れました
+    - else
+      .show_buy_btn
+        =link_to "購入画面へ進む", new_product_buyer_path(@products)
     .show_txet_box
       = @products.explanation
       .show_mini_con

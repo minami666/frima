@@ -26,7 +26,7 @@
           .progress-status
           .progress-status_bar
 
-  = form_with( url: addresses_path, local: true, method: :post) do |f|
+  = form_for(@addresses, url: {controller:'/addresses', action:'create',method:'POST' }) do |f|
     .signup
       .signup__title
         発送元・お届け先住所登録
@@ -60,7 +60,7 @@
               %label{for: "prefecture"} 都道府県
               %span.form-require 必須
               %br
-            .field__input 
+            .field__input
               = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--", class: "input-default"
           .field
             .field__info__city

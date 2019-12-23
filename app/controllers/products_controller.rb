@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    
   end
 
   def show
@@ -10,12 +11,13 @@ class ProductsController < ApplicationController
     @productImages = @products.productsimages
     @message = Message.new
     @messages = Message.where(product_id: params[:id])
-    #@messages = @products.message.includes(:user)
+    @sold = Buyer.find_by(product_id:@products.id)
   end
 
-  def search
-    @products = Product.search(params[:keyword])
+  def login?
+    # 既ログインならばtrue、未ログインならばfalseを返す
   end
+
 
   def set_action
     @categories = Category.all

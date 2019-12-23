@@ -1,4 +1,5 @@
-= link_to "/sellers/new" do
-  .bay_btn
-    出品
-    %i.fa.fa-camera
+- if user_signed_in?
+  = link_to "/sellers/new" do
+    .bay_btn
+      出品
+      %i.fa.fa-camera

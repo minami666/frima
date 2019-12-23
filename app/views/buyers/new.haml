@@ -1,45 +1,46 @@
 = render "partial/sell_bay_header"
-.buy_header
-  購入内容の確認
-.buy-product
-  .buy-content
-    .buy-image
-      = image_tag "/test.jpg"
-    .buy-data
-      .buy-data_name
-        フレアアンクルジーンズ
-      .buy-price
-        .buy-price_1
-          ¥1,700
-        .buy-price_2
-          （税込）送料込み
-.buy-pra
-  .buy-form
-    .buy_a
-      .buy-form_text
-        支払い金額
-      .buy-form_price
-        ¥1,700
-    .buy-label
-      ポイントを使用 (所持ポイント: P0)
-    .buy-how
-      支払い方法
-    .buy-info
-      .buy-info_a
-        .buy-info_text
-          配送先
-        .buy-info_link
-          変更する
-      .buy-user_info
-        %li 〒214-0012
-        %li 神奈川県 川崎市多摩区中野島 ３−１５−５
-        %li 清水 幹太
-    .buy-red_text
-      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-    .buy-btn
-      購入する
-.sell-footer
-  プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
-= render "partial/banner"
-= render "partial/footer"
-= render "partial/sell-btn"
+= form_for @buyer, url: product_buyers_path do |f|
+  .buy_header
+    購入内容の確認
+  .buy-product
+    .buy-content
+      .buy-image
+        = image_tag @productImages[0].image.url
+      .buy-data
+        .buy-data_name
+          = @product.name
+        .buy-price
+          .buy-price_1
+            = "¥#{@product.price}"
+          .buy-price_2
+            （税込）
+  .buy-pra
+    .buy-form
+      .buy_a
+        .buy-form_text
+          支払い金額
+        .buy-form_price
+          = "¥#{@product.price}"
+      .buy-label
+      .buy-how
+        支払い方法
+      .buy-info
+        .buy-info_a
+          .buy-info_text
+            配送先
+          = link_to edit_address_path(@add.user_id) do
+            .buy-info_link
+              変更する
+        .buy-user_info
+          =  "#{@pre.name} #{@add.city} #{@add.street_num}#{@add.building}"
+          %li=current_user.nickname
+      .buy-red_text
+        この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+      = f.hidden_field :user_id ,value: current_user.id
+      = f.hidden_field :product_id ,value:@product.id
+      = f.submit "購入する",class:"buy-btn"
+  .sell-footer
+    プライバシーポリシー メルカリ利用規約 特定商取引に関する表記
+  = render "partial/banner"
+  = render "partial/footer"
+  = render "partial/sell-btn"

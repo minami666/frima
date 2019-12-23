@@ -16,23 +16,26 @@
             出品者
           .show_sell_name_right
             .show_my_name
-              = @product.user.nickname
+              - @user = User.find(@product.user_id)
+              = @user.nickname
         .show_con2
           .show_cate_name
             カテゴリー
           .show_cate_name_right
-
-            = @product.category.name
+            - @category = Category.find(@product.category_id)
+            = @category.name
         .show_con3
           .show_bra_name
             ブランド
           .show_bra_name_right
-            = @product.brand.brand_name
+            - @brand = Brand.find(@product.brand_id)
+            = @brand.brand_name
         .show_con4
           .show_size_name
             サイズ
           .show_size_name_right
-            = @product.size.size_name
+            - @size = Size.find(@product.size_id)
+            = @size.size_name
         .show_con4
           .show_con_name
             商品の状態
