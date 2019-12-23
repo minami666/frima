@@ -23,9 +23,10 @@
         img {
           height: 60px;
           width: 60px;
-          margin-top: 72px;
-          margin-left: 230px;
           border-radius: 50%;
+          position: absolute;
+          top:70px;
+          left:200px;
         }
       }
     }
@@ -38,7 +39,7 @@
         width: 646px;
         background-color: white;
         border: 1px solid #ccc;
-        margin-top: 50px;
+        margin-top: 200px;
       }
       .main_body__h__z__change {
         background-color: red;
@@ -57,16 +58,16 @@
 
 
 .main_body__h__user__imput {
-    height: 48px;
+    height: 38px;
     width: 200px;
-    margin-left: 10px;
+    font-size: 25px;
     background-color:white;
     line-height: 48px;
     text-align: left;
-    padding-left: 20px;
     border-radius: 4px;
+    padding-left: 20px;
     position: absolute;
-    top: 320px;
-    right: 380px;
+    top: 330px;
+    right: 440px;
     text-decoration: none;
 }
