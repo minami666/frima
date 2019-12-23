@@ -9,14 +9,29 @@ class MypagesController < ApplicationController
   end
 
   # 本人確認
-  def identfication
+  def identification
     @categories = Category.all
+    @addresses = Address.new
   end
 
   # SNS認証ページ(APIでfacebookやtwitterアカウントでのログインを行う)
   def sns
 
   end
+
+  def new
+    @addresses = Address.new
+  end
+
+  def create
+    @addresses = Address.new(address_params)
+    if @addresses.save
+      redirect_to new_card_path
+    else
+      render 'new'
+    end
+  end
+
 
   # お知らせ
   def notification
