@@ -43,9 +43,11 @@ class SellersController < ApplicationController
     @product = Product.find(params[:id])
     respond_to do |format|
     if @product.update(product_params2)
+      if params[:productsimages].present?
         params[:productsimages][:image].each do |image| #params[:productsimages][:image]の中に新規の画像が居る
           @product.productsimages.create(image: image) #この中に既存の画像が居る
         end
+      end
       format.html{redirect_to root_path}
     else
       @product.productsimages.build
