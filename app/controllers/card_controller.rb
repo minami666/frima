@@ -37,7 +37,7 @@ class CardController < ApplicationController
     end
   end
 
-  def delete #PayjpとCardデータベースを削除します
+  def destroy #PayjpとCardデータベースを削除します
     if @card.blank?
       redirect_to action: "new"
     else
@@ -51,10 +51,9 @@ class CardController < ApplicationController
     end
       redirect_to action: "new"
   end
+  private
+  def set_card
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  end
 
-end
-
-private
-def set_card
-  @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
 end
