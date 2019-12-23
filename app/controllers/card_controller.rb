@@ -1,11 +1,10 @@
 class CardController < ApplicationController
-  before_action :set_card,only: [:index, :pay]
+  before_action :set_card,only: [:new,:index, :pay]
 
   require "payjp"
 
   def new
-    # @card = Card.new
-    card = Card.where(user_id: current_user.id)
+    @card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
 
@@ -22,14 +21,12 @@ class CardController < ApplicationController
 
       if @card.save
         redirect_to mypages_done_path
-        
-
       else
         redirect_to action: "pay"
       end
     end
   end
-  
+
   def show #Cardのデータpayjpに送り情報を取り出します
     if @card.blank?
       redirect_to action: "new"
@@ -39,7 +36,7 @@ class CardController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
-  
+
   def delete #PayjpとCardデータベースを削除します
     if @card.blank?
       redirect_to controller: "card", action: "new"
