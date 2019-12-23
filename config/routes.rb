@@ -43,11 +43,9 @@ Rails.application.routes.draw do
   # ====================== クレジットカード ======================
   # resources :card, only: [:index,:new,:create,:edit,:update,:delete,:show]
 
-  resources :card, only: [:new, :show] do
+  resources :card, only: [:new,:show,:delete] do
     collection do
       post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
-      post 'show', to: 'card#show'
     end
   end
 
