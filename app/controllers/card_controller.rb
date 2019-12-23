@@ -38,15 +38,15 @@ class CardController < ApplicationController
 
   def delete #PayjpとCardデータベースを削除します
     if @card.blank?
-      redirect_to controller: "card", action: "new"
+      redirect_to action: "new"
     else
-      begin
-        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-        customer = Payjp::Customer.retrieve(card.customer_id)
-        customer.delete
-        card.delete
-      rescue
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      if customer.delete && @card.delete
+        redirect_to root_path
+      else
         puts $!
+        redirect_to root_path
       end
     end
       redirect_to action: "new"
