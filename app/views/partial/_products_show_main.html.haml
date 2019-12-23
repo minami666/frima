@@ -20,26 +20,26 @@
             出品者
           .show_sell_name_right
             .show_my_name
-              ミナミ
-              -# = @products.user.nickname
+              - @user = User.find(@products.user_id)
+              = @user.nickname
         .show_con2
           .show_cate_name
             カテゴリー
           .show_cate_name_right
-            メンズ
-            -# = @products.category.name
+            - @category = Category.find(@products.category_id)
+            = @category.name
         .show_con3
           .show_bra_name
             ブランド
           .show_bra_name_right
-            シャネル
-            -# = @products.brand.brand_name
+            - @brand = Brand.find(@products.brand_id)
+            = @brand.brand_name
         .show_con4
           .show_size_name
             サイズ
           .show_size_name_right
-            M
-            -# = @products.size.size_name
+            - @size = Size.find(@products.size_id)
+            = @size.size_name
         .show_con4
           .show_con_name
             商品の状態
