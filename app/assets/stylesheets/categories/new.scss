@@ -42,6 +42,7 @@
         }
       }
     }
+
     .progress-status_bar {
       position: absolute;
       left: 50%;
@@ -147,7 +148,7 @@
   margin-left: 175px;
   width: 350px;
   display: flex;
-  line-height: 55px;;
+  line-height: 55px;
   .field-input_4_2{
     margin-left: 20px;
   }
@@ -258,6 +259,7 @@ select {
 .gnav > li {
   width: 25%;
 }
+
 .gnav li {
   list-style: none;
   position: relative;

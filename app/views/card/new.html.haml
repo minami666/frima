@@ -26,7 +26,7 @@
           .progress-status
           .progress-status_bar
 
-  = form_with( url: pay_card_index_path, local: true, method: :post, id: 'charge-form',  name: "inputForm") do |f|
+  = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
     .signup_4
       .signup-title_4
         支払い方法
@@ -38,7 +38,7 @@
               %span.form-require 必須
               %br
             .field-input_4
-              = f.text_field :card_id, class: "input-default", autocomplete:"card_id", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+              = text_field_tag "number", "", class: "input-default", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
               .footer-credits__link_4
                 = image_tag "visa.svg", size: "49x20"
                 .footer-credits__link_4_1
@@ -59,7 +59,7 @@
               %span.form-require 必須
               %br
             .field-input_4_1
-              %select#name{name: "name", type: "text"}
+              %select#exp_month{name: "exp_month", type: "text"}
                 %option{value: ""} --
                 %option{value: "1"}01
                 %option{value: "2"}02
@@ -76,7 +76,7 @@
               .field-input_4_2
               %span 月
               .field-input_4_3
-              %select#number{name: "number", type: "text"}
+              %select#exp_year{name: "exp_year", type: "text"}
                 %option{value: ""} --
                 %option{value: "2019"}19
                 %option{value: "2020"}20
@@ -103,12 +103,7 @@
               .field-input_4
               %label{for: "security_num"} セキュリティコード
               %span.form-require 必須
-              = f.text_field :security_num, class: "input-default", autocomplete: "security_num", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-              -# %label{for: "security_num"} セキュリティコード
-              -# %span.form-require 必須
-            -#   -# %br
-            -# .field-input_4
-              = f.text_field :security_num, class: "input-default", placeholder: "例）カード背面4桁もしくは3桁の番号"
+              = text_field_tag "cvc", "", class: "input-default", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
             .field-input_mozi_4
               %ul.gnav
                 %li
@@ -123,7 +118,7 @@
             .field_4
             .next__btn_4
               #card_token
-              = f.submit "次へ進む", id: "token_submit", class:"next-btn_4"
+              = submit_tag "次へ進む", id: "token_submit", class:"next-btn_4"
   .footer-user_4
     %ul
       %li= link_to "プライバシーポリシー", '#'
