@@ -45,7 +45,7 @@ class CardController < ApplicationController
       if customer.delete && @card.delete
         redirect_to root_path
       else
-        puts $!
+        $!
         redirect_to root_path
       end
     end
