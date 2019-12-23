@@ -5,7 +5,7 @@ class MypagesController < ApplicationController
   # マイページ／一覧
   def index
     @categories = Category.all
-    @products = Product.where(user_id: current_user.id)
+    # @products = Product.where(user_id: current_user.id)
   end
 
   # 本人確認
