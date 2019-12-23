@@ -1,7 +1,5 @@
 class BuyersController < ApplicationController
 
-  
-
   def new
     @product = Product.find(params[:product_id])
     @productImages = @product.productsimages
@@ -9,7 +7,6 @@ class BuyersController < ApplicationController
     @pre = Prefecture.find(@add.prefecture)
     @buyer = Buyer.new
     @user = User.find(current_user.id)
-
     @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       redirect_to new_card_path
@@ -31,8 +28,7 @@ class BuyersController < ApplicationController
       :amount => amount, #支払金額を入力（itemテーブル等に紐づけても良い）
       :customer => card.customer_id, #顧客ID
       :currency => 'jpy', #日本円
-      )
-      
+      )      
       redirect_to root_path
     else
       redirect_to new_product_buyer_path
@@ -42,15 +38,10 @@ class BuyersController < ApplicationController
   def show
   end
 
-
   def pay
-   
   end
 
   def buy_params
     params.require(:buyer).permit!
   end
-
-  
-
 end
