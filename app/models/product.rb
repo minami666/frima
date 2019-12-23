@@ -18,13 +18,6 @@ belongs_to :size, foreign_key: true,optional: true
 belongs_to :user, foreign_key: true,optional: true
 belongs_to :category, foreign_key: true,optional: true
 
-# belongs_to :seller,optional: true
-# belongs_to :brand,optional: true
-# belongs_to :size,optional: true
-# belongs_to :user,optional: true
-# belongs_to :category,optional: true
-
-
 has_many :messages,dependent: :destroy
 
 has_many :productsimages, dependent: :destroy
