@@ -14,12 +14,12 @@ class AddressesController < ApplicationController
   end
 
   def edit
-    @address = Address.find(params[:id])
+    @address = Address.find_by(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
-    @address = Address.find(params[:id])
+    @product = Product.find_by(params[:id])
+    @address = Address.find_by(params[:id])
     if @address.update(address_params)
       redirect_to new_product_buyer_path(@product)
     else

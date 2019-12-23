@@ -14,6 +14,10 @@ class ProductsController < ApplicationController
     @sold = Buyer.find_by(product_id:@products.id)
   end
 
+  def login?
+    # 既ログインならばtrue、未ログインならばfalseを返す
+  end
+
 
   def set_action
     @categories = Category.all
