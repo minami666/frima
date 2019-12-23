@@ -7,7 +7,7 @@ class PurchaseController < ApplicationController
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
     else
-      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+      Payjp.api_key = 'sk_test_a3ad683fae92739356cf5902'
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
@@ -24,7 +24,6 @@ class PurchaseController < ApplicationController
       :customer => card.customer_id, #顧客ID
       :currency => 'jpy', #日本円
     )
-    
     redirect_to action: 'done' #完了画面に移動
   end
 
