@@ -4,7 +4,6 @@ class CardController < ApplicationController
   require "payjp"
 
   def new
-    @card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if @card.exists?
   end
 
@@ -53,5 +52,5 @@ end
 
 private
 def set_card
-  @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  @card = Card.find_by(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
 end
