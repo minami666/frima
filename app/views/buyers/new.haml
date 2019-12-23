@@ -25,6 +25,14 @@
       .buy-how
         支払い方法
       .buy-info
+        .a
+          = "**** **** **** " + @default_card_information.last4
+          %br/
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = "有効期限" + exp_month + " / " + exp_year
+          %br
+          = image_tag "visa.svg", size: "49x20"
         .buy-info_a
           .buy-info_text
             配送先
