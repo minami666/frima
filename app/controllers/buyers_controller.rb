@@ -7,7 +7,6 @@ class BuyersController < ApplicationController
     @pre = Prefecture.find(@add.prefecture)
     @buyer = Buyer.new
     @user = User.find(current_user.id)
-
     @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       redirect_to new_card_path
@@ -16,7 +15,6 @@ class BuyersController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
       redirect_to product: "index"
-
     end
   end
 
