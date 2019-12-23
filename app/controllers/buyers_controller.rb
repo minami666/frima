@@ -1,6 +1,5 @@
 class BuyersController < ApplicationController
-
-  
+  before_action :set_card, :set_product
 
   def new
     @product = Product.find(params[:product_id])
@@ -23,14 +22,12 @@ class BuyersController < ApplicationController
   def create
     @buyer = Buyer.new(buy_params)
     if @buyer.save
-      card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
-      product = Product.find(params[:product_id])
       amount = product.price
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       Payjp::Charge.create(
-      :amount => amount, #支払金額を入力（itemテーブル等に紐づけても良い）
-      :customer => card.customer_id, #顧客ID
-      :currency => 'jpy', #日本円
+        :amount => amount, #支払金額を入力（itemテーブル等に紐づけても良い）
+        :customer => card.customer_id, #顧客ID
+        :currency => 'jpy', #日本円
       )
       
       redirect_to root_path
@@ -51,6 +48,13 @@ class BuyersController < ApplicationController
     params.require(:buyer).permit!
   end
 
-  
+  private
+def set_card
+  card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+end
+
+def set_product
+  product = Product.find(params[:product_id])
+end
 
 end
