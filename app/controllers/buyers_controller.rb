@@ -46,12 +46,12 @@ class BuyersController < ApplicationController
   end
 
   private
-def set_card
-  card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
-end
+  def set_card
+    card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  end
 
-def set_product
-  product = Product.find(params[:product_id])
-end
+  def set_product
+    product = Product.find(params[:product_id])
+  end
 
 end
