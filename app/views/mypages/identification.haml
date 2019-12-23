@@ -22,52 +22,96 @@
         .id-main__body__3__title
           %p お名前
         .id-main__body__3__variable
-          %p 中里南(仮置き)
+          = current_user.nickname
+
         .id-main__body__3__title
           %p お名前カナ
         .id-main__body__3__variable
-          %p ナカサトミナミ(仮置き)
+          = current_user.first_name_ktkn
+
         .id-main__body__3__title
           %p 生年月日
         .id-main__body__3__variable
-          %p 1984/12/07(仮置き)
-      .id-main__body__4
-        -# ==== フォーム ====
-        .id-main__body__4__box
-          .id-main__body__4__box--upper
-            %p 郵便番号
-            %p.nini 任意
-          .id-main__body__4__box--lower
-            %input.size{placeholder: "例) 155-0041"}
-        .id-main__body__4__box
-          .id-main__body__4__box--upper
-            %p 都道府県
-            %p.nini 任意
-          .id-main__body__4__box--lower
-            %select.size--prefecture
-        .id-main__body__4__box
-          .id-main__body__4__box--upper
-            %p 市区町村
-            %p.nini 任意
-          .id-main__body__4__box--lower
-            %input.size{placeholder: "例) 東京"}
-        .id-main__body__4__box
-          .id-main__body__4__box--upper
-            %p 番地
-            %p.nini 任意
-          .id-main__body__4__box--lower
-            %input.size{placeholder: "例) 新宿2000丁目"}
-        .id-main__body__4__box
-          .id-main__body__4__box--upper
-            %p 建物名
-            %p.nini 任意
-          .id-main__body__4__box--lower
-            %input.size{placeholder: "ビル"}
-      .id-main__body__5
-        = link_to "登録する", "/"
-      .id-main__body__6
-        = link_to "本人情報の登録について", "/"
-        %i.idicon.fa.fa-check
+          %p 1984/12/07
+
+        .id-main__body__3__title
+          %p 郵便番号
+        .id-main__body__3__variable
+          = @add.postnum
+          
+        .id-main__body__3__title
+          %p 都道府県
+        .id-main__body__3__variable
+          = place.prefecture.name
+
+        .id-main__body__3__title
+          %p 市区町村
+        .id-main__body__3__variable
+          = @add.city
+
+        .id-main__body__3__title
+          %p 番地
+        .id-main__body__3__variable
+          = @add.street_num
+
+        .id-main__body__3__title
+          %p 建物名
+        .id-main__body__3__variable
+          = @add.building
+
+
+
+
+
+      -# .id-main__body__4
+      -#   -# ==== フォーム ====
+
+      -# = form_with(model: @addresses, url: addresses_path, local: true, method: :post) do |f|
+      -#   .id-main__body__4__box
+      -#     .id-main__body__4__box--upper
+      -#       %p 郵便番号
+      -#       %p.nini 任意
+      -#     .field__input
+            -# = f.text_field :postnum, class: "input-default-full", autocomplete: "postnum", placeholder: "例）123-4567"
+
+        -# .id-main__body__4__box
+        -#   .id-main__body__4__box--upper
+        -#     %p 都道府県
+        -#     %p.nini 任意
+        -#   .id-main__body__4__box--lower
+        -#     = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--", class: "input-default-full"
+
+
+        -# .id-main__body__4__box
+        -#   .id-main__body__4__box--upper
+        -#     %p 市区町村
+        -#     %p.nini 任意
+        -#   .id-main__body__4__box--lower
+        -#     = f.text_field :city, class: "input-default-full", autocomplete: "city", placeholder: "例）横浜市緑区"
+
+
+        -# .id-main__body__4__box
+        -#   .id-main__body__4__box--upper
+        -#     %p 番地
+        -#     %p.nini 任意
+        -#   .id-main__body__4__box--lower
+        -#     = f.text_field :street_num, class: "input-default-full", autocomplete: "street_num", placeholder: "例）青山1-1-1"
+
+
+        -# .id-main__body__4__box
+        -#   .id-main__body__4__box--upper
+        -#     %p 建物名
+        -#     %p.nini 任意
+        -#   .id-main__body__4__box--lower
+        -#     = f.text_field :building, class: "input-default-full", autocomplete: "building", placeholder: "例）柳ビル103"
+
+        -# = f.submit '登録する', class:"id-main__body__5"
+
+      -# .id-main__body__5
+      -#   = link_to "登録する", "/"
+      -# .id-main__body__6
+      -#   = link_to "本人情報の登録について", "/"
+      -#   %i.idicon.fa.fa-check
 
 = render "partial/banner"
 = render "partial/footer"

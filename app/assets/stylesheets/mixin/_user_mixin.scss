@@ -266,6 +266,15 @@
     border: 1px solid #ccc;
     margin-left: 8px;
   }
+  &-full {
+    height: 47px;
+    width: 590px;
+    padding: 0 15px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
 }
 
 
@@ -300,4 +309,7 @@
   font-size: 16px;
   font-weight: 400;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+#prefecture{
+  width: 620px;
 }
