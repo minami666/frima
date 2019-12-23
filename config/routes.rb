@@ -41,7 +41,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
   # ====================== クレジットカード ======================
-  # resources :card, only: [:index,:new,:create,:edit,:update,:delete,:show]
 
   resources :card, only: [:new,:show,:delete] do
     collection do
