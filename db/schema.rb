@@ -85,13 +85,11 @@ ActiveRecord::Schema.define(version: 2019_12_20_072418) do
     t.integer "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id"
+    t.integer "transtate"
     t.integer "size_id"
     t.integer "brand_id"
     t.integer "user_id"
-    t.integer "addresses_id"
     t.integer "seller_id"
-    t.integer "transtate"
   end
 
   create_table "productsimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
