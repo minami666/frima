@@ -13,7 +13,6 @@ class MypagesController < ApplicationController
     @categories = Category.all  
     @addresses = Address.new
     @address = Address.find_by(user_id: current_user.id)
-    # binding.pry
   end
 
   # SNS認証ページ(APIでfacebookやtwitterアカウントでのログインを行う)
