@@ -71,9 +71,12 @@ Rails.application.routes.draw do
   get "/mypages/identification", to:"mypages#identification"
   get "/mypages/destroy", to:"mypages#destroy"
   get "/mypages/loginbutton", to:"mypages#loginbutton"
-  get "/mypages/tell", to:"mypages#tell"
   get "/mypages/done", to:"mypages#done"
   patch "/mypages/profile", to:"mypages#update"
   get "/sellers/:id/edit2", to:"sellers#edit2"
+  get "/mypages/edit", to:"mypages#edit"
+  patch "/mypages/up", to:"mypages#up"
+  get "/mypages/tell", to:"mypages#tell"
+  patch "/mypages/tellup", to:"mypages#tellup"
 
 end

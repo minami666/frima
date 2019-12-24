@@ -19,11 +19,13 @@ class BuyersController < ApplicationController
 
   def create
     @buyer = Buyer.new(buy_params)
+    product = Product.find(params[:product_id])
+    card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
     if @buyer.save
       card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
       product = Product.find(params[:product_id])
       amount = product.price
-      Payjp.api_key = 'sk_test_a3ad683fae92739356cf5902'
+      Payjp.api_key ='sk_test_a3ad683fae92739356cf5902'
       Payjp::Charge.create(
         :amount => amount, #支払金額を入力（itemテーブル等に紐づけても良い）
         :customer => card.customer_id, #顧客ID

@@ -19,6 +19,7 @@ belongs_to :user, foreign_key: true,optional: true
 belongs_to :category, foreign_key: true,optional: true
 
 has_many :messages,dependent: :destroy
+has_many :buyers,dependent: :destroy
 
 has_many :productsimages, dependent: :destroy
 accepts_nested_attributes_for :productsimages, allow_destroy: true

@@ -1,11 +1,11 @@
 class MypagesController < ApplicationController
 
-  before_action :set_action
+  before_action :set_action,:set_address
 
   # マイページ／一覧
   def index
+    @products = Product.where(user_id:current_user)
     @categories = Category.all
-    # @products = Product.where(user_id: current_user.id)
   end
 
   # 本人確認
@@ -45,27 +45,27 @@ class MypagesController < ApplicationController
 
   # 出品した商品 - 出品中
   def listing
-    @products = Product.all
+    @products = Product.where(user_id:current_user)
   end
 
   # 出品した商品 - 取引中
   def progress
-
+    @products = Product.where(user_id:current_user)
   end
 
   # 出品した商品 - 売却済み
   def completed
-
+    @products = Product.where(user_id:current_user)
   end
 
   # 購入した商品 - 取引中
   def buying
-
+    @products = Product.where(user_id:current_user)
   end
 
   # 購入した商品 - 過去の取引
   def pastransaction
-
+    @products = Product.where(user_id:current_user)
   end
 
   # ニュース一覧
@@ -78,6 +78,17 @@ class MypagesController < ApplicationController
 
   end
 
+  def edit
+    
+  end
+
+  def up
+   
+    if @address.update(address_params)
+      redirect_to root_path
+    else
+    end
+  end
   # お問い合わせ
   def support
 
@@ -108,6 +119,14 @@ class MypagesController < ApplicationController
 
   #
   def tell
+   
+  end
+
+  def tellup
+   
+    if @address.update(address_params)
+      redirect_to root_path
+    end
   end
 
   # 新規登録の完了画面
@@ -132,6 +151,13 @@ class MypagesController < ApplicationController
       @productsimage = Productsimage.all
       @categories = Category.all
       @brands = Brand.all
+    end
+    def set_address
+      @address = Address.find_by(user_id:current_user)
+    end
+    def address_params
+      params.require(:address).permit(:postnum,:prefecture,:city,:street_num,:building,:tel,:family_name_knj,:first_name_knj,:family_name_ktkn,:first_name_ktkn)
+      .merge(user_id: current_user.id)
     end
 
 end
