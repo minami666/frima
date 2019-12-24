@@ -1,5 +1,4 @@
 class BuyersController < ApplicationController
-  before_action :set_card, :set_product
 
   def new
     @product = Product.find(params[:product_id])
@@ -23,6 +22,8 @@ class BuyersController < ApplicationController
     product = Product.find(params[:product_id])
     card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
     if @buyer.save
+      card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+      product = Product.find(params[:product_id])
       amount = product.price
       Payjp.api_key ='sk_test_a3ad683fae92739356cf5902'
       Payjp::Charge.create(
@@ -30,7 +31,7 @@ class BuyersController < ApplicationController
         :customer => card.customer_id, #顧客ID
         :currency => 'jpy', #日本円
       )
-      
+
       redirect_to root_path
     else
       redirect_to new_product_buyer_path
@@ -45,15 +46,6 @@ class BuyersController < ApplicationController
 
   def buy_params
     params.require(:buyer).permit!
-  end
-
-  private
-  def set_card
-    card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
-  end
-
-  def set_product
-    product = Product.find(params[:product_id])
   end
 
 end

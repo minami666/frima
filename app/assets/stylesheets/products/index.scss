@@ -40,7 +40,7 @@
     }
     .product_show{
       flex-wrap: wrap;
-      width: 1040px;
+      width: 1043px;
       height: 544px;
       margin-left: 180px;
       display: flex;
@@ -146,5 +146,6 @@
 }
 .product_one:hover{
   border: 1px solid #0095EE;
+  box-sizing: border-box;
 }
 
