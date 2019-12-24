@@ -18,7 +18,7 @@ class PurchaseController < ApplicationController
   def pay
     product = Product.find( params[:id])
     amount = product.price
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = 'sk_test_a3ad683fae92739356cf5902'
     Payjp::Charge.create(
       :amount => amount, #支払金額を入力（itemテーブル等に紐づけても良い）
       :customer => card.customer_id, #顧客ID
