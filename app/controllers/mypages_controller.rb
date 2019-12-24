@@ -10,8 +10,9 @@ class MypagesController < ApplicationController
 
   # 本人確認
   def identification
-    @categories = Category.all
+    @categories = Category.all  
     @addresses = Address.new
+    @address = Address.find_by(user_id: current_user.id)
   end
 
   # SNS認証ページ(APIでfacebookやtwitterアカウントでのログインを行う)
