@@ -1,10 +1,19 @@
-= render "partial/header"
-.top_bar
-  - breadcrumb :confirmation
-  = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"
-
-.buying
-  購入中
-
-= render "partial/banner"
-= render "partial/footer"
+.body
+  .header
+    .header__logo
+      = link_to image_tag(src="sns_top.svg"), root_path
+  .head-tell
+    電話番号の変更
+  = form_for(@address,url: {controller:'/mypages', action:'tellup',method:'PATCH'},html:{class: "tell-form"}) do |f|
+    .tell-box
+      携帯電話の番号
+      = f.text_field :tel, placeholder: "携帯電話の番号を入力", class: "tell-input"
+      .tell-text
+        本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+      = f.submit "電話番号を変更する",class:"tell-btn"
+      .tell-text_bottom
+        ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+      .tell-text_bottom2
+        電話番号の確認が必要な理由
+  .sell-footer
+    プライバシーポリシー メルカリ利用規約 特定商取引に関する表

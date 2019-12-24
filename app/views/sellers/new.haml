@@ -50,7 +50,7 @@
             商品の状態
           .img-head_icon
             必須
-        = f.select :state, [["新品", 1],["中古", 2]],prompt:"--"
+        = f.select :state, [["新品", 0],["中古", 1]],prompt:"--"
         .img-head
           .img-head_bold
             サイズ
@@ -67,7 +67,7 @@
             配送料の負担
           .img-head_icon
             必須
-        = f.select :deliver_how, [["送料込み", 1],["着払い", 2]],prompt:"--"
+        = f.select :deliver_how, [["送料込み", 0],["着払い", 1]],prompt:"--"
         .img-head
           .img-head_bold
             配送元の地域
@@ -79,7 +79,7 @@
             配送までの日数
           .img-head_icon
             必須
-        = f.select :deliverday, [["１〜４", 1],["４〜１０", 2]],prompt:"--"
+        = f.select :deliverday, [["１〜４日", 0],["４〜１０日", 1]],prompt:"--"
   .sell-content
     .sell_box
       .sell-sub_head

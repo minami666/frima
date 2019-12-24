@@ -1,10 +1,28 @@
 = render "partial/header"
 .top_bar
-  - breadcrumb :pastransaction
+  - breadcrumb :listing
   = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"
-
-.pastransaction
-  過去の取引
-
+.body
+  .main_body
+    = render '/mypages/partial/sidebar'
+    .right_box
+      .right_box__foot
+        出品した商品
+      .right_box__under_box
+        .right_box__under_box__left
+          出品中
+        .right_box__under_box__right
+          取引中
+        .right_box__under_box__right
+          売却済
+      .right_box__ge-li
+        - @products.last(10).each do |product|
+          = link_to edit_seller_path(product.id) do
+            .listing-zone
+              .listing-img
+                = image_tag product.productsimages[0].image.url,height:60,width:60
+              .listing-name
+                %li
+                  = product.name
 = render "partial/banner"
 = render "partial/footer"
