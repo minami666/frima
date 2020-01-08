@@ -60,6 +60,7 @@
 <img src="https://user-images.githubusercontent.com/55865498/71985854-bc969d00-326e-11ea-86ec-010d131cb7e0.png">
 
 > devise gemを用いたユーザーの登録・管理機能です
+
 <br><br>
 
 ### ▶ 個人情報の入力
@@ -82,14 +83,18 @@
 
 <img src="https://user-images.githubusercontent.com/55865498/71985903-d506b780-326e-11ea-8089-c2545ec8d691.png">
 
+<br><br>
+
 > ユーザーがクレジットカードを登録、および商品を購入することができます。
 > 実装にはAPIのPAY.JPを用いました。
-<br><br>
+
+<br><br><br><br>
 
 <img src="https://user-images.githubusercontent.com/55865498/71985904-d506b780-326e-11ea-8298-62fea83bf395.png">
 
 > クレジットカードの登録が成功すると、モーダルが表示されます。
-<br><br>
+
+<br><br><br><br>
 
 ### ▶ 登録完了ページ
 
@@ -111,7 +116,8 @@
 
 
 > 複数の画像を選択し、javascriptでプレビュー表示可能です。
-<br><br>
+
+<br><br><br><br>
 
 <!-- =========================== 商品の詳細 ============================== -->
 
@@ -125,8 +131,11 @@
 
 <img src="https://user-images.githubusercontent.com/55865498/71985916-d6d07b00-326e-11ea-914b-df7947f61688.png">
 
-> 先ほど登録したクレジットカードの情報を表示。そのカードで買い物が可能です。
 <br><br>
+
+> 先ほど登録したクレジットカードの情報を表示。そのカードで買い物が可能です。
+
+<br><br><br><br>
 
 
 # 🔷 売り切れ表示 🔷
