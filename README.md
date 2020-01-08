@@ -30,12 +30,17 @@
 
 <!-- =========================== 目次 ============================== -->
 # 目次
-[トップページ](https://github.com/minami666/frima#%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8)<br>
-[登録機能](https://github.com/minami666/frima#%E7%99%BB%E9%8C%B2%E6%A9%9F%E8%83%BD)<br>
-[マイページ](https://github.com/minami666/frima#%E3%83%9E%E3%82%A4%E3%83%9A%E3%83%BC%E3%82%B8)<br>
-[出品機能](https://github.com/minami666/frima#%E5%87%BA%E5%93%81%E6%A9%9F%E8%83%BD)<br>
-[商品の詳細](https://github.com/minami666/frima#%E5%95%86%E5%93%81%E3%81%AE%E8%A9%B3%E7%B4%B0%E3%83%9A%E3%83%BC%E3%82%B8)
-[購入機能](https://github.com/minami666/frima#%E8%B3%BC%E5%85%A5%E6%A9%9F%E8%83%BD)<br>
+:white_check_mark: [トップページ](https://github.com/minami666/frima#%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8)<br>
+
+:white_check_mark: [登録機能](https://github.com/minami666/frima#%E7%99%BB%E9%8C%B2%E6%A9%9F%E8%83%BD)<br>
+
+:white_check_mark: [マイページ](https://github.com/minami666/frima#%E3%83%9E%E3%82%A4%E3%83%9A%E3%83%BC%E3%82%B8)<br>
+
+:white_check_mark: [出品機能](https://github.com/minami666/frima#%E5%87%BA%E5%93%81%E6%A9%9F%E8%83%BD)<br>
+
+:white_check_mark: [商品の詳細](https://github.com/minami666/frima#%E5%95%86%E5%93%81%E3%81%AE%E8%A9%B3%E7%B4%B0%E3%83%9A%E3%83%BC%E3%82%B8)<br>
+
+:white_check_mark: [購入機能](https://github.com/minami666/frima#%E8%B3%BC%E5%85%A5%E6%A9%9F%E8%83%BD)<br>
 
 
 <!-- =========================== トップ ============================== -->
