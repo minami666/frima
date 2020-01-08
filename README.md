@@ -22,13 +22,9 @@
 <h3 align="center">- Contributors -</h3>
 <p align="center">
 <b><a><a href="https://github.com/minami666"><img src="https://avatars2.githubusercontent.com/u/55865498?s=460&v=4" width="100px;" /></a></b>
-
 <b><a><a href="https://github.com/kantashimizu"><img src="https://avatars0.githubusercontent.com/u/57340298?s=400&v=4" width="100px;" /></a></b><a>　</a>
-
 <b><a><a href="https://github.com/Ota80"><img src="https://avatars3.githubusercontent.com/u/54613919?s=400&v=4" width="100px;" /></a></b><a>　</a>
-
 <b><a><a href="https://github.com/shota-tanabe"><img src="https://avatars2.githubusercontent.com/u/48944377?s=400&v=4" width="100px;" /></a></b><a>　</a>
-
 <b><a><a href="https://github.com/takatakatakashi"><img src="https://avatars2.githubusercontent.com/u/57404334?s=400&v=4" width="100px;" /></a></b><a>　</a>
 <br><br><br><br>
 
