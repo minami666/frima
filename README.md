@@ -29,7 +29,7 @@
 <br><br><br><br>
 
 <!-- =========================== 目次 ============================== -->
-# 目次
+# 📗 目次 📗
 :white_check_mark: [トップページ](https://github.com/minami666/frima#%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8)<br>
 
 :white_check_mark: [登録機能](https://github.com/minami666/frima#%E7%99%BB%E9%8C%B2%E6%A9%9F%E8%83%BD)<br>
@@ -42,41 +42,43 @@
 
 :white_check_mark: [購入機能](https://github.com/minami666/frima#%E8%B3%BC%E5%85%A5%E6%A9%9F%E8%83%BD)<br>
 
-
+<br><br>
 <!-- =========================== トップ ============================== -->
-# トップページ
+
+# 🔷 トップページ 🔷
 > 出品された商品が最新10個まで表示されます
 
 <img src="https://user-images.githubusercontent.com/55865498/71985832-b0124480-326e-11ea-9259-fe3fd0fcbecf.png">
 
 <br>
 <!-- =========================== ユーザー登録 ============================== -->
-# 登録機能
 
-### ユーザー情報
+# 🔷 登録機能 🔷
+
+### ▶ ユーザー情報
 
 <img src="https://user-images.githubusercontent.com/55865498/71985854-bc969d00-326e-11ea-86ec-010d131cb7e0.png">
 
 > devise gemを用いたユーザーの登録・管理機能です
 <br><br>
 
-### 個人情報の入力
+### ▶ 個人情報の入力
 
 <img src="https://user-images.githubusercontent.com/55865498/71985873-c28c7e00-326e-11ea-862b-fc31fda0bf53.png">
 <br><br>
 
 
-### 電話番号の入力
+### ▶ 電話番号の入力
 
 <img src="https://user-images.githubusercontent.com/55865498/71985880-cae4b900-326e-11ea-991a-5d4bc9524610.png">
 <br><br>
 
-### 住所の入力
+### ▶ 住所の入力
 
 <img src="https://user-images.githubusercontent.com/55865498/71985902-d46e2100-326e-11ea-967f-23f9dbcf4e48.png">
 <br><br>
 
-### 支払い方法の入力
+### ▶ 支払い方法の入力
 
 <img src="https://user-images.githubusercontent.com/55865498/71985903-d506b780-326e-11ea-8089-c2545ec8d691.png">
 
@@ -89,19 +91,19 @@
 > クレジットカードの登録が成功すると、モーダルが表示されます。
 <br><br>
 
-### 登録完了ページ
+### ▶ 登録完了ページ
 
 <img src="https://user-images.githubusercontent.com/55865498/71985908-d59f4e00-326e-11ea-9096-9a76f982c353.png">
 <br><br>
 
 <!-- =========================== マイページ ============================== -->
-# マイページ
+# 🔷 マイページ 🔷
 
 <img src="https://user-images.githubusercontent.com/55865498/71985911-d59f4e00-326e-11ea-90c5-c89e14fb395e.png">
 <br><br>
 
 <!-- =========================== 出品 ============================== -->
-# 出品機能
+# 🔷 出品機能 🔷
 
 <img src="https://user-images.githubusercontent.com/55865498/71985913-d637e480-326e-11ea-8ef5-fc2e59d483f1.png">
 
@@ -113,13 +115,13 @@
 
 <!-- =========================== 商品の詳細 ============================== -->
 
-# 商品の詳細ページ
+# 🔷 商品の詳細ページ 🔷
 
 <img src="https://user-images.githubusercontent.com/55865498/71985915-d6d07b00-326e-11ea-8ee1-4262ca505633.png">
 <br><br>
 
 <!-- =========================== 購入 ============================== -->
-# 購入機能
+# 🔷 購入機能 🔷
 
 <img src="https://user-images.githubusercontent.com/55865498/71985916-d6d07b00-326e-11ea-914b-df7947f61688.png">
 
@@ -127,7 +129,7 @@
 <br><br>
 
 
-# 売り切れ表示
+# 🔷 売り切れ表示 🔷
 
 <img src="https://user-images.githubusercontent.com/55865498/71985919-d6d07b00-326e-11ea-9b5e-35b919e89ebd.png">
 
