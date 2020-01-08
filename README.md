@@ -1,5 +1,5 @@
 ![mercari](https://user-images.githubusercontent.com/39142850/71774503-7feb4d00-2fb3-11ea-8b30-f685466ff97f.png)
-<h1 align="center">Mercari Clone</h1>
+<h1 align="center">🔶メルカリクローンアプリ🔶</h1>
 <br>
 <p align="center">
 <a>　</a>
