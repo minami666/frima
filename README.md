@@ -31,7 +31,9 @@
 > プログラミングスクールTECH::EXPERTの課題で作成したアプリです、
 > ５人チームのアジャイル開発を行いました。
 > 当方が担当したタスクは [こちら](https://docs.google.com/document/d/17Xaqz_pBZ7Fcc4RdEEFb0GMJGbhCe_1uhTF7eXxnrwU/edit#)でご覧頂けます。
-<br><br><br><br>
+
+
+<br><br><br>
 
 <!-- =========================== 目次 ============================== -->
 # 📗 目次 📗
