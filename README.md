@@ -28,6 +28,11 @@
 <b><a><a href="https://github.com/takatakatakashi"><img src="https://avatars2.githubusercontent.com/u/57404334?s=400&v=4" width="100px;" /></a></b><a>　</a>
 <br><br><br><br>
 
+> プログラミングスクールTECH::EXPERTの課題で作成したアプリです、
+> ５人チームのアジャイル開発を行いました。
+> 当方が担当したタスクは [こちら](https://docs.google.com/document/d/17Xaqz_pBZ7Fcc4RdEEFb0GMJGbhCe_1uhTF7eXxnrwU/edit#)でご覧頂けます。
+<br><br><br><br>
+
 <!-- =========================== 目次 ============================== -->
 # 📗 目次 📗
 :white_check_mark: [トップページ](https://github.com/minami666/frima#-%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8-)<br>
