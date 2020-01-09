@@ -28,8 +28,7 @@
 <b><a><a href="https://github.com/takatakatakashi"><img src="https://avatars2.githubusercontent.com/u/57404334?s=400&v=4" width="100px;" /></a></b><a>　</a>
 <br><br><br><br>
 
-> プログラミングスクールTECH::EXPERTの課題で作成したアプリです、
-> ５人チームのアジャイル開発を行いました。
+> プログラミングスクールTECH::EXPERTの課題で作成したアプリです。５人チームのアジャイル開発を行いました。
 > 当方が担当したタスクは [こちら](https://docs.google.com/document/d/17Xaqz_pBZ7Fcc4RdEEFb0GMJGbhCe_1uhTF7eXxnrwU/edit#)でご覧頂けます。
 
 
