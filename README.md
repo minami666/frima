@@ -1,3 +1,7 @@
+※サービスへのリンクは[こちら](http://13.112.183.198)です。
+(ID : admin ／ password : 2222)
+<br>
+
 ![mercari](https://user-images.githubusercontent.com/55865498/71984428-295c6800-326c-11ea-95d9-f5c17b99a45c.png)
 <h1 align="center">🔶メルカリクローンアプリ🔶</h1>
 <br>
