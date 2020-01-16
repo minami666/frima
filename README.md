@@ -1,17 +1,11 @@
-※サービスへのリンクは[こちら]()です。
-
-
-<br>
-<br>
-<br>
+<h1 align="center">🔶メルカリクローンアプリ🔶</h1>
+<h3 align="center">※サービスへのリンクは<a><a href="http://13.112.183.198">こちら</a>(ID : admin ／ password : 2222)</h3>
 <br>
 
 ![mercari](https://user-images.githubusercontent.com/55865498/71984428-295c6800-326c-11ea-95d9-f5c17b99a45c.png)
-<h1 align="center">🔶メルカリクローンアプリ🔶</h1>
-<h3 align="center">※サービスへのリンクは<a><a href="http://13.112.183.198">こちら</a></h3>
-(ID : admin ／ password : 2222)
-<br>
+
 <!-- =========================== 使用技術 ============================== -->
+
 <p align="center">
 <a>　</a>
 <a><a href="https://www.ruby-lang.org/ja/"><img src="https://user-images.githubusercontent.com/39142850/71774533-1ddf1780-2fb4-11ea-8560-753bed352838.png" width="70px;" /></a>
